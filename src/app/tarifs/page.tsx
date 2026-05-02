@@ -38,7 +38,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   visage:     "Soins du visage",
   corps:      "Soins du corps",
   epilation:  "Épilation",
-  injections: "Injections & médecine esthétique",
+  injections: "Injections & esthétique avancée",
   diagnostic: "Diagnostic de peau",
 };
 

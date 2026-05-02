@@ -7,7 +7,7 @@ const ACCORDION_ITEMS = [
   {
     title: "Prise en charge rapide et efficace",
     content:
-      "Dans notre centre de médecine esthétique à Cotonou, nos patients sont rapidement pris en charge, peu importe s'ils souhaitent prendre rendez-vous, réaliser un diagnostic de peau ou effectuer une séance de soins.",
+      "Dans notre centre de esthétique avancée à Cotonou, nos patients sont rapidement pris en charge, peu importe s'ils souhaitent prendre rendez-vous, réaliser un diagnostic de peau ou effectuer une séance de soins.",
   },
   {
     title: "Méthodes non invasives",
@@ -17,12 +17,12 @@ const ACCORDION_ITEMS = [
   {
     title: "Rapidité des résultats",
     content:
-      "Un autre avantage important de la médecine esthétique est la rapidité de ses résultats. En effet, pour la plupart des soins, les résultats peuvent être immédiatement remarqués après la séance. Pour d'autres, il faut attendre seulement quelques heures ou quelques jours.",
+      "Un autre avantage important de la esthétique avancée est la rapidité de ses résultats. En effet, pour la plupart des soins, les résultats peuvent être immédiatement remarqués après la séance. Pour d'autres, il faut attendre seulement quelques heures ou quelques jours.",
   },
   {
     title: "Suivi des patients",
     content:
-      "Tous les patients qui réalisent des soins de médecine esthétique à Cotonou dans notre centre de médecine esthétique bénéficient d'un suivi post-traitement afin que leur protocole se déroule dans les meilleures conditions.",
+      "Tous les patients qui réalisent des soins de esthétique avancée à Cotonou dans notre centre de esthétique avancée bénéficient d'un suivi post-traitement afin que leur protocole se déroule dans les meilleures conditions.",
   },
   {
     title: "Dispositifs sécuritaires",
@@ -42,7 +42,7 @@ export function AccordionSection() {
           Quels sont les avantages des soins esthétiques à Cotonou chez Academy Beauty Gate
         </h2>
         <p className="text-[15px] leading-[28px] text-[#555] mb-8">
-          Choisir BeautyGate, pour vos soins de médecine esthétique à Cotonou
+          Choisir BeautyGate, pour vos soins de esthétique avancée à Cotonou
           vous permettra de bénéficier de plusieurs avantages.
         </p>
 

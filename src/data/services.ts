@@ -754,7 +754,7 @@ export const services: ServiceData[] = [
     hero: {
       image: "/images/soins/injection-hyaluronique/hero.jpg",
       imageAlt: "Injection acide hyaluronique à Cotonou",
-      eyebrow: "Médecine esthétique",
+      eyebrow: "Esthétique avancée",
       headline: "Acide hyaluronique à Cotonou : un visage repulpé et rajeuni",
       subheadline: "Comblements des rides, volume des lèvres, correction des cernes et remodelage du visage par injection d'acide hyaluronique.",
     },
@@ -811,7 +811,7 @@ export const services: ServiceData[] = [
     hero: {
       image: "/images/soins/injection-botulique/hero.jpg",
       imageAlt: "Injection toxine botulique à Cotonou",
-      eyebrow: "Médecine esthétique",
+      eyebrow: "Esthétique avancée",
       headline: "Toxine botulique à Cotonou : effacez les rides d'expression",
       subheadline: "La toxine botulique lisse les rides d'expression du front, de la glabelle et du contour des yeux pour un visage détendu et naturellement jeune.",
     },
@@ -850,7 +850,7 @@ export const services: ServiceData[] = [
       ],
     },
     faq: [
-      { question: "La toxine botulique est-elle sans danger ?", answer: "Oui, utilisée depuis plus de 30 ans en médecine esthétique à des doses faibles et précises, la toxine botulique est sécurisée." },
+      { question: "La toxine botulique est-elle sans danger ?", answer: "Oui, utilisée depuis plus de 30 ans en esthétique avancée à des doses faibles et précises, la toxine botulique est sécurisée." },
       { question: "Quand voient-on les résultats ?", answer: "Les effets apparaissent entre 3 et 7 jours après l'injection et atteignent leur maximum vers le 15e jour." },
       { question: "Combien de temps durent les effets ?", answer: "En moyenne 4 à 6 mois. Des séances régulières peuvent espacer les retouches dans le temps." },
       { question: "Peut-on combiner toxine et acide hyaluronique ?", answer: "Oui, les deux traitements sont complémentaires et peuvent être réalisés lors de la même consultation." },

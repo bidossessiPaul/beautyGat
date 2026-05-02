@@ -82,7 +82,7 @@ export function HeroSlider() {
       {/* Texte hero */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-[90px]">
         <p className="text-white text-sm md:text-base uppercase tracking-[0.25em] font-light mb-4">
-          Institut de beauté — Cadjehoun, Cotonou
+          Espace de bien-être, de beauté et de formation — Cadjehoun, Cotonou
         </p>
         <h1 className="text-white text-3xl md:text-6xl font-bold leading-tight mb-6 max-w-3xl">
           Révélez votre <span className="text-[#6D071A]">beauté</span><br />

@@ -12,7 +12,7 @@ const IMAGES = [
   },
   {
     src: "/beautygate/categories/H5x4IEaQz7SeAGGOIKVSZ6nqzIaQ8XonlcyrJwII.jpg",
-    alt: "Institut beauté Cotonou Bénin",
+    alt: "Espace beauté Cotonou Bénin",
   },
   {
     src: "/beautygate/gallery/LcDicyh6kKAgltJo5xF1UTp44idBu5GgBPTvf3Eh.jpg",

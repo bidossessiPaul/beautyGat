@@ -34,7 +34,7 @@ export function IntroSection() {
             Notre philosophie
           </p>
           <h2 className="font-sans text-[30px] md:text-[44px] font-bold leading-[1.2] text-black max-w-[700px] mx-auto">
-            Institut de beauté & de soins esthétiques au cœur de Cotonou
+            Espace de bien-être, de beauté et de formation au cœur de Cotonou
           </h2>
         </div>
 

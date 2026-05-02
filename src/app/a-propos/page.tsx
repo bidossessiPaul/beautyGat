@@ -91,7 +91,7 @@ const VALUES = [
 ];
 
 const CERTIFICATIONS = [
-  "Formation certifiée en médecine esthétique",
+  "Formation certifiée en esthétique avancée",
   "Protocoles adaptés aux phototypes foncés",
   "Équipements médicaux de dernière génération",
   "Produits cosmétiques haut de gamme et certifiés",

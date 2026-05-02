@@ -7,7 +7,7 @@ const ITEMS = [
   {
     title: "Prise en charge rapide et efficace",
     content:
-      "Dans notre centre de médecine esthétique à Cotonou, nos patients sont rapidement pris en charge, peu importe s'ils souhaitent prendre rendez-vous, réaliser un diagnostic de peau ou effectuer une séance de soins.",
+      "Dans notre centre de esthétique avancée à Cotonou, nos patients sont rapidement pris en charge, peu importe s'ils souhaitent prendre rendez-vous, réaliser un diagnostic de peau ou effectuer une séance de soins.",
   },
   {
     title: "Méthodes non invasives",
@@ -27,7 +27,7 @@ const ITEMS = [
   {
     title: "Dispositifs sécuritaires",
     content:
-      "Tous nos équipements sont certifiés et nos praticiens sont formés aux dernières normes de sécurité en médecine esthétique.",
+      "Tous nos équipements sont certifiés et nos praticiens sont formés aux dernières normes de sécurité en esthétique avancée.",
   },
 ];
 
@@ -58,10 +58,10 @@ export function SeoTextBlock() {
           {/* Colonne gauche — titre + accordéon */}
           <div className="py-16 md:py-20 md:pr-16">
             <h2 className="font-sans text-[26px] md:text-[34px] font-bold leading-[1.25] text-black mb-5">
-              Quels sont les avantages de la médecine esthétique à Cotonou chez BeautyGate ?
+              Quels sont les avantages de la esthétique avancée à Cotonou chez BeautyGate ?
             </h2>
             <p className="text-[15px] leading-[28px] text-[#555] mb-8">
-              Choisir BeautyGate pour vos soins de médecine esthétique à Cotonou
+              Choisir BeautyGate pour vos soins de esthétique avancée à Cotonou
               vous permettra de bénéficier de plusieurs avantages.
             </p>
 
@@ -97,7 +97,7 @@ export function SeoTextBlock() {
           >
             <Image
               src="/beautygate/gallery/2IuZRem4SKvK3UiMXPsNDe0qTSoVdzndfBpHSPUx.jpg"
-              alt="Médecine esthétique BeautyGate Paris"
+              alt="Esthétique avancée BeautyGate Paris"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 hover:scale-105"

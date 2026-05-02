@@ -83,7 +83,7 @@ export function ElectrolysePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
         <div className="relative z-10 h-full flex flex-col justify-center max-w-[1300px] mx-auto px-6 md:px-10 pt-[90px]">
           <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">
-            Institut Academy Beauty Gate — Cotonou
+            Academy Beauty Gate — Cotonou
           </p>
           <h1 className="font-heading text-[36px] md:text-[56px] font-bold text-white leading-tight max-w-[700px] mb-5">
             Épilation par électrolyse<br />à Cotonou

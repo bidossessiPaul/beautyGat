@@ -44,7 +44,7 @@ export function Footer() {
             className="mb-6 brightness-0 invert"
           />
           <p className="text-[13px] text-white/60 leading-[22px] mb-6">
-            Institut de beauté de référence à Cotonou. Soins esthétiques avancés, épilation laser et bien-être au cœur de Cadjehoun, Bénin.
+            Espace de bien-être, de beauté et de formation de référence à Cotonou. Soins esthétiques avancés, épilation laser et bien-être au cœur de Cadjehoun, Bénin.
           </p>
           <div className="flex gap-3">
             <Link

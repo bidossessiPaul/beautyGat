@@ -39,13 +39,13 @@ const tomatoGrotesk = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Academy Beauty Gate Cotonou — Institut de beauté & médecine esthétique",
+    default: "Academy Beauty Gate Cotonou — Espace de bien-être, de beauté et de formation & esthétique avancée",
     template: "%s | Academy Beauty Gate Cotonou",
   },
   description: SITE.description,
   keywords: [
     "institut beauté Cotonou", "salon beauté Bénin", "épilation laser Cotonou",
-    "soins visage Cotonou", "médecine esthétique Bénin", "massages Cotonou",
+    "soins visage Cotonou", "esthétique avancée Bénin", "massages Cotonou",
     "coiffure Cotonou", "maquillage Cotonou", "Academy Beauty Gate",
   ],
   authors: [{ name: SITE.name, url: SITE.url }],
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     apple: "/seo/cropped-appart-beaute-favicon-180x180.png",
   },
   openGraph: {
-    title: "Academy Beauty Gate Cotonou — Institut de beauté & médecine esthétique",
+    title: "Academy Beauty Gate Cotonou — Espace de bien-être, de beauté et de formation & esthétique avancée",
     description: SITE.description,
     url: SITE.url,
     siteName: SITE.name,

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 export const SITE = {
   name: "Academy Beauty Gate",
   url: "https://academybeautygate.com",
-  tagline: "Institut de beauté & médecine esthétique — Cotonou, Bénin",
+  tagline: "Espace de bien-être, de beauté et de formation & esthétique avancée — Cotonou, Bénin",
   description:
-    "Academy Beauty Gate, l'institut de référence à Cotonou pour l'épilation laser, les soins du visage, les massages, la coiffure et la médecine esthétique. Plus de 175 avis 5 étoiles.",
+    "Academy Beauty Gate, l'espace de référence à Cotonou pour l'épilation laser, les soins du visage, les massages, la coiffure et la esthétique avancée. Plus de 175 avis 5 étoiles.",
   locale: "fr_BJ",
   address: {
     street: "Cadjehoun",

@@ -217,7 +217,7 @@ export const menuCategories: MenuCategory[] = [
   },
   {
     emoji: "🥂",
-    label: "Privatisation de l'Institut",
+    label: "Privatisation de l'Espace",
     slug: "privatisation",
     services: [
       { name: "Privatisation EVJF (2–4 personnes)", price: "Sur devis", duration: "3–5h" },
