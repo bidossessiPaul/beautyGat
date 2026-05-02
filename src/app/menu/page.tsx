@@ -73,7 +73,7 @@ export default function MenuPage() {
             <button
               onClick={() => setActiveSlug("all")}
               className={`shrink-0 px-3.5 py-2 text-[11px] font-bold uppercase tracking-wide rounded-[3px] transition-all duration-200 ${
-                activeSlug === "all" ? "bg-[#96000F] text-white" : "bg-[#f5f5f5] text-[#555] hover:bg-[#eee]"
+                activeSlug === "all" ? "bg-[#6D071A] text-white" : "bg-[#f5f5f5] text-[#555] hover:bg-[#eee]"
               }`}
             >
               Tout voir
@@ -83,7 +83,7 @@ export default function MenuPage() {
                 key={cat.slug}
                 onClick={() => setActiveSlug(cat.slug)}
                 className={`shrink-0 px-3.5 py-2 text-[11px] font-bold uppercase tracking-wide rounded-[3px] transition-all duration-200 whitespace-nowrap ${
-                  activeSlug === cat.slug ? "bg-[#96000F] text-white" : "bg-[#f5f5f5] text-[#555] hover:bg-[#eee]"
+                  activeSlug === cat.slug ? "bg-[#6D071A] text-white" : "bg-[#f5f5f5] text-[#555] hover:bg-[#eee]"
                 }`}
               >
                 {cat.emoji} {cat.label.split(" ").slice(0, 2).join(" ")}
@@ -109,7 +109,7 @@ export default function MenuPage() {
         </section>
 
         {/* ── CTA FINAL ── */}
-        <section className="bg-[#96000F] py-20">
+        <section className="bg-[#6D071A] py-20">
           <div className="max-w-[680px] mx-auto px-6 text-center">
             <p className="text-white/60 text-xs font-bold uppercase tracking-[0.2em] mb-4">Réserver</p>
             <h2 className="text-white text-[28px] md:text-[38px] font-bold leading-[1.2] mb-5">
@@ -123,7 +123,7 @@ export default function MenuPage() {
                 href="https://wa.me/22997885887"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden inline-block bg-white text-[#96000F] text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
+                className="group relative overflow-hidden inline-block bg-white text-[#6D071A] text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
               >
                 <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">
@@ -135,7 +135,7 @@ export default function MenuPage() {
                 className="group relative overflow-hidden inline-block border-2 border-white/40 text-white text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
               >
                 <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-                <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">
+                <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">
                   Formulaire de contact
                 </span>
               </Link>

@@ -87,7 +87,7 @@ function Stars() {
 
 function Avatar({ name }: { name: string }) {
   const initials = name.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase();
-  const colors = ["bg-[#96000F]", "bg-[#2D6A4F]", "bg-[#1D4E89]", "bg-[#7B2D8B]", "bg-[#C9620A]"];
+  const colors = ["bg-[#6D071A]", "bg-[#2D6A4F]", "bg-[#1D4E89]", "bg-[#7B2D8B]", "bg-[#C9620A]"];
   const color = colors[name.charCodeAt(0) % colors.length];
   return (
     <div className={`w-10 h-10 rounded-full ${color} flex items-center justify-center shrink-0`}>
@@ -98,7 +98,7 @@ function Avatar({ name }: { name: string }) {
 
 function ReviewCard({ review }: { review: typeof REVIEWS[0] }) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-[#f0f0f0] p-5 w-[300px] shrink-0 hover:shadow-xl hover:-translate-y-1 hover:border-[#96000F]/20 transition-all duration-300 cursor-default">
+    <div className="bg-white rounded-2xl shadow-sm border border-[#f0f0f0] p-5 w-[300px] shrink-0 hover:shadow-xl hover:-translate-y-1 hover:border-[#6D071A]/20 transition-all duration-300 cursor-default">
       <div className="flex items-center gap-3 mb-3">
         <Avatar name={review.name} />
         <div>
@@ -126,7 +126,7 @@ export function ReviewsSection() {
   return (
     <section className="py-[60px] bg-[#fafafa] overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6 md:px-10 mb-10 text-center">
-        <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">
+        <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-3">
           Avis clients
         </p>
         <h2 className="font-sans text-[30px] md:text-[42px] font-bold text-black mb-3">

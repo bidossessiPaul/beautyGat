@@ -48,7 +48,7 @@ export function GeoSeoSection2() {
 
         {/* En-tête centré */}
         <div className="text-center mb-14 max-w-[700px] mx-auto">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">
+          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">
             Pourquoi nous choisir
           </p>
           <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black leading-tight mb-5">
@@ -120,8 +120,8 @@ export function GeoSeoSection2() {
                 },
               ].map((point) => (
                 <div key={point.titre} className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-[#96000F]/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="w-2 h-2 rounded-full bg-[#96000F]" />
+                  <div className="w-8 h-8 rounded-full bg-[#6D071A]/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="w-2 h-2 rounded-full bg-[#6D071A]" />
                   </div>
                   <div>
                     <h3 className="text-[15px] font-bold text-black mb-1">{point.titre}</h3>
@@ -133,7 +133,7 @@ export function GeoSeoSection2() {
 
             <Link
               href="#contact"
-              className="group relative overflow-hidden inline-block bg-[#96000F] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
+              className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
             >
               <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
               <span className="relative z-10">Prendre rendez-vous</span>

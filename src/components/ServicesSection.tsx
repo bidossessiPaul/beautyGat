@@ -77,7 +77,7 @@ export function ServicesSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
-            <p className="text-[13px] font-bold uppercase tracking-[2px] mb-3 text-[#96000F]">
+            <p className="text-[13px] font-bold uppercase tracking-[2px] mb-3 text-[#6D071A]">
               Nos prestations
             </p>
             <h2 className="font-sans text-[32px] md:text-[42px] font-bold leading-tight text-black">
@@ -86,10 +86,10 @@ export function ServicesSection() {
           </div>
           <Link
             href="#contact"
-            className="group relative overflow-hidden inline-block bg-[#96000F] border-2 border-[#96000F] text-[13px] font-medium uppercase rounded-[3px] px-6 py-[14px] shrink-0 self-start md:self-auto"
+            className="group relative overflow-hidden inline-block bg-[#6D071A] border-2 border-[#6D071A] text-[13px] font-medium uppercase rounded-[3px] px-6 py-[14px] shrink-0 self-start md:self-auto"
           >
             <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-            <span className="relative z-10 text-white group-hover:text-[#96000F] transition-colors duration-500">
+            <span className="relative z-10 text-white group-hover:text-[#6D071A] transition-colors duration-500">
               Prendre rendez-vous
             </span>
           </Link>
@@ -109,7 +109,7 @@ export function ServicesSection() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
-              <span className="inline-block bg-[#96000F] text-white text-[11px] uppercase tracking-widest px-3 py-1 rounded-full mb-3">
+              <span className="inline-block bg-[#6D071A] text-white text-[11px] uppercase tracking-widest px-3 py-1 rounded-full mb-3">
                 {featured.tag}
               </span>
               <h3 className="text-white text-[22px] font-bold">{featured.title}</h3>
@@ -145,7 +145,7 @@ export function ServicesSection() {
                   </h3>
                 </div>
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-[#96000F]/0 group-hover:bg-[#96000F]/30 transition-all duration-400" />
+                <div className="absolute inset-0 bg-[#6D071A]/0 group-hover:bg-[#6D071A]/30 transition-all duration-400" />
               </div>
             ))}
           </div>

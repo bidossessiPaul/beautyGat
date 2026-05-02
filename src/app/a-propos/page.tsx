@@ -156,7 +156,7 @@ export default function AProposPage() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover object-top transition-transform duration-[1400ms] ease-in-out group-hover:scale-[1.04]"
               />
-              <div className="absolute inset-0 bg-[#96000F]/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute inset-0 bg-[#6D071A]/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <p className="text-white text-xl font-bold tracking-wide">Sofia Aude HONVO</p>
                 <p className="text-white/80 text-sm uppercase tracking-[0.2em] mt-2">Fondatrice — Academy Beauty Gate</p>
               </div>
@@ -166,7 +166,7 @@ export default function AProposPage() {
             <div className={`flex-1 flex flex-col justify-center px-6 md:px-12 lg:px-16 py-10 md:py-0 transition-all duration-700 ease-out delay-200 ${
               storyRef.inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}>
-              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Qui sommes-nous</p>
+              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Qui sommes-nous</p>
               <h2 className="text-[26px] md:text-[34px] font-bold leading-[1.25] text-black mb-6">
                 L&apos;excellence au service de votre beauté, à Cotonou
               </h2>
@@ -184,10 +184,10 @@ export default function AProposPage() {
               </p>
               <Link
                 href="/contact"
-                className="group relative overflow-hidden inline-block bg-[#96000F] border-2 border-[#96000F] text-[12px] font-bold uppercase tracking-widest rounded-[3px] px-7 py-4 self-start"
+                className="group relative overflow-hidden inline-block bg-[#6D071A] border-2 border-[#6D071A] text-[12px] font-bold uppercase tracking-widest rounded-[3px] px-7 py-4 self-start"
               >
                 <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-                <span className="relative z-10 text-white group-hover:text-[#96000F] transition-colors duration-500">
+                <span className="relative z-10 text-white group-hover:text-[#6D071A] transition-colors duration-500">
                   Prendre rendez-vous
                 </span>
               </Link>
@@ -196,7 +196,7 @@ export default function AProposPage() {
         </section>
 
         {/* ── STATS ── */}
-        <section className="bg-[#96000F] py-16">
+        <section className="bg-[#6D071A] py-16">
           <div className="max-w-[1300px] mx-auto px-6 md:px-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
               {[
@@ -230,7 +230,7 @@ export default function AProposPage() {
             <div className={`text-center mb-12 transition-all duration-700 ease-out ${
               valuesRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}>
-              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">Nos engagements</p>
+              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-3">Nos engagements</p>
               <h2 className="text-[28px] md:text-[38px] font-bold text-black">Ce qui nous définit</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -242,7 +242,7 @@ export default function AProposPage() {
                   }`}
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
-                  <div className="text-[#96000F] mb-4">{val.icon}</div>
+                  <div className="text-[#6D071A] mb-4">{val.icon}</div>
                   <h3 className="text-[16px] font-bold text-black mb-3">{val.title}</h3>
                   <p className="text-[13px] leading-[22px] text-[#666]">{val.desc}</p>
                 </div>
@@ -260,7 +260,7 @@ export default function AProposPage() {
             <div className={`flex-1 transition-all duration-700 ease-out ${
               certifRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}>
-              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">Qualité & sécurité</p>
+              <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-3">Qualité & sécurité</p>
               <h2 className="text-[26px] md:text-[34px] font-bold text-black mb-5">
                 Notre engagement qualité
               </h2>
@@ -271,7 +271,7 @@ export default function AProposPage() {
                 href="/tarifs"
                 className="group relative overflow-hidden inline-block bg-black text-[12px] font-bold uppercase tracking-widest rounded-[3px] px-7 py-4 self-start"
               >
-                <span className="absolute inset-0 bg-[#96000F] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
+                <span className="absolute inset-0 bg-[#6D071A] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
                 <span className="relative z-10 text-white transition-colors duration-500">
                   Voir nos tarifs
                 </span>
@@ -283,7 +283,7 @@ export default function AProposPage() {
               <ul className="space-y-3">
                 {CERTIFICATIONS.map((cert) => (
                   <li key={cert} className="flex items-start gap-3">
-                    <span className="mt-1 shrink-0 w-4 h-4 rounded-full bg-[#96000F] flex items-center justify-center">
+                    <span className="mt-1 shrink-0 w-4 h-4 rounded-full bg-[#6D071A] flex items-center justify-center">
                       <svg viewBox="0 0 12 12" fill="none" className="w-2.5 h-2.5">
                         <path d="M2 6l3 3 5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
@@ -313,10 +313,10 @@ export default function AProposPage() {
                 href="https://wa.me/22997885887"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden inline-block bg-[#96000F] text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
+                className="group relative overflow-hidden inline-block bg-[#6D071A] text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
               >
                 <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-                <span className="relative z-10 text-white group-hover:text-[#96000F] transition-colors duration-500">
+                <span className="relative z-10 text-white group-hover:text-[#6D071A] transition-colors duration-500">
                   WhatsApp
                 </span>
               </Link>

@@ -106,10 +106,10 @@ export function ServicePageTemplate({ service }: Props) {
             >
               <Link
                 href="#contact"
-                className="group relative overflow-hidden inline-block bg-[#96000F] text-white px-7 py-3 text-sm font-semibold uppercase tracking-wider"
+                className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-7 py-3 text-sm font-semibold uppercase tracking-wider"
               >
                 <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-                <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">Prendre rendez-vous</span>
+                <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">Prendre rendez-vous</span>
               </Link>
               <Link
                 href="#tarifs"
@@ -123,7 +123,7 @@ export function ServicePageTemplate({ service }: Props) {
       </section>
 
       {/* ── BADGES ───────────────────────────────────────────────────────── */}
-      <section className="bg-[#96000F]">
+      <section className="bg-[#6D071A]">
         <div className="max-w-6xl mx-auto px-6 py-5">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10">
             {service.badges.map((badge, i) => (
@@ -165,7 +165,7 @@ export function ServicePageTemplate({ service }: Props) {
                 />
                 {/* Red wipe overlay */}
                 <div
-                  className={`absolute inset-0 bg-[#96000F] origin-left transition-transform duration-700 ${
+                  className={`absolute inset-0 bg-[#6D071A] origin-left transition-transform duration-700 ${
                     introRef.inView ? "scale-x-0" : "scale-x-100"
                   }`}
                   style={{ transitionTimingFunction: "cubic-bezier(0.77, 0, 0.18, 1)" }}
@@ -179,7 +179,7 @@ export function ServicePageTemplate({ service }: Props) {
                 introRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-[#96000F] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+              <p className="text-[#6D071A] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
                 À propos
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
@@ -197,7 +197,7 @@ export function ServicePageTemplate({ service }: Props) {
                     }`}
                     style={{ transitionDelay: `${0.4 + i * 0.08}s` }}
                   >
-                    <CheckCircle2 className="text-[#96000F] mt-0.5 shrink-0" size={18} />
+                    <CheckCircle2 className="text-[#6D071A] mt-0.5 shrink-0" size={18} />
                     <span className="text-gray-700 text-sm">{item}</span>
                   </li>
                 ))}
@@ -210,14 +210,14 @@ export function ServicePageTemplate({ service }: Props) {
               >
                 <Link
                   href="#contact"
-                  className="group relative overflow-hidden inline-block bg-[#96000F] text-white px-6 py-3 text-sm font-semibold uppercase tracking-wider"
+                  className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-6 py-3 text-sm font-semibold uppercase tracking-wider"
                 >
                   <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-                  <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">Prendre rendez-vous</span>
+                  <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">Prendre rendez-vous</span>
                 </Link>
                 <Link
                   href="#tarifs"
-                  className="inline-block border border-gray-300 text-gray-700 px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:border-[#96000F] hover:text-[#96000F] transition-colors"
+                  className="inline-block border border-gray-300 text-gray-700 px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:border-[#6D071A] hover:text-[#6D071A] transition-colors"
                 >
                   Voir les tarifs
                 </Link>
@@ -235,7 +235,7 @@ export function ServicePageTemplate({ service }: Props) {
               benefitsRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <p className="text-[#96000F] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#6D071A] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Pourquoi choisir ce soin
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -246,13 +246,13 @@ export function ServicePageTemplate({ service }: Props) {
             {service.benefits.map((benefit, i) => (
               <div
                 key={i}
-                className={`bg-white p-6 border border-gray-100 hover:border-[#96000F]/30 transition-all duration-500 group ${
+                className={`bg-white p-6 border border-gray-100 hover:border-[#6D071A]/30 transition-all duration-500 group ${
                   benefitsRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="w-8 h-0.5 bg-[#96000F] mb-4 transition-all duration-300 group-hover:w-16" />
-                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#96000F] transition-colors">
+                <div className="w-8 h-0.5 bg-[#6D071A] mb-4 transition-all duration-300 group-hover:w-16" />
+                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#6D071A] transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -272,7 +272,7 @@ export function ServicePageTemplate({ service }: Props) {
               pricingRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <p className="text-[#96000F] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#6D071A] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Tarification transparente
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -290,7 +290,7 @@ export function ServicePageTemplate({ service }: Props) {
               <div
                 key={i}
                 className={`flex items-center justify-between px-6 py-4 ${
-                  i === 0 ? "bg-[#96000F] text-white" : "bg-white hover:bg-gray-50"
+                  i === 0 ? "bg-[#6D071A] text-white" : "bg-white hover:bg-gray-50"
                 } transition-colors`}
               >
                 <div>
@@ -307,7 +307,7 @@ export function ServicePageTemplate({ service }: Props) {
                     </span>
                   )}
                 </div>
-                <span className={`font-bold text-lg ${i === 0 ? "text-white" : "text-[#96000F]"}`}>
+                <span className={`font-bold text-lg ${i === 0 ? "text-white" : "text-[#6D071A]"}`}>
                   {item.price}
                 </span>
               </div>
@@ -315,7 +315,7 @@ export function ServicePageTemplate({ service }: Props) {
           </div>
 
           <div
-            className={`mt-8 bg-[#96000F]/5 border border-[#96000F]/20 p-6 text-center transition-all duration-700 delay-300 ${
+            className={`mt-8 bg-[#6D071A]/5 border border-[#6D071A]/20 p-6 text-center transition-all duration-700 delay-300 ${
               pricingRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -324,10 +324,10 @@ export function ServicePageTemplate({ service }: Props) {
             </p>
             <Link
               href="#contact"
-              className="group relative overflow-hidden inline-block bg-[#96000F] text-white px-8 py-3 text-sm font-semibold uppercase tracking-wider"
+              className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-3 text-sm font-semibold uppercase tracking-wider"
             >
               <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-              <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">Demander un devis personnalisé</span>
+              <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">Demander un devis personnalisé</span>
             </Link>
           </div>
         </div>
@@ -341,7 +341,7 @@ export function ServicePageTemplate({ service }: Props) {
               faqRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <p className="text-[#96000F] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#6D071A] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Questions fréquentes
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -365,7 +365,7 @@ export function ServicePageTemplate({ service }: Props) {
                   <span className="font-semibold text-gray-900 text-sm">{item.question}</span>
                   <ChevronDown
                     size={18}
-                    className={`text-[#96000F] shrink-0 mt-0.5 transition-transform duration-200 ${
+                    className={`text-[#6D071A] shrink-0 mt-0.5 transition-transform duration-200 ${
                       openFaq === i ? "rotate-180" : ""
                     }`}
                   />
@@ -392,7 +392,7 @@ export function ServicePageTemplate({ service }: Props) {
                 geoRef1.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <p className="text-[#96000F] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+              <p className="text-[#6D071A] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
                 Notre expertise à Cotonou
               </p>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
@@ -424,12 +424,12 @@ export function ServicePageTemplate({ service }: Props) {
                 ].map((stat, i) => (
                   <div
                     key={i}
-                    className={`text-center border-l-2 border-[#96000F]/20 pl-4 transition-all duration-500 ${
+                    className={`text-center border-l-2 border-[#6D071A]/20 pl-4 transition-all duration-500 ${
                       geoRef1.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                     }`}
                     style={{ transitionDelay: `${0.3 + i * 0.1}s` }}
                   >
-                    <p className="text-2xl font-bold text-[#96000F]">{stat.value}</p>
+                    <p className="text-2xl font-bold text-[#6D071A]">{stat.value}</p>
                     <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
                   </div>
                 ))}
@@ -442,7 +442,7 @@ export function ServicePageTemplate({ service }: Props) {
                 geoRef1.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div className="bg-[#96000F] text-white p-8">
+              <div className="bg-[#6D071A] text-white p-8">
                 <p className="text-white/60 text-xs uppercase tracking-[0.2em] mb-6">
                   Academy Beauty Gate — Cotonou
                 </p>
@@ -466,7 +466,7 @@ export function ServicePageTemplate({ service }: Props) {
 
                 <Link
                   href="#contact"
-                  className="group relative overflow-hidden block text-center bg-white text-[#96000F] py-3 text-sm font-bold uppercase tracking-wider"
+                  className="group relative overflow-hidden block text-center bg-white text-[#6D071A] py-3 text-sm font-bold uppercase tracking-wider"
                 >
                   <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
                   <span className="relative z-10 group-hover:text-white transition-colors duration-500">Prendre rendez-vous</span>
@@ -499,7 +499,7 @@ export function ServicePageTemplate({ service }: Props) {
               geoRef2.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <p className="text-[#96000F] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#6D071A] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Accessibilité
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -527,7 +527,7 @@ export function ServicePageTemplate({ service }: Props) {
               ].map((q, i) => (
                 <span
                   key={i}
-                  className={`px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-xs font-medium hover:border-[#96000F]/40 hover:text-[#96000F] transition-all duration-300 cursor-default ${
+                  className={`px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-xs font-medium hover:border-[#6D071A]/40 hover:text-[#6D071A] transition-all duration-300 cursor-default ${
                     geoRef2.inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
                   }`}
                   style={{ transitionDelay: `${0.15 + i * 0.03}s` }}
@@ -554,7 +554,7 @@ export function ServicePageTemplate({ service }: Props) {
               ].map((v, i) => (
                 <span
                   key={i}
-                  className={`px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-xs font-medium hover:border-[#96000F]/40 hover:text-[#96000F] transition-all duration-300 cursor-default ${
+                  className={`px-3 py-1.5 bg-white border border-gray-200 text-gray-600 text-xs font-medium hover:border-[#6D071A]/40 hover:text-[#6D071A] transition-all duration-300 cursor-default ${
                     geoRef2.inView ? "opacity-100 scale-100" : "opacity-0 scale-95"
                   }`}
                   style={{ transitionDelay: `${0.4 + i * 0.04}s` }}
@@ -590,7 +590,7 @@ export function ServicePageTemplate({ service }: Props) {
       <section className="py-20 bg-white" ref={relatedRef.ref}>
         <div className="max-w-6xl mx-auto px-6">
           <div className={`mb-10 transition-all duration-700 ${relatedRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <p className="text-[#96000F] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+            <p className="text-[#6D071A] text-xs font-semibold uppercase tracking-[0.2em] mb-3">
               Nos autres prestations
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -603,7 +603,7 @@ export function ServicePageTemplate({ service }: Props) {
               <Link
                 key={related.slug}
                 href={`/soins/${related.slug}`}
-                className={`group border border-[#eee] hover:border-[#96000F]/30 bg-white hover:shadow-md transition-all duration-300 flex flex-col ${
+                className={`group border border-[#eee] hover:border-[#6D071A]/30 bg-white hover:shadow-md transition-all duration-300 flex flex-col ${
                   relatedRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
                 style={{ transitionDelay: `${i * 80}ms`, transitionProperty: "opacity, transform" }}
@@ -619,20 +619,20 @@ export function ServicePageTemplate({ service }: Props) {
                     />
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-[2px] text-white/70 bg-[#96000F]/80 px-2 py-1">
+                  <span className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-[2px] text-white/70 bg-[#6D071A]/80 px-2 py-1">
                     {related.hero.eyebrow}
                   </span>
                 </div>
 
                 {/* Texte */}
                 <div className="p-4 flex flex-col flex-1">
-                  <h3 className="text-[14px] font-bold text-black leading-[1.3] mb-2 group-hover:text-[#96000F] transition-colors">
+                  <h3 className="text-[14px] font-bold text-black leading-[1.3] mb-2 group-hover:text-[#6D071A] transition-colors">
                     {related.title.split(" — ")[0]}
                   </h3>
                   <p className="text-[12px] text-[#777] leading-[18px] flex-1 line-clamp-2">
                     {related.hero.subheadline}
                   </p>
-                  <div className="mt-3 flex items-center gap-1 text-[11px] font-bold text-[#96000F] uppercase tracking-wide">
+                  <div className="mt-3 flex items-center gap-1 text-[11px] font-bold text-[#6D071A] uppercase tracking-wide">
                     En savoir plus
                     <span className="transition-transform group-hover:translate-x-1 inline-block">→</span>
                   </div>
@@ -644,7 +644,7 @@ export function ServicePageTemplate({ service }: Props) {
       </section>
 
       {/* ── CTA FINAL ────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-[#96000F] overflow-hidden">
+      <section className="py-20 bg-[#6D071A] overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2
             className="text-3xl md:text-4xl font-bold text-white mb-4"
@@ -664,7 +664,7 @@ export function ServicePageTemplate({ service }: Props) {
           >
             <Link
               href="#contact"
-              className="group relative overflow-hidden inline-block bg-white text-[#96000F] px-8 py-3 text-sm font-bold uppercase tracking-wider"
+              className="group relative overflow-hidden inline-block bg-white text-[#6D071A] px-8 py-3 text-sm font-bold uppercase tracking-wider"
             >
               <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">Prendre rendez-vous</span>

@@ -101,7 +101,7 @@ function CategoryRow({ cat, reverse }: { cat: typeof CATEGORIES[0]; reverse: boo
         }`}
       >
         {/* ligne décorative */}
-        <div className={`w-10 h-[3px] bg-[#96000F] mb-6 transition-all duration-500 delay-300 ${inView ? "w-10" : "w-0"}`} />
+        <div className={`w-10 h-[3px] bg-[#6D071A] mb-6 transition-all duration-500 delay-300 ${inView ? "w-10" : "w-0"}`} />
 
         <h3 className="text-[24px] md:text-[30px] font-bold text-black leading-tight mb-4">
           {cat.title}
@@ -115,7 +115,7 @@ function CategoryRow({ cat, reverse }: { cat: typeof CATEGORIES[0]; reverse: boo
         <ul className="space-y-2 mb-8">
           {cat.services.map((s) => (
             <li key={s} className="flex items-center gap-2.5 text-[13px] text-[#444]">
-              <span className="w-1 h-1 rounded-full bg-[#96000F] shrink-0" />
+              <span className="w-1 h-1 rounded-full bg-[#6D071A] shrink-0" />
               {s}
             </li>
           ))}
@@ -124,7 +124,7 @@ function CategoryRow({ cat, reverse }: { cat: typeof CATEGORIES[0]; reverse: boo
         {/* CTA */}
         <Link
           href={cat.href}
-          className="group relative overflow-hidden inline-flex items-center gap-3 self-start bg-[#96000F] text-white text-[11px] font-bold uppercase tracking-widest px-7 py-3.5"
+          className="group relative overflow-hidden inline-flex items-center gap-3 self-start bg-[#6D071A] text-white text-[11px] font-bold uppercase tracking-widest px-7 py-3.5"
         >
           <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
           <span className="relative z-10">{cat.cta}</span>
@@ -149,7 +149,7 @@ export function ServicesByCategory() {
             headerRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">
+          <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-3">
             Nos soins
           </p>
           <h2 className="font-sans text-[30px] md:text-[42px] font-bold text-black mb-4">

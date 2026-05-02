@@ -23,7 +23,7 @@ const CONTACTS = [
   {
     label: "Appel direct",
     href: `tel:${PHONE}`,
-    bg: "bg-[#96000F]",
+    bg: "bg-[#6D071A]",
     icon: (
       <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
@@ -94,7 +94,7 @@ export function FloatingContact() {
           {/* Flèche pointant vers le bouton */}
           <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white rotate-45 shadow-sm" />
           {/* Avatar */}
-          <div className="w-9 h-9 rounded-full bg-[#96000F] flex items-center justify-center shrink-0 overflow-hidden">
+          <div className="w-9 h-9 rounded-full bg-[#6D071A] flex items-center justify-center shrink-0 overflow-hidden">
             <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
               <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
             </svg>
@@ -119,7 +119,7 @@ export function FloatingContact() {
       {/* Bouton principal */}
       <button
         onClick={() => { setOpen(!open); setBubbleDismissed(true); }}
-        className="w-14 h-14 bg-[#96000F] rounded-full shadow-lg flex items-center justify-center hover:bg-[#7a000c] transition-colors"
+        className="w-14 h-14 bg-[#6D071A] rounded-full shadow-lg flex items-center justify-center hover:bg-[#7a000c] transition-colors"
         aria-label="Contact"
       >
         {open ? (

@@ -10,7 +10,7 @@ export function ContactFooter() {
 
         {/* En-tête */}
         <div className="mb-12">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">
+          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-3">
             Contact
           </p>
           <h2 className="font-heading text-[30px] md:text-[40px] font-bold text-black">
@@ -70,7 +70,7 @@ export function ContactFooter() {
               </p>
               <button
                 type="submit"
-                className="group relative overflow-hidden bg-[#96000F] text-white text-[13px] font-semibold uppercase tracking-widest rounded-[3px] px-8 py-4 w-full mt-2"
+                className="group relative overflow-hidden bg-[#6D071A] text-white text-[13px] font-semibold uppercase tracking-widest rounded-[3px] px-8 py-4 w-full mt-2"
               >
                 <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
                 <span className="relative z-10">Envoyer ma demande de rappel</span>
@@ -84,7 +84,7 @@ export function ContactFooter() {
               Où nous trouver
             </h3>
             <div className="flex items-start gap-3 mb-6">
-              <MapPinIcon className="w-4 h-4 mt-1 shrink-0 text-[#96000F]" />
+              <MapPinIcon className="w-4 h-4 mt-1 shrink-0 text-[#6D071A]" />
               <div>
                 <p className="text-[14px] font-semibold text-black">Academy Beauty Gate</p>
                 <p className="text-[14px] text-[#555]">Cadjehoun, Cotonou, Bénin</p>
@@ -105,7 +105,7 @@ export function ContactFooter() {
               href="https://maps.google.com/?q=995X+6Q+Cotonou"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-[12px] text-[#96000F] font-semibold hover:underline"
+              className="inline-block text-[12px] text-[#6D071A] font-semibold hover:underline"
             >
               Ouvrir dans Google Maps →
             </Link>

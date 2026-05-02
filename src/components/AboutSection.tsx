@@ -62,7 +62,7 @@ export function AboutSection() {
             className="object-cover object-top transition-transform duration-700 ease-in-out group-hover:scale-105"
           />
           {/* Overlay au survol */}
-          <div className="absolute inset-0 bg-[#96000F]/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-0 bg-[#6D071A]/80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <p className="text-white text-xl font-bold tracking-wide">Sofia Aude HONVO</p>
             <p className="text-white/80 text-sm uppercase tracking-[0.2em] mt-2">Fondatrice — BeautyGate</p>
           </div>
@@ -90,10 +90,10 @@ export function AboutSection() {
           </p>
           <Link
             href="#contact"
-            className="group relative overflow-hidden inline-block bg-[#96000F] border-2 border-[#96000F] text-[13px] font-medium uppercase rounded-[3px] px-6 py-[19px] self-start"
+            className="group relative overflow-hidden inline-block bg-[#6D071A] border-2 border-[#6D071A] text-[13px] font-medium uppercase rounded-[3px] px-6 py-[19px] self-start"
           >
             <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-            <span className="relative z-10 text-white group-hover:text-[#96000F] transition-colors duration-500">
+            <span className="relative z-10 text-white group-hover:text-[#6D071A] transition-colors duration-500">
               Prendre rendez-vous
             </span>
           </Link>

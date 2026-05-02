@@ -30,7 +30,7 @@ export function IntroSection() {
 
         {/* Eyebrow + titre centré */}
         <div className="text-center mb-14">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">
+          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">
             Notre philosophie
           </p>
           <h2 className="font-sans text-[30px] md:text-[44px] font-bold leading-[1.2] text-black max-w-[700px] mx-auto">
@@ -46,7 +46,7 @@ export function IntroSection() {
             ref={leftRef}
             className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
           >
-            <div className="w-10 h-[3px] bg-[#96000F] mb-6" />
+            <div className="w-10 h-[3px] bg-[#6D071A] mb-6" />
             <h3 className="font-sans text-[20px] font-bold text-black mb-4 leading-snug">
               Un espace dédié à votre beauté, au cœur de Cotonou
             </h3>
@@ -63,7 +63,7 @@ export function IntroSection() {
             ref={rightRef}
             className="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200"
           >
-            <div className="w-10 h-[3px] bg-[#96000F] mb-6" />
+            <div className="w-10 h-[3px] bg-[#6D071A] mb-6" />
             <h3 className="font-sans text-[20px] font-bold text-black mb-4 leading-snug">
               Notre promesse : une expérience beauté irréprochable à Cotonou
             </h3>

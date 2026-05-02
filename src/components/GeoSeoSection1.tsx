@@ -45,7 +45,7 @@ export function GeoSeoSection1() {
             />
             {/* Badge flottant */}
             <div className="absolute bottom-6 left-6 bg-white rounded-xl px-5 py-4 shadow-lg">
-              <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#96000F] mb-0.5">Certifié</p>
+              <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#6D071A] mb-0.5">Certifié</p>
               <p className="text-[14px] font-bold text-black leading-tight">Équipements médicaux<br />de dernière génération</p>
             </div>
           </div>
@@ -55,7 +55,7 @@ export function GeoSeoSection1() {
             ref={textRef}
             className="opacity-0 translate-x-10 transition-all duration-[900ms] ease-out"
           >
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">
               Institut de beauté à Cotonou
             </p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black leading-tight mb-6">
@@ -80,7 +80,7 @@ export function GeoSeoSection1() {
                 "Suivi personnalisé post-traitement",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[14px] text-[#333]">
-                  <span className="mt-1 w-2 h-2 rounded-full bg-[#96000F] shrink-0" />
+                  <span className="mt-1 w-2 h-2 rounded-full bg-[#6D071A] shrink-0" />
                   {item}
                 </li>
               ))}
@@ -88,7 +88,7 @@ export function GeoSeoSection1() {
 
             <Link
               href="#contact"
-              className="group relative overflow-hidden inline-block bg-[#96000F] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
+              className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
             >
               <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
               <span className="relative z-10">Prendre rendez-vous</span>

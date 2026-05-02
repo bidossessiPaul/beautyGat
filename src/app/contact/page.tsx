@@ -145,7 +145,7 @@ export default function ContactPage() {
                 }`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="text-[#96000F] mb-3">{card.icon}</div>
+                <div className="text-[#6D071A] mb-3">{card.icon}</div>
                 <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#999] mb-1">{card.label}</p>
                 <p className="text-[13px] text-black leading-[20px] whitespace-pre-line mb-2">{card.content}</p>
                 {card.link && (
@@ -153,7 +153,7 @@ export default function ContactPage() {
                     href={card.link}
                     target={card.link.startsWith("http") ? "_blank" : undefined}
                     rel={card.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-[11px] font-bold text-[#96000F] hover:underline"
+                    className="text-[11px] font-bold text-[#6D071A] hover:underline"
                   >
                     {card.linkLabel}
                   </Link>
@@ -175,7 +175,7 @@ export default function ContactPage() {
               <div className={`transition-all duration-700 ease-out ${
                 formRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}>
-                <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">Formulaire</p>
+                <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-3">Formulaire</p>
                 <h2 className="text-[26px] md:text-[32px] font-bold text-black mb-8">
                   Prendre rendez-vous
                 </h2>
@@ -225,7 +225,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     type="submit"
-                    className="group relative overflow-hidden bg-[#96000F] text-white text-[12px] font-bold uppercase tracking-widest rounded-[3px] px-8 py-4 w-full mt-2"
+                    className="group relative overflow-hidden bg-[#6D071A] text-white text-[12px] font-bold uppercase tracking-widest rounded-[3px] px-8 py-4 w-full mt-2"
                   >
                     <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
                     <span className="relative z-10">Envoyer ma demande</span>
@@ -254,7 +254,7 @@ export default function ContactPage() {
               <div className={`transition-all duration-700 ease-out delay-200 ${
                 formRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}>
-                <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">Localisation</p>
+                <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-3">Localisation</p>
                 <h2 className="text-[26px] md:text-[32px] font-bold text-black mb-8">
                   Où nous trouver
                 </h2>
@@ -276,7 +276,7 @@ export default function ContactPage() {
                   href="https://maps.google.com/?q=995X+6Q+Cotonou"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-[12px] text-[#96000F] font-bold hover:underline mb-8"
+                  className="inline-block text-[12px] text-[#6D071A] font-bold hover:underline mb-8"
                 >
                   Ouvrir dans Google Maps →
                 </Link>
@@ -288,17 +288,17 @@ export default function ContactPage() {
                     <p><strong className="text-black">Horaires :</strong> Lun – Sam 9h–19h / Dimanche sur RDV</p>
                     <p><strong className="text-black">Adresse :</strong> Cadjehoun, Cotonou, Bénin</p>
                     <p><strong className="text-black">Tél :</strong>{" "}
-                      <Link href="tel:+22997885887" className="text-[#96000F] hover:underline">+229 97 88 58 87</Link>
+                      <Link href="tel:+22997885887" className="text-[#6D071A] hover:underline">+229 97 88 58 87</Link>
                     </p>
                     <p><strong className="text-black">Email :</strong>{" "}
-                      <Link href="mailto:beautygate055@gmail.com" className="text-[#96000F] hover:underline">beautygate055@gmail.com</Link>
+                      <Link href="mailto:beautygate055@gmail.com" className="text-[#6D071A] hover:underline">beautygate055@gmail.com</Link>
                     </p>
                     <p><strong className="text-black">Instagram :</strong>{" "}
                       <Link
                         href="https://www.instagram.com/beaut.ygateofficiel/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#96000F] hover:underline"
+                        className="text-[#6D071A] hover:underline"
                       >
                         @beaut.ygateofficiel
                       </Link>

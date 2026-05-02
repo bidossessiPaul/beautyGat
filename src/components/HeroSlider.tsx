@@ -85,7 +85,7 @@ export function HeroSlider() {
           Institut de beauté — Cadjehoun, Cotonou
         </p>
         <h1 className="text-white text-3xl md:text-6xl font-bold leading-tight mb-6 max-w-3xl">
-          Révélez votre <span className="text-[#96000F]">beauté</span><br />
+          Révélez votre <span className="text-[#6D071A]">beauté</span><br />
           naturelle à Cotonou
         </h1>
         <p className="text-white text-base md:text-lg font-light max-w-xl mb-8">
@@ -93,10 +93,10 @@ export function HeroSlider() {
         </p>
         <a
           href="#contact"
-          className="group relative overflow-hidden bg-[#96000F] text-white px-8 py-3.5 text-sm font-semibold uppercase tracking-widest rounded-[3px] inline-block"
+          className="group relative overflow-hidden bg-[#6D071A] text-white px-8 py-3.5 text-sm font-semibold uppercase tracking-widest rounded-[3px] inline-block"
         >
           <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-          <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">
+          <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">
             Prendre rendez-vous
           </span>
         </a>

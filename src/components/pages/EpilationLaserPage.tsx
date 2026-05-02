@@ -50,8 +50,8 @@ function FaqItem({ item }: { item: typeof FAQS[0] }) {
         className="w-full flex items-center justify-between gap-4 py-5 text-left"
       >
         <span className="text-[15px] font-semibold text-black leading-snug">{item.q}</span>
-        <span className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-300 ${open ? "bg-[#96000F] border-[#96000F]" : "bg-white border-[#ddd]"}`}>
-          <svg viewBox="0 0 24 24" fill="none" stroke={open ? "#fff" : "#96000F"} strokeWidth="2.5" strokeLinecap="round" className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}>
+        <span className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-300 ${open ? "bg-[#6D071A] border-[#6D071A]" : "bg-white border-[#ddd]"}`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke={open ? "#fff" : "#6D071A"} strokeWidth="2.5" strokeLinecap="round" className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}>
             <path d="M12 5v14M5 12h14" />
           </svg>
         </span>
@@ -110,7 +110,7 @@ export function EpilationLaserPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
         <div className="relative z-10 h-full flex flex-col justify-center max-w-[1300px] mx-auto px-6 md:px-10 pt-[90px]">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">
+          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">
             Institut Academy Beauty Gate — Cotonou
           </p>
           <h1 className="font-heading text-[36px] md:text-[56px] font-bold text-white leading-tight max-w-[700px] mb-5">
@@ -122,10 +122,10 @@ export function EpilationLaserPage() {
           <div className="flex flex-wrap gap-4 items-center">
             <Link
               href="#contact"
-              className="group relative overflow-hidden inline-block bg-[#96000F] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
+              className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
             >
               <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
-              <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">Prendre rendez-vous</span>
+              <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">Prendre rendez-vous</span>
             </Link>
             <span className="text-white/70 text-[13px]">1ère consultation offerte</span>
           </div>
@@ -141,7 +141,7 @@ export function EpilationLaserPage() {
             { icon: "◉", titre: "Résultats garantis", desc: "Réduction permanente dès la 1ère séance, résultat définitif en 6 à 8 séances." },
           ].map((b) => (
             <div key={b.titre} className="flex gap-4 items-start">
-              <span className="text-[#96000F] text-[22px] mt-0.5">{b.icon}</span>
+              <span className="text-[#6D071A] text-[22px] mt-0.5">{b.icon}</span>
               <div>
                 <p className="text-[14px] font-bold text-black mb-1">{b.titre}</p>
                 <p className="text-[13px] text-[#666] leading-[20px]">{b.desc}</p>
@@ -163,7 +163,7 @@ export function EpilationLaserPage() {
             />
           </div>
           <div>
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">À propos du traitement</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">À propos du traitement</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black leading-tight mb-6">
               Épilation laser définitive : qu'est-ce que c'est ?
             </h2>
@@ -184,14 +184,14 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-[#fafafa]">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Pourquoi choisir le laser</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Pourquoi choisir le laser</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black leading-tight mb-8">
               Les avantages de l'épilation laser
             </h2>
             <div className="space-y-5">
               {AVANTAGES.map((a) => (
                 <div key={a.titre} className="flex gap-4">
-                  <span className="w-6 h-6 rounded-full bg-[#96000F]/10 flex items-center justify-center shrink-0 mt-0.5 text-[#96000F] text-[12px] font-bold">{a.icon}</span>
+                  <span className="w-6 h-6 rounded-full bg-[#6D071A]/10 flex items-center justify-center shrink-0 mt-0.5 text-[#6D071A] text-[12px] font-bold">{a.icon}</span>
                   <div>
                     <p className="text-[14px] font-bold text-black mb-0.5">{a.titre}</p>
                     <p className="text-[13px] text-[#666] leading-[20px]">{a.desc}</p>
@@ -215,7 +215,7 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-white">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12 max-w-[650px] mx-auto">
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Zones de traitement</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Zones de traitement</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black leading-tight mb-4">
               Quelles zones peut-on traiter ?
             </h2>
@@ -225,7 +225,7 @@ export function EpilationLaserPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {ZONES.map((z) => (
-              <div key={z.label} className="border border-[#eee] rounded-xl p-5 hover:border-[#96000F]/30 hover:shadow-md transition-all duration-300">
+              <div key={z.label} className="border border-[#eee] rounded-xl p-5 hover:border-[#6D071A]/30 hover:shadow-md transition-all duration-300">
                 <p className="text-[15px] font-bold text-black mb-1">{z.label}</p>
                 <p className="text-[12px] text-[#999]">{z.desc}</p>
               </div>
@@ -238,14 +238,14 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-[#fafafa]">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Protocole</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Protocole</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black leading-tight mb-10">
               Déroulement d'une séance
             </h2>
             <div className="space-y-8">
               {ETAPES.map((e) => (
                 <div key={e.num} className="flex gap-5">
-                  <span className="text-[28px] font-bold text-[#96000F]/20 leading-none shrink-0 w-10">{e.num}</span>
+                  <span className="text-[28px] font-bold text-[#6D071A]/20 leading-none shrink-0 w-10">{e.num}</span>
                   <div>
                     <p className="text-[15px] font-bold text-black mb-1">{e.titre}</p>
                     <p className="text-[14px] text-[#555] leading-[22px]">{e.desc}</p>
@@ -256,7 +256,7 @@ export function EpilationLaserPage() {
           </div>
 
           {/* Diagnostic offert */}
-          <div className="bg-[#96000F] rounded-2xl p-8 text-white">
+          <div className="bg-[#6D071A] rounded-2xl p-8 text-white">
             <p className="text-[11px] font-bold uppercase tracking-[3px] text-white/60 mb-4">Offre de bienvenue</p>
             <h3 className="font-heading text-[26px] font-bold leading-tight mb-4">
               Diagnostic & test de sensibilité offerts
@@ -274,7 +274,7 @@ export function EpilationLaserPage() {
             </ul>
             <Link
               href="#contact"
-              className="group relative overflow-hidden inline-block bg-white text-[#96000F] px-7 py-3.5 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
+              className="group relative overflow-hidden inline-block bg-white text-[#6D071A] px-7 py-3.5 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
             >
               <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">Réserver ma consultation</span>
@@ -287,7 +287,7 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-white">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Investissement</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Investissement</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black mb-3">Nos tarifs d'épilation laser</h2>
             <p className="text-[15px] text-[#555]">Séances à l'unité ou en forfait — contactez-nous pour un devis personnalisé.</p>
           </div>
@@ -302,14 +302,14 @@ export function EpilationLaserPage() {
             ].map((t) => (
               <div key={t.zone} className="border border-[#eee] rounded-xl p-5">
                 <p className="text-[15px] font-bold text-black mb-2">{t.zone}</p>
-                <p className="text-[13px] text-[#96000F] font-semibold">{t.seance}</p>
+                <p className="text-[13px] text-[#6D071A] font-semibold">{t.seance}</p>
                 <p className="text-[12px] text-[#aaa] mt-1">{t.forfait}</p>
               </div>
             ))}
           </div>
           <p className="text-center text-[13px] text-[#888] mt-8">
             Tarifs disponibles sur demande — contactez-nous au{" "}
-            <Link href="tel:+22997885887" className="text-[#96000F] font-semibold">+229 97 88 58 87</Link>
+            <Link href="tel:+22997885887" className="text-[#6D071A] font-semibold">+229 97 88 58 87</Link>
           </p>
         </div>
       </section>
@@ -318,7 +318,7 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-[#fafafa]">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">À savoir</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">À savoir</p>
             <h2 className="font-heading text-[32px] md:text-[38px] font-bold text-black leading-tight mb-6">
               Contre-indications & précautions
             </h2>
@@ -335,7 +335,7 @@ export function EpilationLaserPage() {
                 "Moins de 18 ans (accord parental requis entre 16-18 ans)",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-[14px] text-[#444]">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#96000F] shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#6D071A] shrink-0" />
                   {item}
                 </li>
               ))}
@@ -356,7 +356,7 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-white">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Questions fréquentes</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Questions fréquentes</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black">
               Tout savoir sur l'épilation laser à Cotonou
             </h2>
@@ -372,7 +372,7 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-[#fafafa]">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Notre expertise à Cotonou</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Notre expertise à Cotonou</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black leading-tight mb-6">
               Pourquoi choisir Academy Beauty Gate pour votre épilation laser à Cotonou ?
             </h2>
@@ -401,15 +401,15 @@ export function EpilationLaserPage() {
                 { value: "8 ans", label: "D'expertise" },
                 { value: "90%", label: "Réduction du poil" },
               ].map((s) => (
-                <div key={s.label} className="border-l-2 border-[#96000F]/20 pl-4">
-                  <p className="text-[24px] font-bold text-[#96000F]">{s.value}</p>
+                <div key={s.label} className="border-l-2 border-[#6D071A]/20 pl-4">
+                  <p className="text-[24px] font-bold text-[#6D071A]">{s.value}</p>
                   <p className="text-[12px] text-[#888] mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <div className="bg-[#96000F] rounded-2xl p-8 text-white">
+            <div className="bg-[#6D071A] rounded-2xl p-8 text-white">
               <p className="text-[11px] font-bold uppercase tracking-[3px] text-white/60 mb-6">
                 Academy Beauty Gate — Cotonou
               </p>
@@ -429,7 +429,7 @@ export function EpilationLaserPage() {
                   </div>
                 ))}
               </div>
-              <Link href="#contact" className="group relative overflow-hidden block text-center bg-white text-[#96000F] px-7 py-3.5 text-[13px] font-bold uppercase tracking-widest rounded-[3px]">
+              <Link href="#contact" className="group relative overflow-hidden block text-center bg-white text-[#6D071A] px-7 py-3.5 text-[13px] font-bold uppercase tracking-widest rounded-[3px]">
                 <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">Prendre rendez-vous</span>
               </Link>
@@ -442,7 +442,7 @@ export function EpilationLaserPage() {
       <section className="py-[80px] bg-white">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10">
           <div className="text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Accessibilité</p>
+            <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Accessibilité</p>
             <h2 className="font-heading text-[32px] md:text-[40px] font-bold text-black mb-4">
               Nous accueillons nos clients de tout Cotonou et du Bénin
             </h2>
@@ -454,7 +454,7 @@ export function EpilationLaserPage() {
             <p className="text-[11px] font-bold text-[#bbb] uppercase tracking-widest mb-4 text-center">Quartiers de Cotonou</p>
             <div className="flex flex-wrap justify-center gap-2">
               {["Cadjehoun", "Akpakpa", "Fidjrossè", "Ganhi", "Gbegamey", "Jéricho", "Agla", "Sainte-Rita", "Haie-Vive", "Mènontin", "Zogbo", "Kouhounou", "Vèdoko", "Dantokpa", "Placodji"].map((q) => (
-                <span key={q} className="px-3 py-1.5 bg-[#fafafa] border border-[#eee] text-[#666] text-[12px] font-medium hover:border-[#96000F]/40 hover:text-[#96000F] transition-all duration-200 cursor-default rounded-[3px]">
+                <span key={q} className="px-3 py-1.5 bg-[#fafafa] border border-[#eee] text-[#666] text-[12px] font-medium hover:border-[#6D071A]/40 hover:text-[#6D071A] transition-all duration-200 cursor-default rounded-[3px]">
                   {q}
                 </span>
               ))}
@@ -464,7 +464,7 @@ export function EpilationLaserPage() {
             <p className="text-[11px] font-bold text-[#bbb] uppercase tracking-widest mb-4 text-center">Villes du Bénin</p>
             <div className="flex flex-wrap justify-center gap-2">
               {["Godomey", "Abomey-Calavi", "Porto-Novo", "Ouidah", "Bohicon", "Parakou", "Natitingou", "Lokossa", "Kandi"].map((v) => (
-                <span key={v} className="px-3 py-1.5 bg-[#fafafa] border border-[#eee] text-[#666] text-[12px] font-medium hover:border-[#96000F]/40 hover:text-[#96000F] transition-all duration-200 cursor-default rounded-[3px]">
+                <span key={v} className="px-3 py-1.5 bg-[#fafafa] border border-[#eee] text-[#666] text-[12px] font-medium hover:border-[#6D071A]/40 hover:text-[#6D071A] transition-all duration-200 cursor-default rounded-[3px]">
                   {v}
                 </span>
               ))}
@@ -495,7 +495,7 @@ export function EpilationLaserPage() {
           className="object-cover opacity-30"
         />
         <div className="relative z-10 max-w-[700px] mx-auto px-6 text-center">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">Prêt(e) à commencer ?</p>
+          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">Prêt(e) à commencer ?</p>
           <h2 className="font-heading text-[32px] md:text-[44px] font-bold text-white leading-tight mb-5">
             Nous sommes là pour vous accompagner
           </h2>
@@ -504,10 +504,10 @@ export function EpilationLaserPage() {
           </p>
           <Link
             href="#contact"
-            className="group relative overflow-hidden inline-block bg-[#96000F] text-white px-10 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
+            className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-10 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
           >
             <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
-            <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">Prendre rendez-vous</span>
+            <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">Prendre rendez-vous</span>
           </Link>
         </div>
       </section>

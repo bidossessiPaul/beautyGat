@@ -12,7 +12,7 @@ const REELS = [
 
 export function InstagramReels() {
   return (
-    <section className="py-[80px] bg-[#96000F] overflow-hidden">
+    <section className="py-[80px] bg-[#6D071A] overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-6 md:px-10">
 
         {/* En-tête */}
@@ -30,7 +30,7 @@ export function InstagramReels() {
             href="https://www.instagram.com/beaut.ygateofficiel/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden inline-flex items-center gap-2 bg-white text-[#96000F] px-7 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px] shrink-0"
+            className="group relative overflow-hidden inline-flex items-center gap-2 bg-white text-[#6D071A] px-7 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px] shrink-0"
           >
             <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
             <svg viewBox="0 0 24 24" fill="currentColor" className="relative z-10 w-4 h-4 group-hover:text-white transition-colors duration-500">

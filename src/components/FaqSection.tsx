@@ -48,12 +48,12 @@ function FaqItem({ item }: { item: typeof FAQS[0] }) {
       >
         <span className="text-[15px] font-semibold text-black leading-snug">{item.q}</span>
         <span
-          className={`shrink-0 w-7 h-7 rounded-full border border-[#ddd] flex items-center justify-center transition-all duration-300 ${open ? "bg-[#96000F] border-[#96000F]" : "bg-white"}`}
+          className={`shrink-0 w-7 h-7 rounded-full border border-[#ddd] flex items-center justify-center transition-all duration-300 ${open ? "bg-[#6D071A] border-[#6D071A]" : "bg-white"}`}
         >
           <svg
             viewBox="0 0 24 24"
             fill="none"
-            stroke={open ? "#fff" : "#96000F"}
+            stroke={open ? "#fff" : "#6D071A"}
             strokeWidth="2.5"
             strokeLinecap="round"
             className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-45" : ""}`}
@@ -79,7 +79,7 @@ export function FaqSection() {
     <section className="py-[80px] bg-[#fafafa]">
       <div className="max-w-[1300px] mx-auto px-6 md:px-10">
         <div className="text-center mb-12">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-4">
+          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#6D071A] mb-4">
             Questions fréquentes
           </p>
           <h2 className="font-heading text-[30px] md:text-[40px] font-bold text-black">

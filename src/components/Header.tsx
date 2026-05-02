@@ -86,7 +86,7 @@ export function Header() {
             >
               {item.hasDropdown ? (
                 <>
-                  <button className="flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide text-black hover:text-[#96000F] transition-colors cursor-pointer whitespace-nowrap">
+                  <button className="flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide text-black hover:text-[#6D071A] transition-colors cursor-pointer whitespace-nowrap">
                     {item.label}
                     <ChevronDownIcon className="w-3 h-3" />
                   </button>
@@ -121,7 +121,7 @@ export function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="text-[13px] font-semibold uppercase tracking-wide text-black hover:text-[#96000F] transition-colors whitespace-nowrap"
+                  className="text-[13px] font-semibold uppercase tracking-wide text-black hover:text-[#6D071A] transition-colors whitespace-nowrap"
                 >
                   {item.label}
                 </Link>
@@ -144,10 +144,10 @@ export function Header() {
             href="https://wa.me/22997885887"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden bg-[#96000F] border-2 border-[#96000F] rounded-[3px] px-3.5 py-2.5 text-[13px] font-medium uppercase whitespace-nowrap inline-block"
+            className="group relative overflow-hidden bg-[#6D071A] border-2 border-[#6D071A] rounded-[3px] px-3.5 py-2.5 text-[13px] font-medium uppercase whitespace-nowrap inline-block"
           >
             <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-            <span className="relative z-10 text-white group-hover:text-[#96000F] transition-colors duration-500">
+            <span className="relative z-10 text-white group-hover:text-[#6D071A] transition-colors duration-500">
               Réserver
             </span>
           </Link>

@@ -93,10 +93,10 @@ export default function TarifsPage() {
             </p>
             <Link
               href="#tarifs"
-              className="group relative overflow-hidden inline-block bg-[#96000F] text-white text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
+              className="group relative overflow-hidden inline-block bg-[#6D071A] text-white text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
             >
               <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-              <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">
+              <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">
                 Voir les tarifs
               </span>
             </Link>
@@ -115,7 +115,7 @@ export default function TarifsPage() {
                 onClick={() => setActive(cat.key)}
                 className={`shrink-0 px-4 py-2 text-[12px] font-bold uppercase tracking-wide rounded-[3px] transition-all duration-200 ${
                   active === cat.key
-                    ? "bg-[#96000F] text-white"
+                    ? "bg-[#6D071A] text-white"
                     : "bg-[#f8f8f8] text-[#555] hover:bg-[#eee]"
                 }`}
               >
@@ -151,7 +151,7 @@ export default function TarifsPage() {
         </section>
 
         {/* ── CTA FINAL ── */}
-        <section className="bg-[#96000F] py-20">
+        <section className="bg-[#6D071A] py-20">
           <div className="max-w-[700px] mx-auto px-6 text-center">
             <p className="text-white/70 text-xs font-bold uppercase tracking-[0.25em] mb-4">
               Prendre rendez-vous
@@ -167,7 +167,7 @@ export default function TarifsPage() {
                 href="https://wa.me/22997885887"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden inline-block bg-white text-[#96000F] text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
+                className="group relative overflow-hidden inline-block bg-white text-[#6D071A] text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
               >
                 <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">
@@ -179,7 +179,7 @@ export default function TarifsPage() {
                 className="group relative overflow-hidden inline-block border-2 border-white text-white text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
               >
                 <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
-                <span className="relative z-10 group-hover:text-[#96000F] transition-colors duration-500">
+                <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">
                   Formulaire de contact
                 </span>
               </Link>
@@ -220,7 +220,7 @@ function CategorySection({
       {/* En-tête catégorie */}
       <div className={`mb-8 transition-all duration-700 ease-out ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="flex items-center gap-4">
-          <div className="w-8 h-[2px] bg-[#96000F]" />
+          <div className="w-8 h-[2px] bg-[#6D071A]" />
           <h2 className="text-[22px] md:text-[28px] font-bold text-black">{label}</h2>
         </div>
       </div>
@@ -237,7 +237,7 @@ function CategorySection({
           >
             {/* Header carte */}
             <div className="p-5 border-b border-[#eee]">
-              <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#96000F] mb-1.5">
+              <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#6D071A] mb-1.5">
                 {svc.category === "visage" ? "Soin visage"
                   : svc.category === "corps" ? "Soin corps"
                   : svc.category === "epilation" ? "Épilation"
@@ -263,7 +263,7 @@ function CategorySection({
             <div className="px-5 pb-5">
               <Link
                 href={`/soins/${svc.slug}`}
-                className="group relative overflow-hidden inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#96000F] hover:gap-3 transition-all"
+                className="group relative overflow-hidden inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#6D071A] hover:gap-3 transition-all"
               >
                 En savoir plus
                 <span className="text-[10px] transition-transform group-hover:translate-x-1">→</span>
