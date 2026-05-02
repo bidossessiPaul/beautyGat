@@ -6,11 +6,11 @@ import { useState, useEffect, useRef } from "react";
 import { MapPin, Phone, ChevronDown, CheckCircle2, Star, Navigation } from "lucide-react";
 import { ServiceData, getRelatedServices } from "@/data/services";
 
-const CATEGORY_FALLBACK: Partial<Record<ServiceData["category"], string>> = {
+const HERO_FALLBACK: Partial<Record<ServiceData["category"], string>> = {
   visage:          "/images/soins/hydrafacial/hero.jpg",
   corps:           "/images/soins/bodysculpt/hero.png",
-  epilation:       "/images/epilation-laser/Appart-beaute-epilation-intro-1-scaled.jpg",
-  "epilation-cire":"/images/epilation-laser/Appart-beaute-epilation-intro-1-scaled.jpg",
+  epilation:       "/images/soins/epilation-laser-homme/hero.jpg",
+  "epilation-cire":"/images/dsc00744-1-scaled.jpg",
   injections:      "/images/soins/injection-hyaluronique/hero.jpg",
   diagnostic:      "/images/soins/diagnostic-peau/hero.jpg",
   "mains-pieds":   "/images/appart-beaute-3873920.jpg",
@@ -19,6 +19,21 @@ const CATEGORY_FALLBACK: Partial<Record<ServiceData["category"], string>> = {
   barber:          "/images/dsc01155.jpg",
   "duo-enfants":   "/images/dsc01280.jpg",
   privatisation:   "/images/dsc01308-scaled.jpg",
+};
+
+const INTRO_FALLBACK: Partial<Record<ServiceData["category"], string>> = {
+  visage:          "/images/soins/microneedling/hero.jpg",
+  corps:           "/images/soins/bodysculpt/intro.jpg",
+  epilation:       "/images/epilation-laser/Appart-beaute-epilation-intro-1-scaled.jpg",
+  "epilation-cire":"/images/soins/epilation-laser-homme/intro.jpg",
+  injections:      "/images/soins/injection-botulique/intro.jpg",
+  diagnostic:      "/images/soins/diagnostic-peau/intro.jpg",
+  "mains-pieds":   "/images/appart-beaute-3873926.jpg",
+  massages:        "/images/appart-beaute-3873920.jpg",
+  maquillage:      "/images/appart-beaute-3873920.jpg",
+  barber:          "/images/dsc01280.jpg",
+  "duo-enfants":   "/images/dsc01308-scaled.jpg",
+  privatisation:   "/images/dsc01280.jpg",
 };
 
 interface Props {
@@ -54,9 +69,8 @@ export function ServicePageTemplate({ service }: Props) {
   const relatedRef = useInView(0.08);
   const relatedServices = getRelatedServices(service, 4);
 
-  const fallback = CATEGORY_FALLBACK[service.category];
-  const heroImg = service.hero.image ?? fallback;
-  const introImg = service.intro.image ?? fallback;
+  const heroImg = service.hero.image ?? HERO_FALLBACK[service.category];
+  const introImg = service.intro.image ?? INTRO_FALLBACK[service.category];
 
   return (
     <main>
@@ -609,9 +623,9 @@ export function ServicePageTemplate({ service }: Props) {
               >
                 {/* Image ou fond dégradé */}
                 <div className="relative h-[160px] overflow-hidden bg-gradient-to-br from-[#1a0005] via-[#2d000f] to-[#0d0d0d] shrink-0">
-                  {(related.hero.image || CATEGORY_FALLBACK[related.category]) && (
+                  {(related.hero.image || HERO_FALLBACK[related.category]) && (
                     <Image
-                      src={related.hero.image ?? CATEGORY_FALLBACK[related.category]!}
+                      src={related.hero.image ?? HERO_FALLBACK[related.category]!}
                       alt={related.hero.imageAlt}
                       fill
                       className="object-cover opacity-70 transition-transform duration-[1400ms] ease-in-out group-hover:scale-[1.06]"
