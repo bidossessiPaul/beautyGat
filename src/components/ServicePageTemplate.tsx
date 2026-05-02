@@ -16,7 +16,6 @@ const CATEGORY_FALLBACK: Partial<Record<ServiceData["category"], string>> = {
   "mains-pieds":   "/images/appart-beaute-3873920.jpg",
   massages:        "/images/Appart-beaute-accueil-philosophie-1-scaled.jpg",
   maquillage:      "/images/appart-beaute-3873926.jpg",
-  coiffure:        "/images/appart-beaute-3873931.jpg",
   barber:          "/images/dsc01155.jpg",
   "duo-enfants":   "/images/dsc01280.jpg",
   privatisation:   "/images/dsc01308-scaled.jpg",

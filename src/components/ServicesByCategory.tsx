@@ -36,14 +36,14 @@ const CATEGORIES = [
     cta: "Explorer les soins corps",
   },
   {
-    title: "Coiffure, maquillage & onglerie",
+    title: "Maquillage, mains & pieds",
     description:
-      "Coupe, coloration, maquillage de mariée, manucure gel, nail art — un espace dédié à votre mise en beauté complète. Nos artistes vous accompagnent pour chaque occasion.",
-    image: "/images/appart-beaute-3873931.jpg",
-    href: "/menu",
-    services: ["Coiffure & couleur", "Maquillage événementiel", "Manucure & pédicure", "Nail art"],
-    tag: "Beauté complète",
-    cta: "Voir toutes les prestations",
+      "Maquillage de mariée, événementiel, manucure gel, nail art — un espace dédié à votre mise en beauté complète. Nos artistes vous accompagnent pour chaque occasion.",
+    image: "/images/appart-beaute-3873926.jpg",
+    href: "/soins/makeup-soir-cotonou",
+    services: ["Make-up SOIR", "Microblading sourcils", "Manucure semi-permanent", "Gel sur ongles naturels"],
+    tag: "Beauté & mains",
+    cta: "Découvrir les soins beauté",
   },
 ];
 

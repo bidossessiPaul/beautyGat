@@ -36,15 +36,15 @@ const NAV_ITEMS = [
         ],
       },
       {
-        title: "👑 Coiffure, Maquillage & Beauté",
+        title: "💄 Maquillage, Mains & Bien-être",
         links: [
-          { label: "Braids / Knotless", href: "/soins/braids-knotless-courts-cotonou" },
-          { label: "Shampoing + Brushing", href: "/soins/shampoing-brushing-cotonou" },
           { label: "Make-up SOIR", href: "/soins/makeup-soir-cotonou" },
+          { label: "Make-up JOUR", href: "/soins/makeup-jour-cotonou" },
           { label: "Microblading sourcils", href: "/soins/microblading-sourcils-cotonou" },
           { label: "Manucure semi-permanent", href: "/soins/manucure-semi-permanent-cotonou" },
           { label: "Gel sur ongles naturels", href: "/soins/gel-ongles-naturels-cotonou" },
           { label: "Espace Duo & Enfants", href: "/soins/rituel-duo-cotonou" },
+          { label: "Privatisation EVJF", href: "/soins/privatisation-evjf-cotonou" },
         ],
       },
     ],
