@@ -24,7 +24,7 @@ export interface ServiceData {
   title: string;
   metaDescription: string;
   category: "visage" | "corps" | "epilation" | "injections" | "diagnostic"
-    | "mains-pieds" | "massages" | "maquillage" | "coiffure" | "barber"
+    | "mains-pieds" | "massages" | "coiffure" | "barber"
     | "duo-enfants" | "privatisation" | "epilation-cire";
   hero: {
     image?: string;
@@ -4081,307 +4081,6 @@ export const services: ServiceData[] = [
     cta: { headline: "Rejoignez le club beauté Academy Beauty Gate", description: "Souscrivez à votre abonnement mensuel soins visage à Cadjehoun, Cotonou." },
   },
   // ─── MAQUILLAGE ────────────────────────────────────────────────────────────────
-  {
-    slug: "pose-faux-cils-cotonou",
-    title: "Pose de Faux Cils — Cotonou",
-    metaDescription: "Pose de faux cils à Cotonou Cadjehoun. Résultat naturel ou intense en 15 min. Academy Beauty Gate Bénin — 3 000 FCFA.",
-    category: "maquillage",
-    hero: {
-      imageAlt: "Pose faux cils Cotonou",
-      eyebrow: "Maquillage Yeux",
-      headline: "Pose de Faux Cils à Cotonou",
-      subheadline: "Un regard intensifié en 15 minutes grâce à une pose de faux cils précise et professionnelle à Cadjehoun.",
-    },
-    badges: [
-      { icon: "✦", text: "15 minutes" },
-      { icon: "✦", text: "3 000 FCFA" },
-      { icon: "✦", text: "Cadjehoun, Cotonou" },
-      { icon: "✦", text: "Regard magnifié" },
-    ],
-    intro: {
-      imageAlt: "Faux cils pose professionnelle Cotonou",
-      headline: "Un regard de star en 15 minutes",
-      description: "La pose de faux cils est l'accessoire maquillage incontournable pour intensifier le regard sans effort. En 15 minutes, nos maquilleuses posent des faux cils adaptés à la forme de vos yeux et à l'effet souhaité — naturel ou glamour.",
-      listItems: [
-        "Choix du modèle de faux cils selon vos yeux",
-        "Préparation et nettoyage de la zone des cils",
-        "Application précise à la colle hypoallergénique",
-        "Ajustement et finition pour un rendu parfait",
-        "Conseil sur l'entretien et le retrait",
-      ],
-    },
-    benefits: [
-      { title: "Résultat immédiat", description: "Votre regard est transformé en 15 minutes chrono, idéal avant un événement ou une sortie." },
-      { title: "Larges choix de modèles", description: "Naturel, dramatique, cat eye, demi-cils — nous avons le modèle pour chaque forme d'yeux." },
-      { title: "Pose professionnelle", description: "Nos maquilleuses assurent une pose parfaitement symétrique et confortable." },
-      { title: "Tarif accessible à Cotonou", description: "Sublimez votre regard pour seulement 3 000 FCFA à Academy Beauty Gate Cadjehoun." },
-    ],
-    pricing: {
-      headline: "Tarif Pose de Faux Cils",
-      note: "Tarif hors maquillage complet.",
-      items: [
-        { label: "Pose de Faux Cils", price: "3 000 FCFA", note: "15 min" },
-      ],
-    },
-    faq: [
-      { question: "Les faux cils posés peuvent-ils endommager mes vrais cils ?", answer: "Non, avec une colle de qualité et une pose professionnelle, vos cils naturels ne sont pas abîmés." },
-      { question: "Combien de temps tiennent les faux cils ?", answer: "Les faux cils bande tiennent une journée. Pour un résultat qui dure, optez pour des extensions de cils." },
-      { question: "Puis-je avoir une pose de faux cils avec mes lunettes ?", answer: "Oui, nous sélectionnons des modèles adaptés à la forme de votre monture." },
-      { question: "Ce service est-il disponible sans rendez-vous ?", answer: "Oui, pour une pose express, vous pouvez parfois venir sans rendez-vous selon la disponibilité." },
-    ],
-    cta: { headline: "Magnifiez votre regard à Cotonou", description: "Réservez votre pose de faux cils à Academy Beauty Gate Cadjehoun, Bénin." },
-  },
-  {
-    slug: "makeup-nude-cotonou",
-    title: "Make-up NUDE — Cotonou",
-    metaDescription: "Make-up NUDE naturel à Cotonou Cadjehoun. Maquillage discret et élégant 30 min. Academy Beauty Gate Bénin — 6 000 FCFA.",
-    category: "maquillage",
-    hero: {
-      imageAlt: "Make-up nude naturel Cotonou",
-      eyebrow: "Maquillage Naturel",
-      headline: "Make-up NUDE à Cotonou",
-      subheadline: "Un maquillage naturel et lumineux en 30 minutes pour sublimer votre beauté naturelle sans en faire trop.",
-    },
-    badges: [
-      { icon: "✦", text: "30 minutes" },
-      { icon: "✦", text: "6 000 FCFA" },
-      { icon: "✦", text: "Cadjehoun, Cotonou" },
-      { icon: "✦", text: "Beauté naturelle" },
-    ],
-    intro: {
-      imageAlt: "Maquillage nude professionnel Bénin",
-      headline: "Le maquillage « no-makeup makeup »",
-      description: "Le make-up NUDE est l'art de paraître naturellement belle. Teint unifié, yeux discrets mais définis, lèvres légèrement colorées — ce maquillage donne l'impression que vous ne portez rien tout en magnifiant vos traits.",
-      listItems: [
-        "Préparation et hydratation de la peau",
-        "Fond de teint léger et correcteur ciblé",
-        "Contouring discret et blush naturel",
-        "Maquillage yeux subtil et mascara",
-        "Rouge à lèvres ou gloss nude assorti",
-      ],
-    },
-    benefits: [
-      { title: "Rendu naturel et élégant", description: "Le make-up nude met en valeur votre beauté naturelle sans effet masque ni artifice excessif." },
-      { title: "Adapté à toutes les carnations", description: "Nos maquilleuses maîtrisent les nuances pour toutes les teintes de peau, des plus claires aux plus foncées." },
-      { title: "Parfait pour le quotidien", description: "Idéal pour le bureau, un déjeuner ou une occasion semi-formelle à Cotonou." },
-      { title: "Rapid et accessible", description: "30 minutes pour un résultat professionnel à seulement 6 000 FCFA à Cadjehoun." },
-    ],
-    pricing: {
-      headline: "Tarif Make-up NUDE",
-      note: "Retouches et accessoires non inclus.",
-      items: [
-        { label: "Make-up NUDE", price: "6 000 FCFA", note: "30 min" },
-      ],
-    },
-    faq: [
-      { question: "Ce maquillage est-il adapté aux grandes occasions ?", answer: "Il convient aux occasions semi-formelles. Pour un mariage ou un gala, préférez le make-up SOIR." },
-      { question: "Puis-je demander un résultat plus couvrant en restant dans le style nude ?", answer: "Oui, le maquillage peut être plus ou moins couvrant selon votre préférence tout en restant naturel." },
-      { question: "Les produits utilisés sont-ils adaptés aux peaux noires et métissées ?", answer: "Absolument. Nous disposons d'une gamme inclusive adaptée à toutes les carnations." },
-      { question: "Puis-je prendre un cours de make-up nude pour le faire moi-même ?", answer: "Nous proposons des cours particuliers de maquillage. Demandez-nous lors de votre visite." },
-    ],
-    cta: { headline: "Votre maquillage naturel à Cotonou", description: "Réservez votre make-up NUDE à Academy Beauty Gate Cadjehoun, Bénin." },
-  },
-  {
-    slug: "makeup-jour-cotonou",
-    title: "Make-up JOUR — Cotonou",
-    metaDescription: "Make-up JOUR à Cotonou Cadjehoun. Maquillage journée élégant et tenu 45 min. Academy Beauty Gate Bénin — 8 000 FCFA.",
-    category: "maquillage",
-    hero: {
-      imageAlt: "Make-up jour Cotonou",
-      eyebrow: "Maquillage Journée",
-      headline: "Make-up JOUR à Cotonou",
-      subheadline: "Un maquillage élégant et tenu pour la journée, réalisé en 45 minutes par nos maquilleuses professionnelles.",
-    },
-    badges: [
-      { icon: "✦", text: "45 minutes" },
-      { icon: "✦", text: "8 000 FCFA" },
-      { icon: "✦", text: "Cadjehoun, Cotonou" },
-      { icon: "✦", text: "Tenu toute la journée" },
-    ],
-    intro: {
-      imageAlt: "Maquillage journée professionnel Cotonou",
-      headline: "Beau du matin au soir sous le soleil de Cotonou",
-      description: "Le make-up JOUR est un maquillage complet, élégant et tenu conçu pour résister à la chaleur et à l'humidité du Bénin. Plus élaboré que le NUDE, il offre une couverture complète et une finition soignée pour les journées chargées.",
-      listItems: [
-        "Base de maquillage longue tenue et primer",
-        "Fond de teint couvrant et setting powder",
-        "Contouring, blush et illuminateur structurants",
-        "Yeux définis avec fard, eyeliner et mascara waterproof",
-        "Rouge à lèvres longue tenue au choix",
-      ],
-    },
-    benefits: [
-      { title: "Tenue optimale face à la chaleur", description: "Nos produits sélectionnés résistent à la chaleur et à la transpiration du climat béninois." },
-      { title: "Couverture et fini soigné", description: "Un maquillage complet qui couvre et uniformise parfaitement tout en restant naturel." },
-      { title: "Polyvalent et adaptatif", description: "Ce make-up convient au bureau, aux réunions, aux sorties shopping ou aux déjeuners d'affaires." },
-      { title: "Maquilleuses professionnelles à Cotonou", description: "Nos maquilleuses formées aux techniques modernes réalisent un maquillage impeccable à Cadjehoun." },
-    ],
-    pricing: {
-      headline: "Tarif Make-up JOUR",
-      note: "Faux cils en supplément si souhaité.",
-      items: [
-        { label: "Make-up JOUR", price: "8 000 FCFA", note: "45 min" },
-      ],
-    },
-    faq: [
-      { question: "Ce maquillage convient-il pour une réunion professionnelle importante ?", answer: "Absolument. Le make-up JOUR est idéal pour un look professionnel élégant et soigné." },
-      { question: "Comment le make-up JOUR diffère-t-il du NUDE ?", answer: "Plus complet et couvrant, le JOUR inclut contouring, yeux définis et rouge à lèvres pour un résultat plus affirmé." },
-      { question: "Les produits tiennent-ils bien en pleine chaleur de Cotonou ?", answer: "Oui, nous sélectionnons des produits longue tenue adaptés aux conditions climatiques du Bénin." },
-      { question: "Puis-je apporter mes propres produits de maquillage ?", answer: "Nous préférons utiliser nos produits professionnels pour garantir la qualité, mais vous pouvez le mentionner." },
-    ],
-    cta: { headline: "Un maquillage parfait pour votre journée", description: "Réservez votre make-up JOUR à Academy Beauty Gate Cadjehoun, Cotonou." },
-  },
-  {
-    slug: "makeup-soir-cotonou",
-    title: "Make-up SOIR — Cotonou",
-    metaDescription: "Make-up SOIR glamour à Cotonou Cadjehoun. Maquillage de soirée intense et spectaculaire 1h. Academy Beauty Gate — 10 000 FCFA.",
-    category: "maquillage",
-    hero: {
-      imageAlt: "Make-up soir glamour Cotonou",
-      eyebrow: "Maquillage de Soirée",
-      headline: "Make-up SOIR à Cotonou",
-      subheadline: "Un maquillage de soirée glamour et spectaculaire en 1 heure pour briller lors de vos grandes occasions à Cotonou.",
-    },
-    badges: [
-      { icon: "✦", text: "1 heure" },
-      { icon: "✦", text: "10 000 FCFA" },
-      { icon: "✦", text: "Cadjehoun, Cotonou" },
-      { icon: "✦", text: "Soirée & événements" },
-    ],
-    intro: {
-      imageAlt: "Maquillage soirée professionnel Bénin",
-      headline: "Brillez à toutes vos soirées et événements",
-      description: "Le make-up SOIR est notre maquillage signature pour les grandes occasions : mariages, baptêmes, galas, soirées privées. En une heure, nos maquilleuses créent un look intense, structuré et spectaculaire qui vous fera briller toute la nuit.",
-      listItems: [
-        "Préparation et primer longue tenue",
-        "Fond de teint HD et fixation professionnelle",
-        "Contouring sculptant et illuminateur statement",
-        "Yeux : fards pigmentés, eyeliner graphic ou smoky, faux cils",
-        "Lèvres affirmées — rouge statement ou gloss intense",
-      ],
-    },
-    benefits: [
-      { title: "Look spectaculaire et mémorable", description: "Un maquillage qui se voit, qui se remarque et dont vous vous souviendrez longtemps." },
-      { title: "Tenue exceptionnelle toute la nuit", description: "Le protocole de fixation garantit une tenue impeccable de la cérémonie jusqu'à l'aube." },
-      { title: "Personnalisé selon votre tenue", description: "Votre maquilleuse adapte les couleurs et l'intensité à votre tenue et à votre type d'événement." },
-      { title: "Pour toutes les grandes occasions à Cotonou", description: "Mariages, anniversaires, galas — nous habillons votre visage pour vos plus beaux moments au Bénin." },
-    ],
-    pricing: {
-      headline: "Tarif Make-up SOIR",
-      note: "Faux cils inclus dans la prestation.",
-      items: [
-        { label: "Make-up SOIR", price: "10 000 FCFA", note: "1h — faux cils inclus" },
-      ],
-    },
-    faq: [
-      { question: "Faut-il réserver longtemps à l'avance pour un maquillage de mariage ?", answer: "Oui, pour les mariages et grandes occasions, réservez au moins 2 semaines à l'avance." },
-      { question: "Faites-vous des essais maquillage avant le jour J ?", answer: "Nous proposons des séances d'essai. Contactez-nous pour planifier un essai avant votre événement." },
-      { question: "Puis-je avoir une mise en beauté à domicile à Cotonou ?", answer: "Oui, nous proposons des prestations à domicile pour les mariées et les groupes. Tarif sur devis." },
-      { question: "Le maquillage SOIR convient-il aussi pour un photoshoot ?", answer: "Absolument, le make-up SOIR est idéal pour les shootings photo grâce à son rendu intense et photogénique." },
-    ],
-    cta: { headline: "Brillez à vos plus belles soirées à Cotonou", description: "Réservez votre make-up SOIR à Academy Beauty Gate Cadjehoun, Bénin." },
-  },
-  {
-    slug: "microblading-sourcils-cotonou",
-    title: "Microblading Sourcils — Cotonou",
-    metaDescription: "Microblading sourcils à Cotonou Cadjehoun. Sourcils parfaits semi-permanents 2h. Academy Beauty Gate Bénin — 40 000 FCFA.",
-    category: "maquillage",
-    hero: {
-      imageAlt: "Microblading sourcils Cotonou",
-      eyebrow: "Maquillage Semi-Permanent",
-      headline: "Microblading Sourcils à Cotonou",
-      subheadline: "Des sourcils parfaitement dessinés et semi-permanents grâce à la technique du microblading, réalisé en 2 heures.",
-    },
-    badges: [
-      { icon: "✦", text: "2 heures" },
-      { icon: "✦", text: "40 000 FCFA" },
-      { icon: "✦", text: "Cadjehoun, Cotonou" },
-      { icon: "✦", text: "Sourcils semi-permanents" },
-    ],
-    intro: {
-      imageAlt: "Microblading sourcils semi-permanent Bénin",
-      headline: "Des sourcils parfaits au réveil, chaque jour",
-      description: "Le microblading est une technique de maquillage semi-permanent qui dessine des poils virtuels au tracé millimétrique pour recréer des sourcils naturels et parfaits. Le résultat dure de 12 à 18 mois. Fini les sourcils dessinés au crayon chaque matin.",
-      listItems: [
-        "Consultation et dessin de la forme idéale selon votre visage",
-        "Application de crème anesthésiante",
-        "Microblading au stylet avec pigments naturels",
-        "Ajustement et vérification de la symétrie",
-        "Instructions de cicatrisation et soins post-traitement",
-      ],
-    },
-    benefits: [
-      { title: "Résultat naturel et ultra-réaliste", description: "Les poils virtuels sont dessinés un par un pour un rendu indiscernable de vrais sourcils." },
-      { title: "Gain de temps quotidien", description: "Plus besoin de dessiner vos sourcils chaque matin — vous vous réveillez avec des sourcils parfaits." },
-      { title: "Durable 12 à 18 mois", description: "Le résultat du microblading dure entre 12 et 18 mois selon votre type de peau et votre routine." },
-      { title: "Technique maîtrisée à Cotonou", description: "Nos praticiennes formées au microblading réalisent des tracés précis et des designs personnalisés à Cadjehoun." },
-    ],
-    pricing: {
-      headline: "Tarif Microblading Sourcils",
-      note: "Retouche incluse dans les 6 semaines suivant la pose.",
-      items: [
-        { label: "Microblading Sourcils", price: "40 000 FCFA", note: "2h — retouche incluse" },
-      ],
-    },
-    faq: [
-      { question: "Le microblading est-il douloureux ?", answer: "La crème anesthésiante rend le soin très tolérable. Un léger inconfort peut être ressenti, jamais de douleur intense." },
-      { question: "Combien de temps dure le résultat ?", answer: "En général de 12 à 18 mois. Les peaux grasses retouchent plus vite, les peaux sèches gardent le pigment plus longtemps." },
-      { question: "Faut-il une retouche après la cicatrisation ?", answer: "Oui, une retouche entre 4 et 6 semaines après est recommandée pour parfaire le résultat. Elle est incluse dans le tarif." },
-      { question: "Le microblading est-il adapté aux sourcils très clairs ou clairsemés ?", answer: "C'est justement là que le microblading est le plus efficace — il recrée de la densité et de la profondeur." },
-    ],
-    cta: { headline: "Des sourcils parfaits à Cotonou", description: "Réservez votre microblading sourcils à Academy Beauty Gate Cadjehoun, Bénin." },
-  },
-  {
-    slug: "retouche-microblading-sourcils-cotonou",
-    title: "Retouche Microblading Sourcils — Cotonou",
-    metaDescription: "Retouche microblading sourcils à Cotonou Cadjehoun. Rafraîchissement du résultat semi-permanent 1h15. Academy Beauty Gate — 15 000 FCFA.",
-    category: "maquillage",
-    hero: {
-      imageAlt: "Retouche microblading sourcils Cotonou",
-      eyebrow: "Retouche Semi-Permanente",
-      headline: "Retouche Microblading Sourcils à Cotonou",
-      subheadline: "Rafraîchissez et prolongez votre microblading sourcils en 1h15 pour retrouver un résultat comme au premier jour.",
-    },
-    badges: [
-      { icon: "✦", text: "1h15" },
-      { icon: "✦", text: "15 000 FCFA" },
-      { icon: "✦", text: "Cadjehoun, Cotonou" },
-      { icon: "✦", text: "Prolonge le résultat" },
-    ],
-    intro: {
-      imageAlt: "Retouche microblading Bénin",
-      headline: "Prolongez la durée de votre microblading",
-      description: "Après 12 à 18 mois, le pigment de votre microblading s'estompe naturellement. La retouche permet de raviver les tracés, de corriger d'éventuels effets du temps et de prolonger le résultat pour une nouvelle période de 12 à 18 mois.",
-      listItems: [
-        "Évaluation de l'état du microblading existant",
-        "Redessin et ajustement de la forme si nécessaire",
-        "Application de crème anesthésiante",
-        "Retouche des tracés estompés avec les mêmes pigments",
-        "Instructions de soins post-retouche",
-      ],
-    },
-    benefits: [
-      { title: "Résultat rafraîchi comme au premier jour", description: "La retouche remet vos sourcils à neuf pour une nouvelle période de port optimal." },
-      { title: "Tarif retouche avantageux", description: "À 15 000 FCFA, la retouche est bien plus économique qu'une nouvelle pose complète." },
-      { title: "Correction et amélioration possibles", description: "La retouche est l'occasion d'affiner la forme ou l'intensité selon vos préférences actuelles." },
-      { title: "Continuité de suivi à Cadjehoun", description: "Votre praticienne à Academy Beauty Gate connaît vos sourcils et assure la continuité de votre traitement." },
-    ],
-    pricing: {
-      headline: "Tarif Retouche Microblading",
-      note: "Pour les poses réalisées à Academy Beauty Gate ou ailleurs.",
-      items: [
-        { label: "Retouche Microblading Sourcils", price: "15 000 FCFA", note: "1h15" },
-      ],
-    },
-    faq: [
-      { question: "À quelle fréquence faut-il faire une retouche ?", answer: "En général tous les 12 à 18 mois selon la vitesse à laquelle votre peau estompe le pigment." },
-      { question: "Puis-je venir en retouche même si mon microblading n'a pas été fait ici ?", answer: "Oui, nous acceptons les retouches de microblading réalisés dans d'autres établissements." },
-      { question: "La retouche prend-elle autant de temps que la pose initiale ?", answer: "Non, la retouche est plus rapide — environ 1h15 contre 2h pour une pose complète." },
-      { question: "Que se passe-t-il si j'attends trop longtemps avant la retouche ?", answer: "Si le pigment a complètement disparu, nous retraitons comme une nouvelle pose et facturons le tarif complet." },
-    ],
-    cta: { headline: "Rafraîchissez votre microblading à Cotonou", description: "Réservez votre retouche microblading à Academy Beauty Gate Cadjehoun, Bénin." },
-  },
-  // ─── BARBER SHOP ──────────────────────────────────────────────────────────────
   {
     slug: "coupe-classique-homme-cotonou",
     title: "Coupe Classique Homme — Cotonou",
@@ -9317,19 +9016,18 @@ export function getServicesByCategory(category: ServiceData["category"]): Servic
 }
 
 const RELATED_CATEGORIES: Partial<Record<ServiceData["category"], ServiceData["category"][]>> = {
-  visage:        ["massages", "injections", "diagnostic", "maquillage", "corps"],
+  visage:        ["massages", "injections", "diagnostic", "corps"],
   corps:         ["massages", "visage", "epilation", "epilation-cire"],
   epilation:     ["epilation-cire", "corps", "visage"],
   "epilation-cire": ["epilation", "corps", "mains-pieds"],
   injections:    ["visage", "diagnostic", "corps"],
   diagnostic:    ["visage", "injections", "massages"],
-  "mains-pieds": ["maquillage", "duo-enfants", "epilation-cire", "massages"],
+  "mains-pieds": ["duo-enfants", "epilation-cire", "massages"],
   massages:      ["visage", "corps", "duo-enfants", "privatisation"],
-  maquillage:    ["visage", "mains-pieds", "coiffure"],
   coiffure:      ["barber", "duo-enfants", "mains-pieds"],
   barber:        ["coiffure", "visage", "massages"],
   "duo-enfants": ["coiffure", "mains-pieds", "massages", "privatisation"],
-  privatisation: ["massages", "coiffure", "mains-pieds", "maquillage"],
+  privatisation: ["massages", "coiffure", "mains-pieds"],
 };
 
 export function getRelatedServices(current: ServiceData, count = 4): ServiceData[] {

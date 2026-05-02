@@ -36,13 +36,13 @@ const NAV_ITEMS = [
         ],
       },
       {
-        title: "💄 Maquillage, Mains & Bien-être",
+        title: "💅 Mains, Pieds & Bien-être",
         links: [
-          { label: "Make-up SOIR", href: "/soins/makeup-soir-cotonou" },
-          { label: "Make-up JOUR", href: "/soins/makeup-jour-cotonou" },
-          { label: "Microblading sourcils", href: "/soins/microblading-sourcils-cotonou" },
           { label: "Manucure semi-permanent", href: "/soins/manucure-semi-permanent-cotonou" },
           { label: "Gel sur ongles naturels", href: "/soins/gel-ongles-naturels-cotonou" },
+          { label: "Capsules & résine", href: "/soins/capsules-gel-resine-cotonou" },
+          { label: "Soin complet des mains SPA", href: "/soins/soin-mains-spa-cotonou" },
+          { label: "Soin complet des pieds SPA", href: "/soins/soin-pieds-spa-cotonou" },
           { label: "Espace Duo & Enfants", href: "/soins/rituel-duo-cotonou" },
           { label: "Privatisation EVJF", href: "/soins/privatisation-evjf-cotonou" },
         ],

@@ -130,19 +130,6 @@ export const menuCategories: MenuCategory[] = [
     ],
   },
   {
-    emoji: "💄",
-    label: "Maquillage",
-    slug: "maquillage",
-    services: [
-      { name: "Pose de faux cils", price: "3 000 FCFA", duration: "15 min" },
-      { name: "Make-up NUDE", price: "6 000 FCFA", duration: "30 min" },
-      { name: "Make-up JOUR", price: "8 000 FCFA", duration: "45 min" },
-      { name: "Make-up SOIR", price: "10 000 FCFA", duration: "1h" },
-      { name: "Microblading sourcils", price: "40 000 FCFA", duration: "2h" },
-      { name: "Retouche Microblading", price: "15 000 FCFA", duration: "1h15" },
-    ],
-  },
-  {
     emoji: "✂️",
     label: "Barber Shop",
     slug: "barber",
