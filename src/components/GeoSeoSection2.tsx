@@ -15,7 +15,7 @@ const IMAGES = [
     alt: "Institut beauté Cotonou Bénin",
   },
   {
-    src: "/IMG_3908.JPG",
+    src: "/beautygate/gallery/LcDicyh6kKAgltJo5xF1UTp44idBu5GgBPTvf3Eh.jpg",
     alt: "Academy Beauty Gate Cadjehoun Cotonou",
   },
 ];
