@@ -3485,6 +3485,7 @@ export const services: ServiceData[] = [
     metaDescription: "Nettoyage purifiant du visage à Cotonou Cadjehoun. Soin 45 min pour peaux mixtes à grasses. Academy Beauty Gate — 15 000 FCFA.",
     category: "visage",
     hero: {
+      image: "/image.png",
       imageAlt: "Nettoyage purifiant visage Cotonou",
       eyebrow: "Soin Visage Purifiant",
       headline: "Nettoyage Purifiant Visage à Cotonou",
@@ -3497,6 +3498,7 @@ export const services: ServiceData[] = [
       { icon: "✦", text: "Peaux mixtes à grasses" },
     ],
     intro: {
+      image: "/image.png",
       imageAlt: "Nettoyage purifiant visage Cadjehoun",
       headline: "Purifiez votre peau en profondeur",
       description: "Le nettoyage purifiant va plus loin que le simple nettoyage express. Ce soin de 45 minutes cible les pores dilatés, les points noirs et les excès de sébum pour une peau nette, mattifiée et équilibrée.",
