@@ -105,7 +105,7 @@ export function Header() {
                           </p>
                           <ul className="space-y-2">
                             {col.links.map((link) => (
-                              <li key={link.href}>
+                              <li key={link.label}>
                                 <Link
                                   href={link.href}
                                   className="text-[13px] text-gray-700 hover:text-black transition-colors whitespace-nowrap"
@@ -185,7 +185,7 @@ export function Header() {
                           </p>
                           <ul className="space-y-1">
                             {col.links.map((link) => (
-                              <li key={link.href}>
+                              <li key={link.label}>
                                 <Link
                                   href={link.href}
                                   className="text-[13px] text-gray-700"
