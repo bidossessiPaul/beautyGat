@@ -3485,7 +3485,6 @@ export const services: ServiceData[] = [
     metaDescription: "Nettoyage purifiant du visage à Cotonou Cadjehoun. Soin 45 min pour peaux mixtes à grasses. Academy Beauty Gate — 15 000 FCFA.",
     category: "visage",
     hero: {
-      image: "/image.png",
       imageAlt: "Nettoyage purifiant visage Cotonou",
       eyebrow: "Soin Visage Purifiant",
       headline: "Nettoyage Purifiant Visage à Cotonou",
