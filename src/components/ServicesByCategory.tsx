@@ -1,119 +1,174 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const CATEGORIES = [
   {
-    title: "Épilation",
-    description: "Des solutions permanentes adaptées à tous les phototypes pour une peau lisse et sans poils durablement.",
+    title: "Épilation laser & électrolyse",
+    description:
+      "Des solutions permanentes adaptées à tous les phototypes pour une peau lisse et sans poils durablement. Notre équipe maîtrise les protocoles les plus efficaces pour les peaux africaines et métissées.",
     image: "/images/dsc00744-1-scaled.jpg",
-    href: "/epilation-laser-paris",
-    services: ["Épilation laser", "Électrolyse", "Bleaching"],
+    href: "/epilation-laser-cotonou",
+    services: ["Épilation laser", "Électrolyse", "Épilation à la cire"],
     tag: "Laser & haute fréquence",
+    cta: "Découvrir l'épilation",
   },
   {
     title: "Soins du visage",
-    description: "Des technologies médicales avancées pour révéler l'éclat naturel de votre peau.",
+    description:
+      "Des technologies médicales avancées pour révéler l'éclat naturel de votre peau. Hydrafacial, peeling, carbon laser peel — chaque soin est adapté à votre diagnostic peau personnalisé.",
     image: "/images/img_4538.jpg",
-    href: "/hydrafacial-paris",
-    services: ["Hydrafacial®", "Peeling", "Baby Face", "Carbon Laser Peel"],
+    href: "/menu",
+    services: ["Hydrafacial®", "Peeling", "Carbon Laser Peel", "Diagnostic peau"],
     tag: "Éclat & pureté",
-  },
-  {
-    title: "Anti-âge",
-    description: "Stimulez le collagène, atténuez les rides et retrouvez une peau visiblement rajeunie.",
-    image: "/images/microneedling-appart-beaute.png",
-    href: "/microneedling-paris",
-    services: ["Microneedling", "Photomodulation LED", "Peeling chimique"],
-    tag: "Régénération cellulaire",
+    cta: "Voir les soins visage",
   },
   {
     title: "Corps & silhouette",
-    description: "Redessinez votre silhouette sans chirurgie grâce à nos traitements corps non-invasifs.",
+    description:
+      "Redessinez votre silhouette sans chirurgie grâce à nos traitements corps non-invasifs. Cryolipolyse, BodySculpt, massages modelants — des résultats visibles et durables.",
     image: "/images/adobestock-316410994-jidarv-1-scaled.jpeg",
-    href: "/cryolipolyse-paris",
-    services: ["Cryolipolyse", "BodySculpt", "Détatouage laser", "Peeling intime"],
+    href: "/menu",
+    services: ["Cryolipolyse", "BodySculpt", "Massages modelants", "Détatouage"],
     tag: "Minceur & remodelage",
+    cta: "Explorer les soins corps",
+  },
+  {
+    title: "Coiffure, maquillage & onglerie",
+    description:
+      "Coupe, coloration, maquillage de mariée, manucure gel, nail art — un espace dédié à votre mise en beauté complète. Nos artistes vous accompagnent pour chaque occasion.",
+    image: "/images/appart-beaute-3873931.jpg",
+    href: "/menu",
+    services: ["Coiffure & couleur", "Maquillage événementiel", "Manucure & pédicure", "Nail art"],
+    tag: "Beauté complète",
+    cta: "Voir toutes les prestations",
   },
 ];
 
-export function ServicesByCategory() {
+function useInView(threshold = 0.12) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect(); } },
+      { threshold }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return { ref, inView };
+}
+
+function CategoryRow({ cat, reverse }: { cat: typeof CATEGORIES[0]; reverse: boolean }) {
+  const { ref, inView } = useInView(0.1);
+
   return (
-    <section className="py-[60px] bg-[#fafafa]">
+    <div
+      ref={ref}
+      className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} min-h-[420px] md:h-[480px]`}
+    >
+      {/* Image */}
+      <div
+        className={`relative w-full md:w-1/2 h-[280px] md:h-full overflow-hidden transition-all duration-700 ease-out ${
+          inView ? "opacity-100 scale-100" : "opacity-0 scale-[1.03]"
+        }`}
+      >
+        <Image
+          src={cat.image}
+          alt={cat.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover transition-transform duration-700 hover:scale-[1.04]"
+        />
+        {/* badge */}
+        <div className="absolute top-5 left-5">
+          <span className="text-[10px] uppercase tracking-[2px] bg-black/40 backdrop-blur-sm text-white px-3 py-1.5 border border-white/20">
+            {cat.tag}
+          </span>
+        </div>
+        {/* subtle gradient for edge blending */}
+        <div className={`absolute inset-0 bg-gradient-to-${reverse ? "l" : "r"} from-transparent via-transparent to-black/10`} />
+      </div>
+
+      {/* Texte */}
+      <div
+        className={`relative w-full md:w-1/2 bg-white flex flex-col justify-center px-8 md:px-14 py-10 md:py-0 transition-all duration-700 delay-150 ease-out ${
+          inView ? "opacity-100 translate-x-0" : `opacity-0 ${reverse ? "translate-x-6" : "-translate-x-6"}`
+        }`}
+      >
+        {/* ligne décorative */}
+        <div className={`w-10 h-[3px] bg-[#96000F] mb-6 transition-all duration-500 delay-300 ${inView ? "w-10" : "w-0"}`} />
+
+        <h3 className="text-[24px] md:text-[30px] font-bold text-black leading-tight mb-4">
+          {cat.title}
+        </h3>
+
+        <p className="text-[14px] md:text-[15px] leading-[26px] text-[#555] mb-6">
+          {cat.description}
+        </p>
+
+        {/* liste services */}
+        <ul className="space-y-2 mb-8">
+          {cat.services.map((s) => (
+            <li key={s} className="flex items-center gap-2.5 text-[13px] text-[#444]">
+              <span className="w-1 h-1 rounded-full bg-[#96000F] shrink-0" />
+              {s}
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA */}
+        <Link
+          href={cat.href}
+          className="group relative overflow-hidden inline-flex items-center gap-3 self-start bg-[#96000F] text-white text-[11px] font-bold uppercase tracking-widest px-7 py-3.5"
+        >
+          <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
+          <span className="relative z-10">{cat.cta}</span>
+          <span className="relative z-10 transition-transform group-hover:translate-x-1 duration-300">→</span>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function ServicesByCategory() {
+  const headerRef = useInView(0.2);
+
+  return (
+    <section className="py-[70px] bg-[#fafafa]">
       <div className="max-w-[1300px] mx-auto px-6 md:px-10">
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-[12px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">
+        <div
+          ref={headerRef.ref}
+          className={`text-center mb-14 transition-all duration-700 ease-out ${
+            headerRef.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <p className="text-[11px] font-bold uppercase tracking-[3px] text-[#96000F] mb-3">
             Nos soins
           </p>
           <h2 className="font-sans text-[30px] md:text-[42px] font-bold text-black mb-4">
             Des soins d'exception pour vous
           </h2>
-          <p className="text-[15px] leading-[28px] text-[#555] max-w-[600px] mx-auto">
-            Chaque soin est réalisé avec expertise et des technologies de pointe, pour des résultats visibles et durables.
+          <p className="text-[15px] leading-[28px] text-[#555] max-w-[580px] mx-auto">
+            Chaque prestation est réalisée avec expertise et des technologies de pointe, pour des résultats visibles et durables.
           </p>
         </div>
 
-        {/* Grille 2×2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {CATEGORIES.map((cat) => (
-            <Link
-              key={cat.title}
-              href={cat.href}
-              className="group relative overflow-hidden rounded-xl h-[380px] block"
-            >
-              {/* Image */}
-              <Image
-                src={cat.image}
-                alt={cat.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-
-              {/* Gradient permanent */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-              {/* Overlay rouge au hover */}
-              <div className="absolute inset-0 bg-[#96000F]/0 group-hover:bg-[#96000F]/40 transition-colors duration-500" />
-
-              {/* Badge catégorie */}
-              <div className="absolute top-5 left-5">
-                <span className="text-[11px] uppercase tracking-[2px] bg-white/15 backdrop-blur-sm text-white px-3 py-1.5 rounded-full border border-white/20">
-                  {cat.tag}
-                </span>
-              </div>
-
-              {/* Contenu bas */}
-              <div className="absolute bottom-0 left-0 right-0 p-7">
-                <h3 className="font-sans text-[26px] font-bold text-white mb-2 leading-tight">
-                  {cat.title}
-                </h3>
-                <p className="text-[13px] leading-[22px] text-white/80 mb-4 max-w-[380px]">
-                  {cat.description}
-                </p>
-
-                {/* Tags services — visibles au hover */}
-                <div className="flex flex-wrap gap-2 mb-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
-                  {cat.services.map((s) => (
-                    <span
-                      key={s}
-                      className="text-[10px] uppercase tracking-wide bg-white/20 text-white px-2.5 py-1 rounded-full"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-
-                <span className="text-white text-[12px] font-semibold uppercase tracking-[2px] flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-                  Découvrir <span>→</span>
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-
       </div>
+
+      {/* Blocs alternés — full width */}
+      <div className="max-w-[1300px] mx-auto px-6 md:px-10 space-y-3">
+        {CATEGORIES.map((cat, i) => (
+          <CategoryRow key={cat.title} cat={cat} reverse={i % 2 !== 0} />
+        ))}
+      </div>
+
     </section>
   );
 }
