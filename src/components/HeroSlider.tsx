@@ -4,9 +4,9 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 const SLIDES = [
+  { src: "/images/dsc01439-1.jpg", width: 6000, height: 4000 },
   { src: "/images/appart-beaute-3873920.jpg", width: 1903, height: 1270 },
   { src: "/beautygate/hero_slides/IJ8hf1frmVKbLw1l3iHwTu3V4ofjeFjL5g9BSnbQ.jpg", width: 1920, height: 1280 },
-  { src: "/images/dsc01439-1.jpg", width: 6000, height: 4000 },
   { src: "/images/appart-beaute-3873931.jpg", width: 1903, height: 1270 },
   { src: "/images/appart-beaute-3873926.jpg", width: 1903, height: 1270 },
 ] as const;
