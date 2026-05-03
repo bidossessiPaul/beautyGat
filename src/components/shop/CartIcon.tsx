@@ -1,10 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useCart } from "@/store/cart";
 
 export function CartIcon() {
   const totalItems = useCart((s) => s.totalItems)();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <Link
@@ -17,7 +20,7 @@ export function CartIcon() {
         <line x1="3" y1="6" x2="21" y2="6" />
         <path d="M16 10a4 4 0 0 1-8 0" />
       </svg>
-      {totalItems > 0 && (
+      {mounted && totalItems > 0 && (
         <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#6D071A] text-white text-[9px] font-bold rounded-full flex items-center justify-center">
           {totalItems > 9 ? "9+" : totalItems}
         </span>
