@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AddToCart } from "./AddToCart";
-import type { Product } from "@/data/products";
+import type { Product } from "@prisma/client";
 
 function formatPrice(n: number) {
   return n.toLocaleString("fr-FR") + " FCFA";
@@ -17,7 +17,6 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group bg-white border border-[#f0f0f0] hover:shadow-md transition-shadow duration-300 flex flex-col">
-      {/* Image */}
       <Link href={`/boutique/${product.slug}`} className="relative block overflow-hidden aspect-[4/3]">
         <Image
           src={product.image}
@@ -38,19 +37,12 @@ export function ProductCard({ product }: { product: Product }) {
         )}
       </Link>
 
-      {/* Infos */}
       <div className="p-5 flex flex-col flex-1 gap-3">
-        <p className="text-[10px] uppercase tracking-[2px] text-[#6D071A] font-semibold">
-          {product.categoryLabel}
-        </p>
+        <p className="text-[10px] uppercase tracking-[2px] text-[#6D071A] font-semibold">{product.categoryLabel}</p>
         <Link href={`/boutique/${product.slug}`}>
-          <h3 className="text-[16px] font-bold text-black leading-tight hover:text-[#6D071A] transition-colors">
-            {product.name}
-          </h3>
+          <h3 className="text-[16px] font-bold text-black leading-tight hover:text-[#6D071A] transition-colors">{product.name}</h3>
         </Link>
-        <p className="text-[13px] text-[#666] leading-relaxed flex-1">
-          {product.shortDescription}
-        </p>
+        <p className="text-[13px] text-[#666] leading-relaxed flex-1">{product.shortDescription}</p>
 
         <div className="flex items-center justify-between mt-auto pt-3 border-t border-[#f0f0f0]">
           <div>
@@ -60,7 +52,6 @@ export function ProductCard({ product }: { product: Product }) {
             )}
           </div>
         </div>
-
         <AddToCart product={product} className="w-full text-center" />
       </div>
     </div>

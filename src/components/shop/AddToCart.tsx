@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useCart } from "@/store/cart";
-import type { Product } from "@/data/products";
+import type { Product } from "@prisma/client";
 
 interface Props {
   product: Product;
