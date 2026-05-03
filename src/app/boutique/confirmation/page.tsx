@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Commande confirmée — Academy Beauty Gate",
@@ -15,6 +17,8 @@ export default async function ConfirmationPage({
   const transactionId = params.transaction_id ?? params.id ?? "";
 
   return (
+    <>
+    <Header />
     <main className="pt-[90px] min-h-screen bg-[#fafafa] flex items-center justify-center px-6">
       <div className="max-w-[540px] w-full bg-white border border-[#f0f0f0] p-10 md:p-14 text-center">
         {/* Icône succès */}
@@ -55,5 +59,7 @@ export default async function ConfirmationPage({
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

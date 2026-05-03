@@ -3,6 +3,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { getProductBySlug, products } from "@/data/products";
 import { AddToCart } from "@/components/shop/AddToCart";
+import { Header } from "@/components/Header";
+import { ContactFooter } from "@/components/ContactFooter";
+import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/shop/ProductCard";
 
 function formatPrice(n: number) {
@@ -46,6 +49,8 @@ export default async function ProductPage({
     : 0;
 
   return (
+    <>
+    <Header />
     <main className="pt-[90px] min-h-screen">
       {/* Breadcrumb */}
       <div className="bg-[#fafafa] border-b border-[#f0f0f0] py-3">
@@ -144,5 +149,8 @@ export default async function ProductPage({
         </section>
       )}
     </main>
+    <ContactFooter />
+    <Footer />
+    </>
   );
 }

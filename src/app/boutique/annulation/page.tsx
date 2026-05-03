@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Paiement annulé — Academy Beauty Gate",
@@ -8,6 +10,8 @@ export const metadata: Metadata = {
 
 export default function AnnulationPage() {
   return (
+    <>
+    <Header />
     <main className="pt-[90px] min-h-screen bg-[#fafafa] flex items-center justify-center px-6">
       <div className="max-w-[540px] w-full bg-white border border-[#f0f0f0] p-10 md:p-14 text-center">
         {/* Icône annulation */}
@@ -41,5 +45,7 @@ export default function AnnulationPage() {
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

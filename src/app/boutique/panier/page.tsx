@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/store/cart";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 function formatPrice(n: number) {
   return n.toLocaleString("fr-FR") + " FCFA";
@@ -13,6 +15,8 @@ export default function PanierPage() {
 
   if (items.length === 0) {
     return (
+      <>
+      <Header />
       <main className="pt-[90px] min-h-screen bg-[#fafafa] flex flex-col items-center justify-center gap-6 px-6">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
@@ -27,10 +31,14 @@ export default function PanierPage() {
           Découvrir la boutique
         </Link>
       </main>
+      <Footer />
+      </>
     );
   }
 
   return (
+    <>
+    <Header />
     <main className="pt-[90px] min-h-screen bg-[#fafafa]">
       <div className="max-w-[1100px] mx-auto px-6 md:px-10 py-14">
         <h1 className="text-[28px] md:text-[36px] font-bold text-black mb-10">Mon panier</h1>
@@ -117,5 +125,7 @@ export default function PanierPage() {
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 }

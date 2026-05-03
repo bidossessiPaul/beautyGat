@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { products, CATEGORIES } from "@/data/products";
+import { Header } from "@/components/Header";
+import { ContactFooter } from "@/components/ContactFooter";
+import { Footer } from "@/components/Footer";
 import type { Product } from "@/data/products";
 
 export default function BoutiquePage() {
@@ -14,6 +17,8 @@ export default function BoutiquePage() {
       : products.filter((p) => p.category === activeCategory);
 
   return (
+    <>
+    <Header />
     <main className="pt-[90px] min-h-screen bg-[#fafafa]">
       {/* Hero section */}
       <section className="bg-white border-b border-[#f0f0f0] py-14">
@@ -62,5 +67,8 @@ export default function BoutiquePage() {
         )}
       </section>
     </main>
+    <ContactFooter />
+    <Footer />
+    </>
   );
 }

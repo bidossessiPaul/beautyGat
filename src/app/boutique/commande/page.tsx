@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/store/cart";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 function formatPrice(n: number) {
   return n.toLocaleString("fr-FR") + " FCFA";
@@ -61,6 +63,8 @@ export default function CommandePage() {
   }
 
   return (
+    <>
+    <Header />
     <main className="pt-[90px] min-h-screen bg-[#fafafa]">
       <div className="max-w-[900px] mx-auto px-6 md:px-10 py-14">
         <h1 className="text-[28px] md:text-[36px] font-bold text-black mb-10">Finaliser la commande</h1>
@@ -172,5 +176,7 @@ export default function CommandePage() {
         </div>
       </div>
     </main>
+    <Footer />
+    </>
   );
 }
