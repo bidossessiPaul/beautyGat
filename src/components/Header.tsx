@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PhoneIcon, InstagramIcon, ChevronDownIcon } from "@/components/icons";
+import { CartIcon } from "@/components/shop/CartIcon";
 
 const NAV_ITEMS = [
   {
@@ -50,6 +51,7 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Nos tarifs", href: "/tarifs" },
+  { label: "Boutique", href: "/boutique" },
   { label: "À propos", href: "/a-propos" },
   { label: "Contact", href: "/contact" },
 ];
@@ -153,6 +155,8 @@ export function Header() {
               Réserver
             </span>
           </Link>
+          <CartIcon />
+
           {/* Burger mobile */}
           <button
             className="md:hidden flex flex-col gap-1.5 text-black"
