@@ -7,10 +7,15 @@ import { Footer } from "@/components/Footer";
 export const dynamic = "force-dynamic";
 
 export default async function BoutiquePage() {
-  const products = await prisma.product.findMany({
-    where: { active: true },
-    orderBy: { createdAt: "desc" },
-  });
+  let products: import("@prisma/client").Product[] = [];
+  try {
+    products = await prisma.product.findMany({
+      where: { active: true },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (err) {
+    console.error("[boutique] DB error:", err);
+  }
 
   return (
     <>

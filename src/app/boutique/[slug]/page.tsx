@@ -34,13 +34,21 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const product = await prisma.product.findUnique({ where: { slug } });
+  let product = null;
+  try {
+    product = await prisma.product.findUnique({ where: { slug } });
+  } catch (err) {
+    console.error("[boutique/slug] DB error:", err);
+  }
   if (!product) notFound();
 
-  const related = await prisma.product.findMany({
-    where: { category: product.category, id: { not: product.id }, active: true },
-    take: 4,
-  });
+  let related: import("@prisma/client").Product[] = [];
+  try {
+    related = await prisma.product.findMany({
+      where: { category: product.category, id: { not: product.id }, active: true },
+      take: 4,
+    });
+  } catch { /* noop */ }
 
   const hasDiscount = product.comparePrice && product.comparePrice > product.price;
   const discountPct = hasDiscount
