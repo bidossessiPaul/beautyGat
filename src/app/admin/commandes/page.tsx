@@ -17,7 +17,12 @@ const statusLabel: Record<string, string> = {
 };
 
 export default async function AdminCommandes() {
-  const orders = await prisma.order.findMany({ orderBy: { createdAt: "desc" } });
+  let orders: import("@prisma/client").Order[] = [];
+  try {
+    orders = await prisma.order.findMany({ orderBy: { createdAt: "desc" } });
+  } catch (err) {
+    console.error("[admin/commandes] DB error:", err);
+  }
 
   return (
     <div className="min-h-screen bg-[#fafafa]">

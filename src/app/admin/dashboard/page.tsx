@@ -3,35 +3,43 @@ import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
+function formatPrice(n: number) {
+  return n.toLocaleString("fr-FR") + " FCFA";
+}
+
+const statusColor: Record<string, string> = {
+  paid: "bg-green-100 text-green-700",
+  pending: "bg-yellow-100 text-yellow-700",
+  failed: "bg-red-100 text-red-600",
+};
+const statusLabel: Record<string, string> = {
+  paid: "Payé", pending: "En attente", failed: "Échoué",
+};
+
 export default async function AdminDashboard() {
-  const [totalProducts, totalOrders, recentOrders] = await Promise.all([
-    prisma.product.count(),
-    prisma.order.count(),
-    prisma.order.findMany({ orderBy: { createdAt: "desc" }, take: 5 }),
-  ]);
+  let totalProducts = 0;
+  let totalOrders = 0;
+  let paidOrders = 0;
+  let revenueSum = 0;
+  let recentOrders: { id: string; customerName: string; customerEmail: string; createdAt: Date; totalAmount: number; status: string }[] = [];
+  let dbError = false;
 
-  const paidOrders = await prisma.order.count({ where: { status: "paid" } });
-  const totalRevenue = await prisma.order.aggregate({
-    where: { status: "paid" },
-    _sum: { totalAmount: true },
-  });
-
-  function formatPrice(n: number) {
-    return n.toLocaleString("fr-FR") + " FCFA";
+  try {
+    [totalProducts, totalOrders, recentOrders] = await Promise.all([
+      prisma.product.count(),
+      prisma.order.count(),
+      prisma.order.findMany({ orderBy: { createdAt: "desc" }, take: 5 }),
+    ]);
+    paidOrders = await prisma.order.count({ where: { status: "paid" } });
+    const rev = await prisma.order.aggregate({ where: { status: "paid" }, _sum: { totalAmount: true } });
+    revenueSum = rev._sum.totalAmount ?? 0;
+  } catch (err) {
+    console.error("[admin/dashboard] DB error:", err);
+    dbError = true;
   }
-
-  const statusColor: Record<string, string> = {
-    paid: "bg-green-100 text-green-700",
-    pending: "bg-yellow-100 text-yellow-700",
-    failed: "bg-red-100 text-red-600",
-  };
-  const statusLabel: Record<string, string> = {
-    paid: "Payé", pending: "En attente", failed: "Échoué",
-  };
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      {/* Header admin */}
       <header className="bg-white border-b border-[#f0f0f0] px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-[18px] font-bold text-black">Beauty Gate</span>
@@ -49,13 +57,19 @@ export default async function AdminDashboard() {
       <main className="max-w-[1100px] mx-auto px-6 py-10">
         <h1 className="text-[24px] font-bold text-black mb-8">Tableau de bord</h1>
 
-        {/* Stats */}
+        {dbError && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-6 py-4 mb-8 text-[13px]">
+            <strong>Erreur de connexion à la base de données.</strong> Vérifiez que la variable d&apos;environnement{" "}
+            <code className="bg-red-100 px-1 py-0.5 font-mono">DATABASE_URL</code> est bien configurée sur Hostinger.
+          </div>
+        )}
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           {[
             { label: "Produits", value: totalProducts, icon: "📦" },
             { label: "Commandes", value: totalOrders, icon: "🛒" },
             { label: "Commandes payées", value: paidOrders, icon: "✅" },
-            { label: "Revenus", value: formatPrice(totalRevenue._sum.totalAmount ?? 0), icon: "💰" },
+            { label: "Revenus", value: formatPrice(revenueSum), icon: "💰" },
           ].map((stat) => (
             <div key={stat.label} className="bg-white border border-[#f0f0f0] p-5">
               <p className="text-[24px] mb-1">{stat.icon}</p>
@@ -65,16 +79,15 @@ export default async function AdminDashboard() {
           ))}
         </div>
 
-        {/* Accès rapides */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-          <Link href="/admin/produits/nouveau" className="bg-[#6D071A] text-white p-6 flex items-center gap-4 hover:bg-black transition-colors group">
+          <Link href="/admin/produits/nouveau" className="bg-[#6D071A] text-white p-6 flex items-center gap-4 hover:bg-black transition-colors">
             <span className="text-[32px]">+</span>
             <div>
               <p className="text-[16px] font-bold">Ajouter un produit</p>
               <p className="text-[12px] opacity-75">Nouveau produit dans la boutique</p>
             </div>
           </Link>
-          <Link href="/admin/commandes" className="bg-white border-2 border-[#6D071A] text-[#6D071A] p-6 flex items-center gap-4 hover:bg-[#6D071A] hover:text-white transition-colors group">
+          <Link href="/admin/commandes" className="bg-white border-2 border-[#6D071A] text-[#6D071A] p-6 flex items-center gap-4 hover:bg-[#6D071A] hover:text-white transition-colors">
             <span className="text-[32px]">📋</span>
             <div>
               <p className="text-[16px] font-bold">Voir les commandes</p>
@@ -83,7 +96,6 @@ export default async function AdminDashboard() {
           </Link>
         </div>
 
-        {/* Commandes récentes */}
         {recentOrders.length > 0 && (
           <div className="bg-white border border-[#f0f0f0]">
             <div className="px-6 py-4 border-b border-[#f0f0f0] flex items-center justify-between">

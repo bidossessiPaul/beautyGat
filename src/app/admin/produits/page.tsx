@@ -9,7 +9,14 @@ function formatPrice(n: number) {
 }
 
 export default async function AdminProduits() {
-  const products = await prisma.product.findMany({ orderBy: { createdAt: "desc" } });
+  let products: import("@prisma/client").Product[] = [];
+  let dbError = false;
+  try {
+    products = await prisma.product.findMany({ orderBy: { createdAt: "desc" } });
+  } catch (err) {
+    console.error("[admin/produits] DB error:", err);
+    dbError = true;
+  }
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
@@ -27,6 +34,11 @@ export default async function AdminProduits() {
       </header>
 
       <main className="max-w-[1100px] mx-auto px-6 py-10">
+        {dbError && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-6 py-4 mb-8 text-[13px]">
+            <strong>Erreur de connexion à la base de données.</strong> Configurez <code className="bg-red-100 px-1 font-mono">DATABASE_URL</code> dans les variables d&apos;environnement Hostinger.
+          </div>
+        )}
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-[24px] font-bold text-black">Produits ({products.length})</h1>
           <Link href="/admin/produits/nouveau" className="bg-[#6D071A] text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3 hover:bg-black transition-colors">
