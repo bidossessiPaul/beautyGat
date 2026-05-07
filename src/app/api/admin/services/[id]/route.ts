@@ -53,6 +53,22 @@ export async function PUT(req: NextRequest, { params }: Params) {
   }
 }
 
+export async function PATCH(req: NextRequest, { params }: Params) {
+  const { id } = await params;
+  try {
+    const { active } = await req.json();
+    const service = await prisma.service.update({
+      where: { id },
+      data: { active },
+      select: { id: true, active: true },
+    });
+    return NextResponse.json(service);
+  } catch (err) {
+    console.error("[api/admin/services/[id]] PATCH error:", err);
+    return NextResponse.json({ error: "DB error" }, { status: 500 });
+  }
+}
+
 export async function DELETE(_req: NextRequest, { params }: Params) {
   const { id } = await params;
   try {
