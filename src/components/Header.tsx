@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { PhoneIcon, ChevronDownIcon } from "@/components/icons";
@@ -66,9 +67,14 @@ const NAV_LINKS = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [openCategory, setOpenCategory] = useState<string | null>(
+    () => MEGA_MENU.find((col) => col.links.some((l) => l.href === pathname))?.title ?? null
+  );
+
+  const isSoinsActive = pathname.startsWith("/soins/") || pathname === "/menu";
 
   function closeMobile() {
     setMobileOpen(false);
@@ -99,7 +105,7 @@ export function Header() {
         <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
           {/* Trigger mega menu */}
           <button
-            className={`flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide transition-colors cursor-pointer whitespace-nowrap ${megaOpen ? "text-[#6D071A]" : "text-black hover:text-[#6D071A]"}`}
+            className={`flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide transition-colors cursor-pointer whitespace-nowrap ${megaOpen || isSoinsActive ? "text-[#6D071A]" : "text-black hover:text-[#6D071A]"}`}
             onMouseEnter={() => setMegaOpen(true)}
           >
             Nos soins
@@ -110,7 +116,7 @@ export function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[13px] font-semibold uppercase tracking-wide text-black hover:text-[#6D071A] transition-colors whitespace-nowrap"
+              className={`text-[13px] font-semibold uppercase tracking-wide transition-colors whitespace-nowrap ${pathname === item.href ? "text-[#6D071A]" : "text-black hover:text-[#6D071A]"}`}
             >
               {item.label}
             </Link>
@@ -170,18 +176,21 @@ export function Header() {
                   {col.title}
                 </p>
                 <ul className="space-y-2.5">
-                  {col.links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        onClick={() => setMegaOpen(false)}
-                        className="group flex items-center gap-2 text-[13px] text-[#444] hover:text-[#6D071A] transition-colors"
-                      >
-                        <span className="w-0 group-hover:w-2 h-px bg-[#6D071A] transition-all duration-200 shrink-0" />
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {col.links.map((link) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          onClick={() => setMegaOpen(false)}
+                          className={`group flex items-center gap-2 text-[13px] transition-colors ${isActive ? "text-[#6D071A] font-semibold" : "text-[#444] hover:text-[#6D071A]"}`}
+                        >
+                          <span className={`h-px bg-[#6D071A] transition-all duration-200 shrink-0 ${isActive ? "w-2" : "w-0 group-hover:w-2"}`} />
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
@@ -235,7 +244,7 @@ export function Header() {
                         <Link
                           href={link.href}
                           onClick={closeMobile}
-                          className="block py-1.5 text-[13px] text-[#555] hover:text-[#6D071A] transition-colors"
+                          className={`block py-1.5 text-[13px] transition-colors ${pathname === link.href ? "text-[#6D071A] font-semibold" : "text-[#555] hover:text-[#6D071A]"}`}
                         >
                           {link.label}
                         </Link>
@@ -262,7 +271,7 @@ export function Header() {
               key={item.label}
               href={item.href}
               onClick={closeMobile}
-              className="flex items-center px-3 py-3 text-[14px] font-semibold text-black hover:text-[#6D071A] hover:bg-[#fafafa] rounded transition-colors"
+              className={`flex items-center px-3 py-3 text-[14px] font-semibold rounded transition-colors hover:bg-[#fafafa] ${pathname === item.href ? "text-[#6D071A]" : "text-black hover:text-[#6D071A]"}`}
             >
               {item.label}
             </Link>

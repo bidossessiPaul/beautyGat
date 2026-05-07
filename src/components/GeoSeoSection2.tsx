@@ -7,16 +7,16 @@ import { useRef, useEffect } from "react";
 
 const IMAGES = [
   {
-    src: "/beautygate/services/J4pZHLIOEvHOmvfIlVfp7wPLYg3UMnUae5PW48Cr.jpg",
-    alt: "Soins corps Academy Beauty Gate Cotonou",
+    src: "/images/dsc01155.jpg",
+    alt: "Soin LED thérapeutique — technologie médicale de pointe à Cotonou",
   },
   {
-    src: "/beautygate/categories/H5x4IEaQz7SeAGGOIKVSZ6nqzIaQ8XonlcyrJwII.jpg",
-    alt: "Espace beauté Cotonou Bénin",
+    src: "/images/dsc01280.jpg",
+    alt: "Traitement ultra-sons par praticienne certifiée Academy Beauty Gate",
   },
   {
-    src: "/beautygate/gallery/LcDicyh6kKAgltJo5xF1UTp44idBu5GgBPTvf3Eh.jpg",
-    alt: "Academy Beauty Gate Cadjehoun Cotonou",
+    src: "/images/dsc01308-scaled.jpg",
+    alt: "Résultats peau lumineuse — soins visage Academy Beauty Gate Cotonou",
   },
 ];
 
