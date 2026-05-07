@@ -6,41 +6,41 @@ import Link from "next/link";
 
 const SERVICES = [
   {
-    title: "Épilation Laser",
-    tag: "By Clarity II",
-    image: "/images/dsc00744-1-scaled.jpg",
-    href: "/epilation-laser-paris",
-    featured: true,
-  },
-  {
     title: "Hydrafacial®",
-    tag: "Soin visage",
+    tag: "Soin visage premium",
     image: "/images/img_4538.jpg",
-    href: "/hydrafacial-paris",
+    href: "/soins/hydrafacial-cotonou",
+    featured: true,
   },
   {
     title: "Peeling",
     tag: "Novelskin & Mediderma",
     image: "/images/dsc01308-scaled.jpg",
-    href: "/peeling-visage-paris",
+    href: "/soins/peeling-visage-cotonou",
   },
   {
     title: "Microneedling",
     tag: "Anti-âge",
     image: "/images/microneedling-appart-beaute.png",
-    href: "/microneedling-paris",
+    href: "/soins/microneedling-cotonou",
   },
   {
     title: "Cryolipolyse",
     tag: "By CRISTAL Pro®",
     image: "/images/adobestock-316410994-jidarv-1-scaled.jpeg",
-    href: "/cryolipolyse-paris",
+    href: "/soins/cryolipolyse-cotonou",
   },
   {
-    title: "Détatouage Laser",
-    tag: "By Hollywood Peel™",
-    image: "/images/design-sans-titre-2.png",
-    href: "/detatouage-laser-paris",
+    title: "Photomodulation LED",
+    tag: "Thérapie lumineuse",
+    image: "/images/soins/photomodulation-led/hero.jpg",
+    href: "/soins/photomodulation-led-cotonou",
+  },
+  {
+    title: "Carbon Laser Peel",
+    tag: "Éclat & pureté",
+    image: "/images/soins/carbon-laser-peel/hero.jpg",
+    href: "/soins/carbon-laser-peel-cotonou",
   },
 ];
 

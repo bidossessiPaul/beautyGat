@@ -6,16 +6,6 @@ import { useEffect, useRef, useState } from "react";
 
 const CATEGORIES = [
   {
-    title: "Épilation laser & électrolyse",
-    description:
-      "Des solutions permanentes adaptées à tous les phototypes pour une peau lisse et sans poils durablement. Notre équipe maîtrise les protocoles les plus efficaces pour les peaux africaines et métissées.",
-    image: "/images/dsc00744-1-scaled.jpg",
-    href: "/epilation-laser-cotonou",
-    services: ["Épilation laser", "Électrolyse", "Épilation à la cire"],
-    tag: "Laser & haute fréquence",
-    cta: "Découvrir l'épilation",
-  },
-  {
     title: "Soins du visage",
     description:
       "Des technologies médicales avancées pour révéler l'éclat naturel de votre peau. Hydrafacial, peeling, carbon laser peel — chaque soin est adapté à votre diagnostic peau personnalisé.",

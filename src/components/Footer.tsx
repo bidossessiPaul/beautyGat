@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const SERVICES = [
-  "Épilation laser",
   "Soins du visage",
   "Hydrafacial",
   "Peeling",
