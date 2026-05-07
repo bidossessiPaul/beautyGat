@@ -4,20 +4,82 @@ import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
 import { ServicePageTemplate } from "@/components/ServicePageTemplate";
 import { JsonLd } from "@/components/JsonLd";
-import { services, getServiceBySlug } from "@/data/services";
+import { services, getServiceBySlug, type ServiceData } from "@/data/services";
 import { buildMetadata, serviceSchema, faqSchema, breadcrumbSchema, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
+import { prisma } from "@/lib/prisma";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+/* Convert a DB Service record to the ServiceData shape the template expects */
+function dbServiceToServiceData(s: {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  category: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  hero: any; badges: any; intro: any; benefits: any; pricing: any; faq: any; cta: any;
+}): ServiceData {
+  return {
+    slug: s.slug,
+    title: s.title,
+    metaDescription: s.metaDescription,
+    category: s.category as ServiceData["category"],
+    hero: {
+      image: s.hero?.image ?? undefined,
+      imageAlt: s.hero?.imageAlt ?? "",
+      eyebrow: s.hero?.eyebrow ?? "",
+      headline: s.hero?.headline ?? s.title,
+      subheadline: s.hero?.subheadline ?? "",
+      imagePosition: s.hero?.imagePosition ?? "center",
+    },
+    badges: Array.isArray(s.badges) ? s.badges : [],
+    intro: {
+      image: s.intro?.image ?? undefined,
+      imageAlt: s.intro?.imageAlt ?? "",
+      headline: s.intro?.headline ?? "",
+      description: s.intro?.description ?? "",
+      listItems: Array.isArray(s.intro?.listItems) ? s.intro.listItems : [],
+    },
+    benefits: Array.isArray(s.benefits) ? s.benefits : [],
+    pricing: {
+      headline: s.pricing?.headline ?? "",
+      note: s.pricing?.note ?? "",
+      items: Array.isArray(s.pricing?.items) ? s.pricing.items : [],
+    },
+    faq: Array.isArray(s.faq) ? s.faq : [],
+    cta: {
+      headline: s.cta?.headline ?? "",
+      description: s.cta?.description ?? "",
+    },
+  };
+}
+
+async function getService(slug: string): Promise<ServiceData | null> {
+  // Try DB first
+  try {
+    const dbService = await prisma.service.findUnique({
+      where: { slug, active: true },
+    });
+    if (dbService) return dbServiceToServiceData(dbService);
+  } catch {
+    // DB unavailable — fall through to static
+  }
+
+  // Fall back to static data
+  return getServiceBySlug(slug) ?? null;
 }
 
 export async function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = await getService(slug);
   if (!service) return {};
   return buildMetadata({
     title: service.title,
@@ -29,7 +91,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const service = await getService(slug);
   if (!service) notFound();
 
   const schemas = [
