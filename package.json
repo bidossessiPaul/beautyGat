@@ -28,10 +28,10 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build && cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public",
+    "build": "prisma generate && next build",
     "postinstall": "prisma generate",
     "seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts",
-    "start": "node .next/standalone/server.js",
+    "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm run build"
