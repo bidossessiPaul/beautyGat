@@ -52,10 +52,12 @@ export const metadata: Metadata = {
   creator: SITE.name,
   icons: {
     icon: [
-      { url: "/seo/cropped-appart-beaute-favicon-32x32.png", sizes: "32x32" },
-      { url: "/seo/cropped-appart-beaute-favicon-192x192.png", sizes: "192x192" },
+      { url: "/seo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/seo/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/seo/icon-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/seo/cropped-appart-beaute-favicon-180x180.png",
+    apple: { url: "/seo/apple-icon-180x180.png", sizes: "180x180", type: "image/png" },
+    shortcut: "/seo/favicon-32x32.png",
   },
   openGraph: {
     title: "Academy Beauty Gate Cotonou — Espace de bien-être, de beauté et de formation & esthétique avancée",
