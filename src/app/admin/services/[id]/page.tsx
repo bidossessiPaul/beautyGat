@@ -23,7 +23,7 @@ export default async function EditServicePage({ params }: Props) {
   if (service === null) notFound();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const initial = service ? { ...service, hero: service.hero as any, badges: service.badges as any, intro: service.intro as any, benefits: service.benefits as any, pricing: service.pricing as any, faq: service.faq as any, cta: service.cta as any } : undefined;
+  const initial = service ? { ...service, hero: service.hero as any, badges: service.badges as any, intro: service.intro as any, benefits: service.benefits as any, pricing: service.pricing as any, faq: service.faq as any, cta: service.cta as any, gallery: service.gallery as any } : undefined;
 
   return (
     <AdminShell>

@@ -21,7 +21,7 @@ export async function PUT(req: NextRequest, { params }: Params) {
   const { id } = await params;
   try {
     const body = await req.json();
-    const { slug, title, metaDescription, category, active, sortOrder, hero, badges, intro, benefits, pricing, faq, cta } = body;
+    const { slug, title, metaDescription, category, active, sortOrder, hero, badges, intro, benefits, pricing, faq, cta, gallery } = body;
 
     const service = await prisma.service.update({
       where: { id },
@@ -39,6 +39,7 @@ export async function PUT(req: NextRequest, { params }: Params) {
         pricing,
         faq,
         cta,
+        gallery: gallery ?? [],
       },
     });
 

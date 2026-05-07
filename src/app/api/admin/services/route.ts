@@ -16,7 +16,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { slug, title, metaDescription, category, active, sortOrder, hero, badges, intro, benefits, pricing, faq, cta } = body;
+    const { slug, title, metaDescription, category, active, sortOrder, hero, badges, intro, benefits, pricing, faq, cta, gallery } = body;
 
     if (!slug || !title) {
       return NextResponse.json({ error: "slug et title sont requis" }, { status: 400 });
@@ -37,6 +37,7 @@ export async function POST(req: NextRequest) {
         pricing: pricing ?? {},
         faq: faq ?? [],
         cta: cta ?? {},
+        gallery: gallery ?? [],
       },
     });
 

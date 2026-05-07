@@ -27,7 +27,7 @@ function dbServiceToServiceData(s: {
     metaDescription: s.metaDescription,
     category: s.category as ServiceData["category"],
     hero: {
-      image: s.hero?.image ?? undefined,
+      image: s.hero?.image || undefined,
       imageAlt: s.hero?.imageAlt ?? "",
       eyebrow: s.hero?.eyebrow ?? "",
       headline: s.hero?.headline ?? s.title,
@@ -36,7 +36,7 @@ function dbServiceToServiceData(s: {
     },
     badges: Array.isArray(s.badges) ? s.badges : [],
     intro: {
-      image: s.intro?.image ?? undefined,
+      image: s.intro?.image || undefined,
       imageAlt: s.intro?.imageAlt ?? "",
       headline: s.intro?.headline ?? "",
       description: s.intro?.description ?? "",

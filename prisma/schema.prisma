@@ -55,6 +55,7 @@ model Service {
   pricing         Json
   faq             Json
   cta             Json
+  gallery         Json     @default("[]")
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
