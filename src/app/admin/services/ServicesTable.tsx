@@ -139,7 +139,7 @@ export function ServicesTable({ services }: { services: Service[] }) {
       ) : (
         <>
           {/* ── Layout carte (mobile + tablet) ─────────────── */}
-          <div className="xl:hidden bg-white border border-[#e8e8e8] divide-y divide-[#f0f0f0]">
+          <div className="lg:hidden bg-white border border-[#e8e8e8] divide-y divide-[#f0f0f0]">
             {filtered.map((service) => (
               <div key={service.id} className="flex items-center gap-3 px-4 py-3">
                 {/* Toggle */}
@@ -168,7 +168,7 @@ export function ServicesTable({ services }: { services: Service[] }) {
           </div>
 
           {/* ── Table (desktop xl+) ─────────────────────────── */}
-          <div className="hidden xl:block bg-white border border-[#e8e8e8]">
+          <div className="hidden lg:block bg-white border border-[#e8e8e8]">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-[#f0f0f0]">
