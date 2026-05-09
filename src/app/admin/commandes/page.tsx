@@ -31,7 +31,7 @@ export default async function AdminCommandes() {
 
   return (
     <AdminShell>
-      <div className="px-8 py-8">
+      <div className="px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-[22px] font-bold text-[#1a1a1a]">Commandes</h1>

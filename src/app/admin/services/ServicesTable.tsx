@@ -65,9 +65,9 @@ function DeleteButton({ id, title }: { id: string; title: string }) {
     <button
       onClick={handleDelete}
       disabled={loading}
-      className="text-[12px] font-medium text-red-500 hover:text-red-700 transition-colors px-3 py-1.5 border border-red-200 hover:border-red-400 disabled:opacity-50"
+      className="text-[12px] font-medium text-red-500 hover:text-red-700 transition-colors px-2.5 py-1.5 border border-red-200 hover:border-red-400 disabled:opacity-50"
     >
-      {loading ? "..." : "Supprimer"}
+      {loading ? "…" : "Sup."}
     </button>
   );
 }
@@ -92,9 +92,9 @@ export function ServicesTable({ services }: { services: Service[] }) {
 
   return (
     <>
-      {/* Barre de recherche + filtres */}
-      <div className="flex items-center gap-3 mb-4">
-        <div className="relative flex-1 max-w-sm">
+      {/* Barre recherche + filtres */}
+      <div className="flex flex-col sm:flex-row gap-2 sm:items-center mb-4">
+        <div className="relative flex-1 sm:max-w-sm">
           <svg
             viewBox="0 0 20 20"
             fill="currentColor"
@@ -108,7 +108,7 @@ export function ServicesTable({ services }: { services: Service[] }) {
           </svg>
           <input
             type="text"
-            placeholder="Rechercher par titre, slug, catégorie…"
+            placeholder="Rechercher…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full pl-9 pr-4 py-2 text-[13px] border border-[#e8e8e8] focus:border-[#6D071A] focus:outline-none bg-white"
@@ -120,7 +120,7 @@ export function ServicesTable({ services }: { services: Service[] }) {
             <button
               key={f}
               onClick={() => setFilterActive(f)}
-              className={`px-3 py-2 text-[12px] font-medium border transition-colors ${
+              className={`flex-1 sm:flex-none px-3 py-2 text-[12px] font-medium border transition-colors ${
                 filterActive === f
                   ? "bg-[#6D071A] text-white border-[#6D071A]"
                   : "bg-white text-[#555] border-[#e8e8e8] hover:border-[#6D071A] hover:text-[#6D071A]"
@@ -131,7 +131,7 @@ export function ServicesTable({ services }: { services: Service[] }) {
           ))}
         </div>
 
-        <span className="text-[12px] text-[#999] ml-auto shrink-0">
+        <span className="text-[12px] text-[#999] sm:ml-auto shrink-0">
           {filtered.length} / {services.length}
         </span>
       </div>
@@ -142,29 +142,44 @@ export function ServicesTable({ services }: { services: Service[] }) {
           Aucun service ne correspond à votre recherche.
         </div>
       ) : (
-        <div className="bg-white border border-[#e8e8e8]">
-          <table className="w-full">
+        <div className="bg-white border border-[#e8e8e8] overflow-x-auto">
+          <table className="w-full min-w-[420px]">
             <thead>
               <tr className="border-b border-[#f0f0f0]">
-                {["Titre", "Slug", "Catégorie", "Actif", "Créé le", ""].map((h) => (
-                  <th
-                    key={h}
-                    className="text-left px-5 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]"
-                  >
-                    {h}
-                  </th>
-                ))}
+                <th className="text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">
+                  Titre
+                </th>
+                <th className="hidden sm:table-cell text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">
+                  Catégorie
+                </th>
+                <th className="hidden md:table-cell text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">
+                  Slug
+                </th>
+                <th className="text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">
+                  Actif
+                </th>
+                <th className="hidden lg:table-cell text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">
+                  Créé le
+                </th>
+                <th className="px-4 py-3" />
               </tr>
             </thead>
             <tbody className="divide-y divide-[#f9f9f9]">
               {filtered.map((service) => (
                 <tr key={service.id} className="hover:bg-[#fafafa] transition-colors">
-                  <td className="px-5 py-3.5">
+                  <td className="px-4 py-3">
                     <p className="text-[13px] font-semibold text-[#1a1a1a] leading-tight">
                       {service.title}
                     </p>
+                    {/* Catégorie visible sous le titre sur mobile */}
+                    <p className="sm:hidden text-[11px] text-[#999] mt-0.5 capitalize">
+                      {service.category}
+                    </p>
                   </td>
-                  <td className="px-5 py-3.5">
+                  <td className="hidden sm:table-cell px-4 py-3">
+                    <span className="text-[12px] text-[#666] capitalize">{service.category}</span>
+                  </td>
+                  <td className="hidden md:table-cell px-4 py-3">
                     <Link
                       href={`/soins/${service.slug}`}
                       target="_blank"
@@ -173,20 +188,17 @@ export function ServicesTable({ services }: { services: Service[] }) {
                       {service.slug}
                     </Link>
                   </td>
-                  <td className="px-5 py-3.5">
-                    <span className="text-[12px] text-[#666] capitalize">{service.category}</span>
-                  </td>
-                  <td className="px-5 py-3.5">
+                  <td className="px-4 py-3">
                     <ToggleActiveButton id={service.id} active={service.active} />
                   </td>
-                  <td className="px-5 py-3.5 text-[13px] text-[#999]">
+                  <td className="hidden lg:table-cell px-4 py-3 text-[13px] text-[#999]">
                     {new Date(service.createdAt).toLocaleDateString("fr-FR")}
                   </td>
-                  <td className="px-5 py-3.5">
-                    <div className="flex items-center gap-2 justify-end">
+                  <td className="px-4 py-3">
+                    <div className="flex items-center gap-1.5 justify-end">
                       <Link
                         href={`/admin/services/${service.id}`}
-                        className="text-[12px] font-medium text-[#555] hover:text-[#6D071A] transition-colors px-3 py-1.5 border border-[#e8e8e8] hover:border-[#6D071A]"
+                        className="text-[12px] font-medium text-[#555] hover:text-[#6D071A] transition-colors px-2.5 py-1.5 border border-[#e8e8e8] hover:border-[#6D071A] whitespace-nowrap"
                       >
                         Modifier
                       </Link>

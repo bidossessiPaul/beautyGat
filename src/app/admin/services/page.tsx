@@ -30,9 +30,9 @@ export default async function AdminServices() {
 
   return (
     <AdminShell>
-      <div className="px-8 py-8">
+      <div className="px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 md:mb-8">
           <div>
             <h1 className="text-[22px] font-bold text-[#1a1a1a]">Services</h1>
             <p className="text-[13px] text-[#999] mt-0.5">
