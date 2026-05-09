@@ -162,7 +162,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
       <div className="flex-1 min-w-0 md:ml-[220px] flex flex-col">
 
         {/* Top bar — mobile only */}
-        <header className="md:hidden sticky top-0 z-30 bg-[#1a1a1a] flex items-center justify-between px-4 h-14 shrink-0">
+        <header className="md:hidden sticky top-0 z-50 bg-[#1a1a1a] flex items-center justify-between px-4 h-14 shrink-0">
           <div className="flex items-center gap-2">
             <span className="text-white font-bold text-[14px]">Beauty Gate</span>
             <span className="text-[9px] uppercase tracking-widest bg-[#6D071A] text-white px-1.5 py-0.5 font-bold rounded-[2px]">
