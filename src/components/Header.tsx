@@ -74,7 +74,7 @@ export function Header() {
     () => MEGA_MENU.find((col) => col.links.some((l) => l.href === pathname))?.title ?? null
   );
 
-  const isSoinsActive = pathname.startsWith("/soins/") || pathname === "/menu";
+  const isSoinsActive = pathname.startsWith("/soins/") || pathname === "/menu" || pathname === "/nos-soins";
 
   function closeMobile() {
     setMobileOpen(false);
@@ -202,7 +202,7 @@ export function Header() {
               Plus de <strong className="text-black">150 prestations</strong> disponibles dans notre centre
             </p>
             <Link
-              href="/menu"
+              href="/nos-soins"
               onClick={() => setMegaOpen(false)}
               className="group relative overflow-hidden inline-flex items-center gap-2 bg-[#6D071A] text-white text-[11px] font-bold uppercase tracking-widest px-6 py-3"
             >
@@ -252,7 +252,7 @@ export function Header() {
                     ))}
                     <li>
                       <Link
-                        href="/menu"
+                        href="/nos-soins"
                         onClick={closeMobile}
                         className="block py-1.5 text-[12px] font-semibold text-[#6D071A]"
                       >
