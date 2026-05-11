@@ -28,7 +28,7 @@ export function CTASection() {
           Prenez rendez-vous dès aujourd'hui et bénéficiez d'un diagnostic de peau offert avec votre première séance.
         </p>
         <Link
-          href="#contact"
+          href="/rendez-vous"
           className="group relative overflow-hidden inline-block bg-white border-2 border-white text-[13px] font-medium uppercase rounded-[3px] px-8 py-[16px]"
         >
           <span className="absolute inset-0 bg-[#6D071A] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />

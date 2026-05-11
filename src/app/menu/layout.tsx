@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Menu des prestations",
   description:
-    "Toutes les prestations d'Academy Beauty Gate Cotonou : 151 services répartis en 9 catégories. Soins visage, épilation, massages, coiffure, maquillage, onglerie. Tarifs en FCFA.",
+    "Toutes les prestations d'Academy Beauty Gate Cotonou — soins du visage, épilation, massages, maquillage, onglerie, duo & enfants. Tarifs en FCFA.",
   path: "/menu",
 });
 

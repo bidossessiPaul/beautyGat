@@ -89,7 +89,7 @@ export function AboutSection() {
             Dans un cadre chaleureux et professionnel, nous créons un espace de confiance où vous pouvez vous ressourcer et prendre soin de vous en toute sérénité.
           </p>
           <Link
-            href="#contact"
+            href="/rendez-vous"
             className="group relative overflow-hidden inline-block bg-[#6D071A] border-2 border-[#6D071A] text-[13px] font-medium uppercase rounded-[3px] px-6 py-[19px] self-start"
           >
             <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />

@@ -13,12 +13,13 @@ export default async function AdminServices() {
     category: string;
     active: boolean;
     createdAt: Date;
+    hero: object;
   }[] = [];
   let dbError = false;
 
   try {
     services = await prisma.service.findMany({
-      select: { id: true, slug: true, title: true, category: true, active: true, createdAt: true },
+      select: { id: true, slug: true, title: true, category: true, active: true, createdAt: true, hero: true },
       orderBy: [{ sortOrder: "asc" }, { createdAt: "desc" }],
     });
   } catch (err) {

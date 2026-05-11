@@ -3,44 +3,26 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  LayoutDashboard,
+  Sparkles,
+  ShoppingBag,
+  FolderOpen,
+  ClipboardList,
+  CalendarCheck,
+  LogOut,
+  X,
+  Menu,
+  ExternalLink,
+} from "lucide-react";
 
 const NAV = [
-  {
-    href: "/admin/dashboard",
-    label: "Dashboard",
-    icon: (
-      <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-        <path d="M2 10a8 8 0 1 1 16 0A8 8 0 0 1 2 10zm8-3a1 1 0 0 1 1 1v2h2a1 1 0 1 1 0 2h-3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" />
-      </svg>
-    ),
-  },
-  {
-    href: "/admin/services",
-    label: "Services",
-    icon: (
-      <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-        <path fillRule="evenodd" d="M3 4a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h7a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z" clipRule="evenodd" />
-      </svg>
-    ),
-  },
-  {
-    href: "/admin/produits",
-    label: "Produits",
-    icon: (
-      <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-        <path d="M3 1a1 1 0 0 0 0 2h1.22l.305 1.222a.997.997 0 0 0 .01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 0 0 0-2H6.414l1-1H14a1 1 0 0 0 .894-.553l3-6A1 1 0 0 0 17 3H6.28l-.31-1.243A1 1 0 0 0 5 1H3z" />
-      </svg>
-    ),
-  },
-  {
-    href: "/admin/commandes",
-    label: "Commandes",
-    icon: (
-      <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-        <path fillRule="evenodd" d="M5 4v3H4a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v2a1 1 0 1 0 2 0v-2h6v2a1 1 0 1 0 2 0v-2h1a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-1V4a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3zm8 0v3H7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1zm-4 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" clipRule="evenodd" />
-      </svg>
-    ),
-  },
+  { href: "/admin/dashboard", label: "Dashboard",      icon: LayoutDashboard },
+  { href: "/admin/rdv",       label: "Rendez-vous",    icon: CalendarCheck },
+  { href: "/admin/services",  label: "Services",       icon: Sparkles },
+  { href: "/admin/produits",  label: "Produits",       icon: ShoppingBag },
+  { href: "/admin/categories",label: "Catégories",     icon: FolderOpen },
+  { href: "/admin/commandes", label: "Commandes",      icon: ClipboardList },
 ];
 
 function SidebarContent({ pathname, onClose }: { pathname: string; onClose?: () => void }) {
@@ -62,18 +44,13 @@ function SidebarContent({ pathname, onClose }: { pathname: string; onClose?: () 
               onClick={onClose}
               className="text-white/35 text-[11px] hover:text-white/60 transition-colors flex items-center gap-1"
             >
-              <svg viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3">
-                <path fillRule="evenodd" d="M8 1a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V1.75A.75.75 0 0 1 8 1zM4.96 3.46a.75.75 0 0 1 0 1.061A5.25 5.25 0 1 0 11.04 4.52a.75.75 0 1 1 1.06-1.06 6.75 6.75 0 1 1-9.2-.001.75.75 0 0 1 1.06 0z" clipRule="evenodd" />
-              </svg>
+              <ExternalLink className="w-3 h-3" />
               Voir le site
             </Link>
           </div>
-          {/* Close button — mobile only */}
           {onClose && (
             <button onClick={onClose} className="md:hidden text-white/40 hover:text-white p-1">
-              <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10 4.293 5.707a1 1 0 0 1 0-1.414z" clipRule="evenodd" />
-              </svg>
+              <X className="w-5 h-5" />
             </button>
           )}
         </div>
@@ -87,6 +64,7 @@ function SidebarContent({ pathname, onClose }: { pathname: string; onClose?: () 
       {/* Nav */}
       <nav className="flex-1 px-3 space-y-0.5">
         {NAV.map((item) => {
+          const Icon = item.icon;
           const active =
             item.href === "/admin/dashboard"
               ? pathname === "/admin/dashboard" || pathname === "/admin"
@@ -102,7 +80,7 @@ function SidebarContent({ pathname, onClose }: { pathname: string; onClose?: () 
                   : "text-white/55 hover:text-white hover:bg-white/7"
               }`}
             >
-              <span className={active ? "text-white" : "text-white/40"}>{item.icon}</span>
+              <Icon className={`w-4 h-4 shrink-0 ${active ? "text-white" : "text-white/40"}`} />
               {item.label}
             </Link>
           );
@@ -116,10 +94,7 @@ function SidebarContent({ pathname, onClose }: { pathname: string; onClose?: () 
             type="submit"
             className="w-full flex items-center gap-3 px-3 py-2.5 text-[13px] text-white/40 hover:text-red-400 hover:bg-white/5 rounded-[4px] transition-all"
           >
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-              <path fillRule="evenodd" d="M3 3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h7a1 1 0 1 0 0-2H4V5h6a1 1 0 1 0 0-2H3zm11.707 4.293a1 1 0 0 1 0 1.414L13.414 10l1.293 1.293a1 1 0 0 1-1.414 1.414l-2-2a1 1 0 0 1 0-1.414l2-2a1 1 0 0 1 1.414 0z" clipRule="evenodd" />
-              <path d="M13 10a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1z" />
-            </svg>
+            <LogOut className="w-4 h-4 shrink-0" />
             Déconnexion
           </button>
         </form>
@@ -146,9 +121,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           className="fixed inset-0 z-50 md:hidden"
           onClick={() => setDrawerOpen(false)}
         >
-          {/* Backdrop */}
           <div className="absolute inset-0 bg-black/50" />
-          {/* Panel */}
           <aside
             className="absolute top-0 left-0 w-[260px] h-full bg-[#1a1a1a] flex flex-col"
             onClick={(e) => e.stopPropagation()}
@@ -174,9 +147,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             className="text-white/60 hover:text-white p-1"
             aria-label="Menu"
           >
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-              <path fillRule="evenodd" d="M3 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z" clipRule="evenodd" />
-            </svg>
+            <Menu className="w-5 h-5" />
           </button>
         </header>
 

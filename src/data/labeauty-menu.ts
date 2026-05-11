@@ -273,42 +273,12 @@ export const menuCategories: MenuCategory[] = [
     ],
   },
 
-  // ─── BARBER SHOP ──────────────────────────────────────────────────────────────
-  {
-    emoji: "✂️",
-    label: "Barber Shop",
-    slug: "barber",
-    services: [
-      { name: "Coupe classique", price: "2 000 FCFA", duration: "30 min" },
-      { name: "Coupe stylée exclusive curly", price: "8 000 FCFA", duration: "45 min" },
-      { name: "Coupe stylée exclusive twist", price: "10 000 FCFA", duration: "1h" },
-      { name: "Shampoing + Coupe classique + Teinte noire", price: "5 000 FCFA", duration: "1h15" },
-      { name: "Shampoing + Coupe + Teinte (or, rouge…)", price: "9 000 FCFA", duration: "1h30" },
-      { name: "Coupe classique + Head massage", price: "6 000 FCFA", duration: "45 min" },
-      { name: "Soin de visage express (homme)", price: "6 000 FCFA", duration: "30 min" },
-      { name: "Barbe", price: "1 000 FCFA", duration: "15 min" },
-      { name: "Traitement barbe", price: "2 000 FCFA", duration: "20 min" },
-      { name: "Traitement cheveux (homme)", price: "5 000 FCFA", duration: "45 min" },
-      { name: "Coupe + Nattes sans mèche", price: "3 000 FCFA", duration: "1h" },
-    ],
-  },
-
   // ─── ESPACE DUO & ENFANTS ─────────────────────────────────────────────────────
   {
     emoji: "🫶",
     label: "Espace Duo & Enfants",
     slug: "duo-enfants",
     services: [
-      { name: "Shampoing et Brushing enfant", price: "1 500 FCFA", duration: "30 min" },
-      { name: "Chignon enfant", price: "2 500 FCFA", duration: "30 min" },
-      { name: "Pompom enfant", price: "1 500 FCFA", duration: "20 min" },
-      { name: "Nattes simples enfant", price: "1 000 FCFA", duration: "30 min" },
-      { name: "Nattes avec mèches enfant", price: "3 000 FCFA", duration: "1h30" },
-      { name: "Nattes avec perles enfant", price: "2 500 FCFA", duration: "1h" },
-      { name: "Twist sans mèches enfant", price: "2 000 FCFA", duration: "1h" },
-      { name: "Twist avec mèches enfant", price: "3 000 FCFA", duration: "1h30" },
-      { name: "Knotless enfant", price: "5 000 FCFA", duration: "2–3h" },
-      { name: "Coupe fille / garçon enfant", price: "1 000 FCFA", duration: "20 min" },
       { name: "Petits doigts de fée (manucure enfant)", price: "2 000 FCFA", duration: "20 min" },
       { name: "Pédicure enfant", price: "2 000 FCFA", duration: "20 min" },
       { name: "Vernis simple mains ou pieds enfant", price: "1 500 FCFA", duration: "15 min" },

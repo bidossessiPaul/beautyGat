@@ -3,118 +3,155 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
-import { services, ServiceData } from "@/data/services";
+import { prisma } from "@/lib/prisma";
+import { CATEGORY_LABELS, CATEGORY_FALLBACK_IMAGES } from "./config";
 
 export const metadata = {
   title: "Nos Soins à Cotonou — Academy Beauty Gate",
-  description: "Découvrez tous nos soins beauté à Cotonou : visage, corps, épilation, massages, injections et bien plus.",
+  description:
+    "Découvrez tous nos soins beauté à Cotonou : visage, corps, épilation, massages, injections et bien plus. Academy Beauty Gate, Cadjehoun.",
 };
 
-const CATEGORIES: { key: ServiceData["category"]; label: string }[] = [
-  { key: "visage",         label: "LES SOINS DU VISAGE" },
-  { key: "corps",          label: "LES SOINS DU CORPS" },
-  { key: "epilation",      label: "ÉPILATION LASER" },
-  { key: "epilation-cire", label: "ÉPILATION À LA CIRE" },
-  { key: "massages",       label: "LES MASSAGES CORPORELS" },
-  { key: "mains-pieds",    label: "MAINS & PIEDS" },
-  { key: "barber",         label: "BARBERSHOP" },
-  { key: "duo-enfants",    label: "DUO & ENFANTS" },
-  { key: "injections",     label: "PRESTATIONS MÉDICALES" },
-  { key: "diagnostic",     label: "LES CONSULTATIONS" },
-  { key: "privatisation",  label: "PRIVATISATION" },
-];
+export const revalidate = 60;
 
-export default function NosSoins() {
-  const grouped = CATEGORIES.map((cat) => ({
-    ...cat,
-    items: services.filter((s) => s.category === cat.key),
-  })).filter((g) => g.items.length > 0);
+export default async function NosSoins() {
+  // Compte de services par catégorie
+  const serviceGroups = await prisma.service.groupBy({
+    by: ["category"],
+    where: { active: true },
+    _count: { id: true },
+  });
+  const countMap = new Map(serviceGroups.map((g) => [g.category, g._count.id]));
+
+  // Auto-crée les catégories manquantes dans ServiceCategory
+  for (const key of countMap.keys()) {
+    if (CATEGORY_LABELS[key]) {
+      await prisma.serviceCategory.upsert({
+        where: { key },
+        create: {
+          key,
+          label: CATEGORY_LABELS[key],
+          image: CATEGORY_FALLBACK_IMAGES[key] ?? null,
+          sortOrder: 0,
+        },
+        update: {},
+      });
+    }
+  }
+
+  // Catégories depuis la DB (labels et images gérés via admin)
+  const dbCategories = await prisma.serviceCategory.findMany({
+    orderBy: [{ sortOrder: "asc" }, { key: "asc" }],
+  });
+
+  const categories = dbCategories
+    .filter((cat) => countMap.has(cat.key))
+    .map((cat) => ({
+      key: cat.key,
+      label: cat.label,
+      count: countMap.get(cat.key) ?? 0,
+      image: cat.image ?? CATEGORY_FALLBACK_IMAGES[cat.key] ?? null,
+    }));
 
   return (
     <>
       <Header />
 
-      <main className="min-h-screen bg-white pt-28 pb-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-[22px] font-bold text-[#1a1a1a] mb-1">Nos soins</h1>
-          <p className="text-[13px] text-[#999] mb-8">Toutes nos prestations classées par catégorie</p>
+      <main className="min-h-screen bg-[#faf8f6]">
 
-          {/* Grille catégories */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-14">
-            {grouped.map((g) => {
-              const avatars = g.items.filter((s) => s.hero.image).slice(0, 3);
-              const extra = g.items.length - 3;
-              return (
-                <Link
-                  key={g.key}
-                  href={`#${g.key}`}
-                  className="group border border-[#e8e8e8] rounded-xl p-5 hover:border-[#6D071A] hover:shadow-md transition-all duration-200 flex flex-col gap-3"
-                >
-                  <h2 className="text-[13px] font-bold text-[#1a1a1a] uppercase tracking-wide leading-snug group-hover:text-[#6D071A] transition-colors line-clamp-2">
-                    {g.label}
-                  </h2>
-                  <p className="text-[12px] text-[#888]">Services : {g.items.length}</p>
-                  <div className="flex items-center mt-1">
-                    {avatars.map((s, i) => (
-                      <div
-                        key={s.slug}
-                        className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-white ring-1 ring-[#e0e0e0]"
-                        style={{ marginLeft: i === 0 ? 0 : "-8px", zIndex: 10 - i }}
-                      >
-                        <Image src={s.hero.image!} alt={s.hero.imageAlt} fill sizes="32px" className="object-cover" />
-                      </div>
-                    ))}
-                    {extra > 0 && (
-                      <div
-                        className="w-8 h-8 rounded-full bg-[#f2f2f2] border-2 border-white ring-1 ring-[#e0e0e0] flex items-center justify-center text-[10px] font-bold text-[#555]"
-                        style={{ marginLeft: "-8px" }}
-                      >
-                        +{extra}
-                      </div>
-                    )}
-                  </div>
-                </Link>
-              );
-            })}
+        {/* ── HERO ─────────────────────────────────────────────────────── */}
+        <section className="relative bg-black pt-[90px] overflow-hidden">
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage: "url('/images/Appart-beaute-accueil-philosophie-1-scaled.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center 30%",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="relative z-10 max-w-[1300px] mx-auto px-6 md:px-10 py-24 md:py-32">
+            <p className="text-[#f0b8b8] text-xs font-bold uppercase tracking-[0.25em] mb-4">
+              Academy Beauty Gate · Cotonou, Bénin
+            </p>
+            <h1 className="text-white text-[38px] md:text-[58px] font-bold leading-[1.1] mb-5 max-w-[600px]">
+              Nos Soins
+            </h1>
+            <p className="text-white/70 text-[15px] md:text-[17px] leading-[28px] max-w-[520px]">
+              Soins visage, corps, épilation, massages et bien plus — tout ce dont vous avez besoin pour prendre soin de vous.
+            </p>
           </div>
+        </section>
 
-          {/* Détail par catégorie */}
-          <div className="space-y-12">
-            {grouped.map((g) => (
-              <section key={g.key} id={g.key} className="scroll-mt-6">
-                <div className="flex items-center justify-between border-b border-[#f0f0f0] pb-3 mb-5">
-                  <h2 className="text-[15px] font-bold text-[#1a1a1a] uppercase tracking-wider">{g.label}</h2>
-                  <span className="text-[12px] text-[#bbb]">{g.items.length} service{g.items.length > 1 ? "s" : ""}</span>
+        {/* ── CATÉGORIES ───────────────────────────────────────────────── */}
+        <section className="max-w-[1300px] mx-auto px-6 md:px-10 py-16">
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#6D071A] mb-8">
+            Choisissez une catégorie
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {categories.map((cat) => (
+              <Link
+                key={cat.key}
+                href={`/nos-soins/${cat.key}`}
+                className="group relative overflow-hidden bg-white border border-[#e8e8e8] hover:border-[#6D071A]/50 hover:shadow-[0_4px_24px_rgba(109,7,26,0.12)] transition-all duration-300"
+              >
+                {/* Image */}
+                <div className="relative h-[160px] bg-[#ede9e9] overflow-hidden">
+                  {cat.image ? (
+                    <Image
+                      src={cat.image}
+                      alt={cat.label}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                      className="object-cover group-hover:scale-[1.06] transition-transform duration-500 ease-out"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#f5e8ea] to-[#e0c8cc]" />
+                  )}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+                  {/* Badge count */}
+                  <span className="absolute top-2.5 right-2.5 bg-[#6D071A] text-white text-[10px] font-bold px-2 py-0.5">
+                    {cat.count} soin{cat.count > 1 ? "s" : ""}
+                  </span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {g.items.map((s) => (
-                    <Link
-                      key={s.slug}
-                      href={`/soins/${s.slug}`}
-                      className="group border border-[#ebebeb] rounded-lg overflow-hidden hover:border-[#6D071A] hover:shadow-sm transition-all duration-200 flex flex-col"
-                    >
-                      <div className="relative h-36 bg-[#f0f0f0] overflow-hidden">
-                        {s.hero.image ? (
-                          <Image src={s.hero.image} alt={s.hero.imageAlt} fill sizes="300px" className="object-cover group-hover:scale-105 transition-transform duration-300" />
-                        ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-[#f5e8ea] to-[#e8d0d3]" />
-                        )}
-                      </div>
-                      <div className="p-3">
-                        <p className="text-[12px] font-semibold text-[#1a1a1a] leading-snug line-clamp-2 group-hover:text-[#6D071A] transition-colors">
-                          {s.hero.headline || s.title}
-                        </p>
-                        {s.pricing.items[0] && (
-                          <p className="text-[11px] text-[#6D071A] font-medium mt-1">{s.pricing.items[0].price}</p>
-                        )}
-                      </div>
-                    </Link>
-                  ))}
+
+                {/* Label */}
+                <div className="px-4 py-3 flex items-center justify-between">
+                  <p className="text-[12.5px] font-semibold text-[#1a1a1a] group-hover:text-[#6D071A] transition-colors leading-tight">
+                    {cat.label}
+                  </p>
+                  <span className="text-[#ccc] group-hover:text-[#6D071A] group-hover:translate-x-0.5 transition-all duration-200 text-sm">
+                    →
+                  </span>
                 </div>
-              </section>
+              </Link>
             ))}
           </div>
-        </div>
+        </section>
+
+        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        <section className="bg-[#6D071A] py-14">
+          <div className="max-w-[1300px] mx-auto px-6 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-2">
+                Vous hésitez ?
+              </p>
+              <p className="text-white font-bold text-xl leading-tight">
+                Prenez rendez-vous — consultation offerte
+              </p>
+            </div>
+            <Link
+              href="/rendez-vous"
+              className="group relative overflow-hidden shrink-0 bg-white text-[#6D071A] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] inline-block"
+            >
+              <span className="absolute inset-0 bg-[#1C1C1C] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
+              <span className="relative z-10 group-hover:text-white transition-colors duration-500">
+                Prendre rendez-vous
+              </span>
+            </Link>
+          </div>
+        </section>
+
       </main>
 
       <Footer />

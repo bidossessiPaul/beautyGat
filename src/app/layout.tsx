@@ -3,6 +3,7 @@ import { Montserrat, Outfit } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { JsonLd } from "@/components/JsonLd";
+import { PageTransition } from "@/components/PageTransition";
 import { localBusinessSchema, websiteSchema, SITE } from "@/lib/seo";
 
 const montserrat = Montserrat({
@@ -87,8 +88,9 @@ export default function RootLayout({
       lang="fr"
       className={`${montserrat.variable} ${outfit.variable} ${tomatoGrotesk.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <JsonLd schema={[localBusinessSchema(), websiteSchema()]} />
+        <PageTransition />
         {children}
       </body>
     </html>

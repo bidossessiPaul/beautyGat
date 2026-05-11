@@ -66,7 +66,6 @@ export const CATEGORY_FALLBACK_FOR_META: Record<string, string> = {
   diagnostic:       "/images/soins/diagnostic-peau/hero.jpg",
   "mains-pieds":    "/images/appart-beaute-3873920.jpg",
   massages:         "/images/Appart-beaute-accueil-philosophie-1-scaled.jpg",
-  barber:           "/images/dsc01155.jpg",
   "duo-enfants":    "/images/dsc01280.jpg",
   privatisation:    "/images/dsc01308-scaled.jpg",
 };

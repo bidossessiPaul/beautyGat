@@ -120,7 +120,7 @@ export default function MenuPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="https://wa.me/22997885887"
+                href="/rendez-vous"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden inline-block bg-white text-[#6D071A] text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"

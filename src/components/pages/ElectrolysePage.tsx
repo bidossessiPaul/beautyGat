@@ -92,7 +92,7 @@ export function ElectrolysePage() {
             La seule technique d'épilation reconnue comme 100% définitive, poil par poil — efficace sur tous les types de peau et de poils, y compris les poils blancs et fins.
           </p>
           <div className="flex flex-wrap gap-4 items-center">
-            <Link href="#contact" className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
+            <Link href="/rendez-vous" className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
               <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
               <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">Prendre rendez-vous</span>
             </Link>
@@ -228,7 +228,7 @@ export function ElectrolysePage() {
                 </li>
               ))}
             </ul>
-            <Link href="#contact" className="group relative overflow-hidden inline-block bg-white text-[#6D071A] px-7 py-3.5 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
+            <Link href="/rendez-vous" className="group relative overflow-hidden inline-block bg-white text-[#6D071A] px-7 py-3.5 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
               <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">Réserver ma consultation</span>
             </Link>
@@ -321,7 +321,7 @@ export function ElectrolysePage() {
             <p className="text-[15px] text-[#444] leading-[26px] mb-6">
               À l'issue de cette consultation, vous repartez avec un planning de séances personnalisé, une estimation du nombre de séances nécessaires et un devis transparent — sans engagement de votre part.
             </p>
-            <Link href="#contact" className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
+            <Link href="/rendez-vous" className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
               <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
               <span className="relative z-10">Réserver ma consultation gratuite</span>
             </Link>
@@ -411,7 +411,7 @@ export function ElectrolysePage() {
                   </div>
                 ))}
               </div>
-              <Link href="#contact" className="group relative overflow-hidden block text-center bg-white text-[#6D071A] px-7 py-3.5 text-[13px] font-bold uppercase tracking-widest rounded-[3px]">
+              <Link href="/rendez-vous" className="group relative overflow-hidden block text-center bg-white text-[#6D071A] px-7 py-3.5 text-[13px] font-bold uppercase tracking-widest rounded-[3px]">
                 <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-500">Prendre rendez-vous</span>
               </Link>
@@ -487,7 +487,7 @@ export function ElectrolysePage() {
           <p className="text-white/70 text-[15px] leading-[26px] mb-8">
             Prenez rendez-vous pour votre consultation offerte à Academy Beauty Gate, Cadjehoun, Cotonou. Nos praticiens répondent à toutes vos questions.
           </p>
-          <Link href="#contact" className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-10 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
+          <Link href="/rendez-vous" className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-10 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]">
             <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
             <span className="relative z-10 group-hover:text-[#6D071A] transition-colors duration-500">Prendre rendez-vous</span>
           </Link>

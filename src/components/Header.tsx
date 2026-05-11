@@ -48,13 +48,11 @@ const MEGA_MENU = [
   {
     title: "🌸 Épilation & Bien-être",
     links: [
-      { label: "Électrolyse", href: "/epilation-electrolyse-cotonou" },
       { label: "Épilation demi-jambes", href: "/soins/epilation-demi-jambes-femme-cotonou" },
       { label: "Maillot brésilien", href: "/soins/epilation-maillot-bresilien-cotonou" },
       { label: "Vajacial", href: "/soins/vajacial-cotonou" },
       { label: "Rituel duo & enfants", href: "/soins/rituel-duo-cotonou" },
       { label: "Privatisation EVJF", href: "/soins/privatisation-evjf-cotonou" },
-      { label: "Barber shop", href: "/soins/barbe-cotonou" },
     ],
   },
 ];
@@ -103,14 +101,16 @@ export function Header() {
 
         {/* Nav desktop */}
         <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
-          {/* Trigger mega menu */}
-          <button
+          {/* Trigger mega menu — aussi lien direct vers /nos-soins */}
+          <Link
+            href="/nos-soins"
             className={`flex items-center gap-1 text-[13px] font-semibold uppercase tracking-wide transition-colors cursor-pointer whitespace-nowrap ${megaOpen || isSoinsActive ? "text-[#6D071A]" : "text-black hover:text-[#6D071A]"}`}
             onMouseEnter={() => setMegaOpen(true)}
+            onClick={() => setMegaOpen(false)}
           >
             Nos soins
             <ChevronDownIcon className={`w-3 h-3 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} />
-          </button>
+          </Link>
 
           {NAV_LINKS.map((item) => (
             <Link
@@ -134,9 +134,7 @@ export function Header() {
           </Link>
 
           <Link
-            href="https://wa.me/22997885887"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/rendez-vous"
             className="group relative overflow-hidden bg-[#6D071A] border-2 border-[#6D071A] px-3.5 py-2.5 text-[13px] font-semibold uppercase whitespace-nowrap inline-block"
           >
             <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />
@@ -288,8 +286,7 @@ export function Header() {
               Appeler
             </Link>
             <Link
-              href="https://wa.me/22997885887"
-              target="_blank"
+              href="/rendez-vous"
               onClick={closeMobile}
               className="flex-1 flex items-center justify-center bg-[#6D071A] text-white py-3 text-[13px] font-semibold"
             >
