@@ -13,7 +13,7 @@ export default async function AdminServices() {
     category: string;
     active: boolean;
     createdAt: Date;
-    hero: object;
+    hero: unknown;
   }[] = [];
   let dbError = false;
 
