@@ -92,7 +92,7 @@ export function HeroSlider() {
           Soins du visage, épilation, massages, onglerie & bien-être — une expérience beauté irréprochable au cœur du Bénin.
         </p>
         <a
-          href="#contact"
+          href="/rendez-vous"
           className="group relative overflow-hidden bg-[#6D071A] text-white px-8 py-3.5 text-sm font-semibold uppercase tracking-widest rounded-[3px] inline-block"
         >
           <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />

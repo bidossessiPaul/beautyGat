@@ -310,9 +310,7 @@ export default function AProposPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="https://wa.me/22997885887"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/rendez-vous"
                 className="group relative overflow-hidden inline-block bg-[#6D071A] text-[12px] font-bold uppercase tracking-widest px-8 py-4 rounded-[3px]"
               >
                 <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />

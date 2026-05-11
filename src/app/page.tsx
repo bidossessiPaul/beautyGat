@@ -7,7 +7,7 @@ import { Header } from "@/components/Header";
 export const metadata: Metadata = buildMetadata({
   title: "Espace de bien-être, de beauté et de formation & esthétique avancée",
   description:
-    "Academy Beauty Gate, l'espace de référence à Cotonou pour l'épilation laser, les soins du visage, les massages, la coiffure et la esthétique avancée. Plus de 175 avis 5 étoiles.",
+    "Academy Beauty Gate, l'espace de référence à Cotonou pour l'épilation, les soins du visage, les massages et l'esthétique avancée. Plus de 175 avis 5 étoiles.",
   path: "",
 });
 import { HeroSlider } from "@/components/HeroSlider";

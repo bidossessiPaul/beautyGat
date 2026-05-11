@@ -87,7 +87,7 @@ export function GeoSeoSection1() {
             </ul>
 
             <Link
-              href="#contact"
+              href="/rendez-vous"
               className="group relative overflow-hidden inline-block bg-[#6D071A] text-white px-8 py-4 text-[13px] font-semibold uppercase tracking-widest rounded-[3px]"
             >
               <span className="absolute inset-0 bg-black translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />

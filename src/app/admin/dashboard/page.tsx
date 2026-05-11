@@ -62,11 +62,11 @@ export default async function AdminDashboard() {
 
   return (
     <AdminShell>
-      <div className="px-8 py-8">
+      <div className="px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8">
         {/* Page header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 md:mb-8">
           <div>
-            <h1 className="text-[22px] font-bold text-[#1a1a1a]">Tableau de bord</h1>
+            <h1 className="text-[20px] md:text-[22px] font-bold text-[#1a1a1a]">Tableau de bord</h1>
             <p className="text-[13px] text-[#999] mt-0.5 capitalize">{today}</p>
           </div>
           <Link
@@ -213,50 +213,48 @@ export default async function AdminDashboard() {
         {/* Recent orders */}
         {recentOrders.length > 0 && (
           <div className="bg-white border border-[#e8e8e8]">
-            <div className="px-6 py-4 border-b border-[#f0f0f0] flex items-center justify-between">
+            <div className="px-4 sm:px-6 py-4 border-b border-[#f0f0f0] flex items-center justify-between">
               <h2 className="text-[14px] font-bold text-[#1a1a1a]">Commandes récentes</h2>
               <Link href="/admin/commandes" className="text-[12px] text-[#6D071A] hover:underline font-medium">
                 Tout voir →
               </Link>
             </div>
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-[#f0f0f0]">
-                  {["Client", "Email", "Montant", "Statut", "Date"].map((h) => (
-                    <th key={h} className="text-left px-6 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#f9f9f9]">
-                {recentOrders.map((order) => (
-                  <tr key={order.id} className="hover:bg-[#fafafa] transition-colors">
-                    <td className="px-6 py-3.5 text-[13px] font-semibold text-[#1a1a1a]">
-                      {order.customerName}
-                    </td>
-                    <td className="px-6 py-3.5 text-[13px] text-[#666]">
-                      {order.customerEmail}
-                    </td>
-                    <td className="px-6 py-3.5 text-[13px] font-bold text-[#1a1a1a]">
-                      {formatPrice(order.totalAmount)}
-                    </td>
-                    <td className="px-6 py-3.5">
-                      <span
-                        className={`text-[11px] font-semibold uppercase px-2.5 py-1 rounded-full ${
-                          statusStyle[order.status] ?? "bg-gray-100 text-gray-600 border border-gray-200"
-                        }`}
-                      >
-                        {statusLabel[order.status] ?? order.status}
-                      </span>
-                    </td>
-                    <td className="px-6 py-3.5 text-[13px] text-[#999]">
-                      {new Date(order.createdAt).toLocaleDateString("fr-FR")}
-                    </td>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[360px]">
+                <thead>
+                  <tr className="border-b border-[#f0f0f0]">
+                    <th className="text-left px-4 sm:px-6 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">Client</th>
+                    <th className="hidden sm:table-cell text-left px-4 sm:px-6 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">Email</th>
+                    <th className="text-left px-4 sm:px-6 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">Montant</th>
+                    <th className="text-left px-4 sm:px-6 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">Statut</th>
+                    <th className="hidden md:table-cell text-left px-4 sm:px-6 py-3 text-[11px] font-bold uppercase tracking-wider text-[#999]">Date</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-[#f9f9f9]">
+                  {recentOrders.map((order) => (
+                    <tr key={order.id} className="hover:bg-[#fafafa] transition-colors">
+                      <td className="px-4 sm:px-6 py-3.5 text-[13px] font-semibold text-[#1a1a1a]">
+                        {order.customerName}
+                      </td>
+                      <td className="hidden sm:table-cell px-4 sm:px-6 py-3.5 text-[13px] text-[#666]">
+                        {order.customerEmail}
+                      </td>
+                      <td className="px-4 sm:px-6 py-3.5 text-[13px] font-bold text-[#1a1a1a] whitespace-nowrap">
+                        {formatPrice(order.totalAmount)}
+                      </td>
+                      <td className="px-4 sm:px-6 py-3.5">
+                        <span className={`text-[11px] font-semibold uppercase px-2 py-0.5 rounded-full ${statusStyle[order.status] ?? "bg-gray-100 text-gray-600 border border-gray-200"}`}>
+                          {statusLabel[order.status] ?? order.status}
+                        </span>
+                      </td>
+                      <td className="hidden md:table-cell px-4 sm:px-6 py-3.5 text-[13px] text-[#999]">
+                        {new Date(order.createdAt).toLocaleDateString("fr-FR")}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
 

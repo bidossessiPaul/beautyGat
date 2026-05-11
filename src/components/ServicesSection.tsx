@@ -85,7 +85,7 @@ export function ServicesSection() {
             </h2>
           </div>
           <Link
-            href="#contact"
+            href="/rendez-vous"
             className="group relative overflow-hidden inline-block bg-[#6D071A] border-2 border-[#6D071A] text-[13px] font-medium uppercase rounded-[3px] px-6 py-[14px] shrink-0 self-start md:self-auto"
           >
             <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out" />

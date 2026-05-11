@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { AdminShell } from "@/components/admin/AdminShell";
 import { ProductForm } from "../../ProductForm";
 
 export default async function ModifierProduit({ params }: { params: Promise<{ id: string }> }) {
@@ -9,29 +10,17 @@ export default async function ModifierProduit({ params }: { params: Promise<{ id
   if (!product) notFound();
 
   return (
-    <div className="min-h-screen bg-[#fafafa]">
-      <header className="bg-white border-b border-[#f0f0f0] px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="text-[18px] font-bold text-black">Beauty Gate</span>
-          <span className="text-[11px] uppercase tracking-wider bg-[#6D071A] text-white px-2 py-0.5 font-semibold">Admin</span>
-        </div>
-        <nav className="flex items-center gap-6 text-[13px] font-medium">
-          <Link href="/admin/dashboard" className="text-[#555] hover:text-black">Dashboard</Link>
-          <Link href="/admin/produits" className="text-[#6D071A] font-semibold">Produits</Link>
-          <Link href="/admin/commandes" className="text-[#555] hover:text-black">Commandes</Link>
-        </nav>
-      </header>
-
-      <main className="max-w-[1100px] mx-auto px-6 py-10">
+    <AdminShell>
+      <div className="px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8">
         <div className="flex items-center gap-3 mb-8">
           <Link href="/admin/produits" className="text-[13px] text-[#999] hover:text-black">← Produits</Link>
           <span className="text-[#ddd]">/</span>
-          <h1 className="text-[22px] font-bold text-black">Modifier : {product.name}</h1>
+          <h1 className="text-[20px] md:text-[22px] font-bold text-[#1a1a1a]">Modifier : {product.name}</h1>
         </div>
-        <div className="bg-white border border-[#f0f0f0] p-8">
+        <div className="bg-white border border-[#e8e8e8] p-6 md:p-8">
           <ProductForm product={product} />
         </div>
-      </main>
-    </div>
+      </div>
+    </AdminShell>
   );
 }

@@ -21,7 +21,7 @@ export default async function AdminProduits() {
 
   return (
     <AdminShell>
-      <div className="px-8 py-8">
+      <div className="px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>

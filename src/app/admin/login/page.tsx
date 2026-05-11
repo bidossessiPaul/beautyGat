@@ -49,6 +49,9 @@ export default function AdminLogin() {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoFocus
+              autoComplete="current-password"
+              data-1p-ignore="true"
+              data-lpignore="true"
               className="w-full border border-[#ddd] px-4 py-3 text-[14px] focus:outline-none focus:border-[#6D071A] transition-colors"
               placeholder="••••••••"
             />

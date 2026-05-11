@@ -40,6 +40,16 @@ model Product {
   updatedAt        DateTime @updatedAt
 }
 
+model ServiceCategory {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  label     String
+  image     String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Service {
   id              String   @id @default(cuid())
   slug            String   @unique
@@ -58,4 +68,20 @@ model Service {
   gallery         Json     @default("[]")
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+}
+
+model Appointment {
+  id           String   @id @default(cuid())
+  serviceTitle String
+  serviceSlug  String?
+  date         String
+  time         String
+  firstName    String
+  lastName     String
+  phone        String
+  email        String?
+  message      String?  @db.Text
+  status       String   @default("pending")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
