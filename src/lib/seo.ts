@@ -191,3 +191,31 @@ export function breadcrumbSchema(crumbs: { name: string; href: string }[]) {
     })),
   };
 }
+
+export function itemListSchema(items: { name: string; url: string; description?: string; image?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: `${SITE.url}${item.url}`,
+      ...(item.description && { description: item.description }),
+      ...(item.image && { image: `${SITE.url}${item.image}` }),
+    })),
+  };
+}
+
+export function speakableSchema(cssSelectors: string[], url: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE.url}${url}`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+    url: `${SITE.url}${url}`,
+  };
+}
