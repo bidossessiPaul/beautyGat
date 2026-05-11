@@ -36,7 +36,7 @@ interface Service {
   category: string;
   active: boolean;
   createdAt: Date;
-  hero: { image?: string } | null;
+  hero: unknown;
 }
 
 function ToggleActiveButton({ id, active }: { id: string; active: boolean }) {
@@ -197,7 +197,8 @@ export function ServicesTable({ services }: { services: Service[] }) {
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
           {filtered.map((s) => {
-            const img = s.hero?.image || CATEGORY_FALLBACK[s.category] || null;
+            const hero = s.hero as { image?: string } | null;
+            const img = hero?.image || CATEGORY_FALLBACK[s.category] || null;
             return (
               <div
                 key={s.id}
