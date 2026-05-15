@@ -4,24 +4,16 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    q: "L'épilation laser est-elle douloureuse ?",
-    a: "Nos lasers de dernière génération sont conçus pour minimiser l'inconfort. La plupart des clients décrivent une légère sensation de chaleur. Le résultat est une réduction permanente et indolore des poils dès les premières séances.",
-  },
-  {
-    q: "Combien de séances faut-il pour l'épilation laser ?",
-    a: "En moyenne 6 à 8 séances sont nécessaires pour un résultat durable. Le nombre varie selon la zone traitée, la couleur du poil et du phototype. Un bilan personnalisé est réalisé dès votre première visite à l'académie.",
-  },
-  {
     q: "Qu'est-ce qu'un soin Hydrafacial ?",
     a: "L'Hydrafacial est un protocole en 3 étapes — nettoyage, exfoliation et hydratation profonde — réalisé avec une technologie à ultrasons et vortex. Le teint est immédiatement lumineux, sans rougeur ni éviction sociale.",
   },
   {
     q: "Puis-je venir sans rendez-vous ?",
-    a: "Nous recommandons vivement de prendre rendez-vous pour garantir la disponibilité de nos praticiens. Vous pouvez réserver via WhatsApp au +229 97 88 58 87 ou en remplissant le formulaire de contact sur cette page.",
+    a: "Nous recommandons vivement de prendre rendez-vous pour garantir la disponibilité de nos praticiens. Vous pouvez réserver via WhatsApp au +229 01 68 41 11 11 ou en remplissant le formulaire de contact sur cette page.",
   },
   {
     q: "Quels types de soins proposez-vous ?",
-    a: "Academy Beauty Gate propose l'épilation laser, les soins du visage (Hydrafacial, peeling, LED), les massages relaxants et drainants, l'onglerie, les traitements anti-âge, et les soins corps & silhouette.",
+    a: "Academy Beauty Gate propose les soins du visage (Hydrafacial, peeling, LED), les massages relaxants et drainants, l'onglerie, les traitements anti-âge, l'électrolyse et les soins corps & silhouette.",
   },
   {
     q: "Où se trouve Academy Beauty Gate à Cotonou ?",
@@ -33,7 +25,7 @@ const FAQS = [
   },
   {
     q: "Proposez-vous des forfaits ou abonnements ?",
-    a: "Oui, nous proposons des packs séances à tarifs avantageux pour l'épilation laser et les soins visage. Contactez-nous pour recevoir notre grille tarifaire personnalisée et nos offres du moment.",
+    a: "Oui, nous proposons des packs séances à tarifs avantageux pour l'électrolyse et les soins visage. Contactez-nous pour recevoir notre grille tarifaire personnalisée et nos offres du moment.",
   },
 ];
 

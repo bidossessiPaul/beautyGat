@@ -177,7 +177,7 @@ export default function AProposPage() {
                 Implantés au cœur de Cadjehoun, à Cotonou, nous avons fait le choix d&apos;intégrer les technologies esthétiques les plus avancées, tout en restant profondément ancrés dans la réalité des peaux africaines et métissées. Chaque protocole est pensé pour les spécificités de notre clientèle locale.
               </p>
               <p className="text-[15px] leading-[28px] text-[#444] mb-4">
-                Notre équipe de praticiens certifiés vous accompagne avec des techniques modernes et des produits de haute qualité. Hydrafacial, épilation laser, injections esthétiques, peeling, cryolipolyse — nous maîtrisons l&apos;ensemble des disciplines de l&apos;esthétique avancée.
+                Notre équipe de praticiens certifiés vous accompagne avec des techniques modernes et des produits de haute qualité. Hydrafacial, électrolyse, injections esthétiques, peeling, cryolipolyse — nous maîtrisons l&apos;ensemble des disciplines de l&apos;esthétique avancée.
               </p>
               <p className="text-[15px] leading-[28px] text-[#444] mb-8">
                 Dans un cadre chaleureux et professionnel, nous créons un espace de confiance où vous pouvez vous ressourcer et prendre soin de vous en toute sérénité.

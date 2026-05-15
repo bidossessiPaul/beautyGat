@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/tarifs`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE.url}/a-propos`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE.url}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE.url}/epilation-laser-cotonou`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE.url}/epilation-electrolyse-cotonou`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
 

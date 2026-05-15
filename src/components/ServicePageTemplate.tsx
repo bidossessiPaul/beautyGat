@@ -367,11 +367,11 @@ export function ServicePageTemplate({ service }: Props) {
               </span>
             </Link>
             <a
-              href="tel:+22997885887"
+              href="tel:+2290168411111"
               className="inline-flex items-center gap-2 border border-white/20 text-white/70 px-10 py-4 text-[11px] font-semibold uppercase tracking-[0.2em] hover:border-white/50 hover:text-white transition-all duration-300"
             >
               <Phone size={14} />
-              +229 97 88 58 87
+              +229 01 68 41 11 11
             </a>
           </div>
         </div>
@@ -739,7 +739,7 @@ export function ServicePageTemplate({ service }: Props) {
                 <div className="space-y-5 mb-8">
                   {[
                     { icon: <MapPin size={16} />, label: "Adresse", value: "Cadjehoun, Cotonou, Bénin" },
-                    { icon: <Phone size={16} />, label: "Téléphone", value: "+229 97 88 58 87" },
+                    { icon: <Phone size={16} />, label: "Téléphone", value: "+229 01 68 41 11 11" },
                     { icon: <Star size={16} />, label: "Avis Google", value: "4,9 / 5 — 175+ avis" },
                     { icon: <Navigation size={16} />, label: "Accès", value: "Proche carrefour Cadjehoun" },
                   ].map((info, i) => (
@@ -905,7 +905,7 @@ export function ServicePageTemplate({ service }: Props) {
               <span className="relative z-10 group-hover:text-white transition-colors duration-500">Prendre rendez-vous</span>
             </Link>
             <a
-              href="tel:+22997885887"
+              href="tel:+2290168411111"
               className="inline-flex items-center gap-2 border border-white/60 text-white px-8 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-white/10 transition-colors"
             >
               <Phone size={16} />

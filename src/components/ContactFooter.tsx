@@ -57,7 +57,6 @@ export function ContactFooter() {
                 defaultValue=""
               >
                 <option value="" disabled>Soin souhaité</option>
-                <option>Épilation laser</option>
                 <option>Peeling</option>
                 <option>Hydrafacial</option>
                 <option>Injections</option>

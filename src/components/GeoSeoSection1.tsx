@@ -65,7 +65,7 @@ export function GeoSeoSection1() {
               Implanté à <strong>Cadjehoun, Cotonou</strong>, Academy Beauty Gate est l'espace de bien-être, de beauté et de formation de référence au Bénin. Depuis son ouverture, il accompagne hommes et femmes dans leur quête d'une beauté saine, durable et naturelle.
             </p>
             <p className="text-[15px] text-[#444] leading-[26px] mb-5">
-              Notre équipe de praticiens qualifiés maîtrise les protocoles les plus avancés : <strong>épilation laser à Cotonou</strong>, soins Hydrafacial, peelings chimiques, thérapie LED et traitements anti-âge. Chaque soin est personnalisé selon votre morphologie et vos besoins spécifiques.
+              Notre équipe de praticiens qualifiés maîtrise les protocoles les plus avancés : soins Hydrafacial, peelings chimiques, thérapie LED, électrolyse et traitements anti-âge. Chaque soin est personnalisé selon votre morphologie et vos besoins spécifiques.
             </p>
             <p className="text-[15px] text-[#444] leading-[26px] mb-8">
               Academy Beauty Gate est plus qu'un salon de beauté à Cotonou — c'est un espace de bien-être global où la technologie médicale rencontre le savoir-faire artisanal pour des résultats visibles et durables.
@@ -73,7 +73,7 @@ export function GeoSeoSection1() {
 
             <ul className="space-y-3 mb-8">
               {[
-                "Épilation laser définitive — résultats garantis",
+                "Électrolyse — épilation définitive sur tous types de poils",
                 "Soins Hydrafacial & LED thérapeutique",
                 "Massages relaxants & drainants",
                 "Onglerie & nail art professionnel",

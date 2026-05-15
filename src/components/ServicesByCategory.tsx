@@ -8,10 +8,10 @@ const CATEGORIES = [
   {
     title: "Soins du visage",
     description:
-      "Des technologies médicales avancées pour révéler l'éclat naturel de votre peau. Hydrafacial, peeling, carbon laser peel — chaque soin est adapté à votre diagnostic peau personnalisé.",
+      "Des technologies médicales avancées pour révéler l'éclat naturel de votre peau. Hydrafacial, peeling, photomodulation LED — chaque soin est adapté à votre diagnostic peau personnalisé.",
     image: "/images/img_4538.jpg",
     href: "/menu",
-    services: ["Hydrafacial®", "Peeling", "Carbon Laser Peel", "Diagnostic peau"],
+    services: ["Hydrafacial®", "Peeling", "Photomodulation LED", "Diagnostic peau"],
     tag: "Éclat & pureté",
     cta: "Voir les soins visage",
   },

@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   keywords: [
-    "institut beauté Cotonou", "salon beauté Bénin", "épilation laser Cotonou",
-    "soins visage Cotonou", "esthétique avancée Bénin", "massages Cotonou",
+    "institut beauté Cotonou", "salon beauté Bénin", "soins visage Cotonou",
+    "esthétique avancée Bénin", "massages Cotonou",
     "coiffure Cotonou", "maquillage Cotonou", "Academy Beauty Gate",
   ],
   authors: [{ name: SITE.name, url: SITE.url }],

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const PHONE = "+22997885887";
-const WHATSAPP_URL = "https://wa.me/22997885887";
+const PHONE = "+2290168411111";
+const WHATSAPP_URL = "https://wa.me/2290168411111";
 const EMAIL = "beautygate055@gmail.com";
 const INSTAGRAM_URL = "https://www.instagram.com/beaut.ygateofficiel/";
 

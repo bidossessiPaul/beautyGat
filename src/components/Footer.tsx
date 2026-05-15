@@ -12,7 +12,7 @@ const SERVICES = [
   "Massages & bien-être",
   "Onglerie & nail art",
   "Amincissement",
-  "Détatouage laser",
+  "Électrolyse",
 ];
 
 const LIENS = [
@@ -43,7 +43,7 @@ export function Footer() {
             className="mb-6 brightness-0 invert"
           />
           <p className="text-[13px] text-white/60 leading-[22px] mb-6">
-            Espace de bien-être, de beauté et de formation de référence à Cotonou. Soins esthétiques avancés, épilation laser et bien-être au cœur de Cadjehoun, Bénin.
+            Espace de bien-être, de beauté et de formation de référence à Cotonou. Soins esthétiques avancés et bien-être au cœur de Cadjehoun, Bénin.
           </p>
           <div className="flex gap-3">
             <Link
@@ -57,7 +57,7 @@ export function Footer() {
               </svg>
             </Link>
             <Link
-              href="https://wa.me/22997885887"
+              href="https://wa.me/2290168411111"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] transition-all"
@@ -121,8 +121,8 @@ export function Footer() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4 shrink-0 mt-0.5 text-[#6D071A]">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
               </svg>
-              <Link href="tel:+22997885887" className="text-[13px] text-white/60 hover:text-white transition-colors">
-                +229 97 88 58 87
+              <Link href="tel:+2290168411111" className="text-[13px] text-white/60 hover:text-white transition-colors">
+                +229 01 68 41 11 11
               </Link>
             </li>
             <li className="flex gap-3">

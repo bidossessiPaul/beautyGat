@@ -42,7 +42,7 @@ interface ServiceFormData {
 const CATEGORIES = [
   { value: "visage", label: "Soins Visage" },
   { value: "corps", label: "Soins Corps" },
-  { value: "epilation", label: "Épilation Laser" },
+  { value: "epilation", label: "Épilation & Électrolyse" },
   { value: "epilation-cire", label: "Épilation à la Cire" },
   { value: "injections", label: "Injections" },
   { value: "diagnostic", label: "Diagnostic" },
