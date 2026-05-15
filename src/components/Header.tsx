@@ -17,7 +17,6 @@ const MEGA_MENU = [
       { label: "Peeling anti-taches", href: "/soins/peeling-visage-cotonou" },
       { label: "Anti-âge régénérant", href: "/soins/soin-anti-age-regenerant-visage-cotonou" },
       { label: "Dermaplaning", href: "/soins/dermaplaning-visage-cotonou" },
-      { label: "Carbon Laser Peel", href: "/soins/carbon-laser-peel-cotonou" },
       { label: "Photomodulation LED", href: "/soins/photomodulation-led-cotonou" },
     ],
   },
@@ -126,11 +125,11 @@ export function Header() {
         {/* Actions droite */}
         <div className="flex items-center gap-3 shrink-0">
           <Link
-            href="tel:+22997885887"
+            href="tel:+2290168411111"
             className="hidden lg:flex items-center gap-2 bg-white text-black border-2 border-[#eee] px-3.5 py-2.5 text-[13px] font-medium uppercase hover:border-[#6D071A] hover:text-[#6D071A] transition-colors whitespace-nowrap"
           >
             <PhoneIcon className="w-3.5 h-3.5" />
-            +229 97 88 58 87
+            +229 01 68 41 11 11
           </Link>
 
           <Link
@@ -278,7 +277,7 @@ export function Header() {
           {/* CTA mobile */}
           <div className="pt-4 flex gap-3">
             <Link
-              href="tel:+22997885887"
+              href="tel:+2290168411111"
               onClick={closeMobile}
               className="flex-1 flex items-center justify-center gap-2 border-2 border-[#eee] py-3 text-[13px] font-medium text-black"
             >

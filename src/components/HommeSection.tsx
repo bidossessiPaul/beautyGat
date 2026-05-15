@@ -10,12 +10,12 @@ const HOMME_CARDS = [
     href: "/hydrafacial-homme-paris",
   },
   {
-    title: "ÉPILATION LASER",
-    subtitle: "avec Lutronic",
+    title: "ÉLECTROLYSE",
+    subtitle: "Épilation définitive",
     description:
-      "BeautyGate est équipé des machines les plus performantes pour l'épilation laser. Nous proposons des forfaits ou des traitements à la séance.",
-    imageSrc: "/images/hero-laser-homme.jpg",
-    href: "/epilation-laser-homme-paris",
+      "La seule méthode d'épilation reconnue définitive à 100 %, efficace sur tous types de poils. Résultats permanents dès les premières séances.",
+    imageSrc: "/images/hero-peeling-homme.jpg",
+    href: "/soins/electrolysis-cotonou",
   },
   {
     title: "PEELING",

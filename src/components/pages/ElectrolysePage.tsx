@@ -261,7 +261,7 @@ export function ElectrolysePage() {
             </div>
             <p className="text-center text-[13px] text-[#888] mt-6">
               Contactez-nous au{" "}
-              <Link href="tel:+22997885887" className="text-[#6D071A] font-semibold">+229 97 88 58 87</Link>
+              <Link href="tel:+2290168411111" className="text-[#6D071A] font-semibold">+229 01 68 41 11 11</Link>
               {" "}pour un devis personnalisé.
             </p>
           </div>
@@ -398,7 +398,7 @@ export function ElectrolysePage() {
               <div className="space-y-5 mb-8">
                 {[
                   { icon: <MapPin size={15} />, label: "Adresse", value: "Cadjehoun, Cotonou, Bénin" },
-                  { icon: <Phone size={15} />, label: "Téléphone", value: "+229 97 88 58 87" },
+                  { icon: <Phone size={15} />, label: "Téléphone", value: "+229 01 68 41 11 11" },
                   { icon: <Star size={15} />, label: "Avis Google", value: "4,9 / 5 — 175+ avis" },
                   { icon: <Clock size={15} />, label: "Horaires", value: "Lun–Ven 8h–20h · Sam 9h–18h" },
                 ].map((info) => (

@@ -5,7 +5,7 @@ export const SITE = {
   url: "https://academybeautygate.com",
   tagline: "Espace de bien-être, de beauté et de formation & esthétique avancée — Cotonou, Bénin",
   description:
-    "Academy Beauty Gate, l'espace de référence à Cotonou pour l'épilation laser, les soins du visage, les massages, et l'esthétique avancée. Plus de 175 avis 5 étoiles.",
+    "Academy Beauty Gate, l'espace de référence à Cotonou pour les soins du visage, l'électrolyse, les massages et l'esthétique avancée. Plus de 175 avis 5 étoiles.",
   locale: "fr_BJ",
   address: {
     street: "Cadjehoun",
@@ -13,7 +13,7 @@ export const SITE = {
     region: "Littoral",
     countryCode: "BJ",
   },
-  phone: "+22997885887",
+  phone: "+2290168411111",
   email: "contact@academybeautygate.com",
   openingHours: ["Mo-Fr 08:00-20:00", "Sa 09:00-18:00"],
   geo: { lat: 6.3641, lng: 2.4219 },
@@ -120,7 +120,7 @@ export function localBusinessSchema() {
     currenciesAccepted: "XOF",
     areaServed: { "@type": "City", name: "Cotonou" },
     hasMap: `https://www.google.com/maps/search/Academy+Beauty+Gate+Cotonou`,
-    sameAs: ["https://wa.me/22997885887"],
+    sameAs: ["https://wa.me/2290168411111"],
   };
 }
 
@@ -189,5 +189,33 @@ export function breadcrumbSchema(crumbs: { name: string; href: string }[]) {
       name: crumb.name,
       item: `${SITE.url}${crumb.href}`,
     })),
+  };
+}
+
+export function itemListSchema(items: { name: string; url: string; description?: string; image?: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      url: `${SITE.url}${item.url}`,
+      ...(item.description && { description: item.description }),
+      ...(item.image && { image: `${SITE.url}${item.image}` }),
+    })),
+  };
+}
+
+export function speakableSchema(cssSelectors: string[], url: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE.url}${url}`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+    url: `${SITE.url}${url}`,
   };
 }

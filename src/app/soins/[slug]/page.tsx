@@ -5,7 +5,7 @@ import { FloatingContact } from "@/components/FloatingContact";
 import { ServicePageTemplate } from "@/components/ServicePageTemplate";
 import { JsonLd } from "@/components/JsonLd";
 import { services, getServiceBySlug, type ServiceData } from "@/data/services";
-import { buildMetadata, serviceSchema, faqSchema, breadcrumbSchema, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
+import { buildMetadata, serviceSchema, faqSchema, breadcrumbSchema, speakableSchema, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
 import { prisma } from "@/lib/prisma";
 
 interface Props {
@@ -103,12 +103,13 @@ export default async function Page({ params }: Props) {
       image: service.hero.image ?? CATEGORY_FALLBACK_FOR_META[service.category],
       priceRange: service.pricing.items[0]?.price,
     }),
-    faqSchema(service.faq),
+    ...(service.faq.length > 0 ? [faqSchema(service.faq)] : []),
     breadcrumbSchema([
       { name: "Accueil", href: "/" },
-      { name: "Nos soins", href: "/menu" },
+      { name: "Nos soins", href: "/nos-soins" },
       { name: service.hero.headline, href: `/soins/${service.slug}` },
     ]),
+    speakableSchema(["h1", ".service-intro-description", ".service-benefits"], `/soins/${service.slug}`),
   ];
 
   return (

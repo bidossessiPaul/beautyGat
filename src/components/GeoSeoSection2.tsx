@@ -104,7 +104,7 @@ export function GeoSeoSection2() {
               {[
                 {
                   titre: "Technologie médicale de pointe",
-                  desc: "Laser dernière génération, Hydrafacial, ultra-sons, LED thérapeutique — les mêmes équipements que les cliniques européennes, disponibles à Cotonou.",
+                  desc: "Hydrafacial, ultra-sons, LED thérapeutique, électrolyse — les mêmes équipements que les cliniques européennes, disponibles à Cotonou.",
                 },
                 {
                   titre: "Praticiens certifiés & expérimentés",
@@ -112,7 +112,7 @@ export function GeoSeoSection2() {
                 },
                 {
                   titre: "Résultats visibles & durables",
-                  desc: "Nos clients voient des résultats dès la première séance. L'épilation laser à Cotonou avec nos appareils garantit une réduction permanente et indolore.",
+                  desc: "Nos clients voient des résultats dès la première séance. L'électrolyse à Cotonou garantit une réduction permanente des poils, sur tous types de carnations.",
                 },
                 {
                   titre: "Cadre luxueux & hygiène irréprochable",

@@ -37,10 +37,10 @@ const SERVICES = [
     href: "/soins/photomodulation-led-cotonou",
   },
   {
-    title: "Carbon Laser Peel",
-    tag: "Éclat & pureté",
-    image: "/images/soins/carbon-laser-peel/hero.jpg",
-    href: "/soins/carbon-laser-peel-cotonou",
+    title: "BB Glow",
+    tag: "Teint naturel & éclat",
+    image: "/images/dsc01308-scaled.jpg",
+    href: "/soins/bb-glow-visage-cotonou",
   },
 ];
 

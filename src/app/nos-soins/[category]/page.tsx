@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
+import { JsonLd } from "@/components/JsonLd";
 import { prisma } from "@/lib/prisma";
+import { buildMetadata, breadcrumbSchema, itemListSchema, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
 import { CATEGORY_LABELS, CATEGORY_FALLBACK_IMAGES } from "../config";
 import { CATEGORY_CONTENT } from "../categoryContent";
 
@@ -18,10 +20,13 @@ export async function generateMetadata({ params }: Props) {
   const { category } = await params;
   const cat = await prisma.serviceCategory.findUnique({ where: { key: category } });
   const label = cat?.label ?? CATEGORY_LABELS[category] ?? category;
-  return {
-    title: `${label} à Cotonou — Academy Beauty Gate`,
-    description: `Découvrez tous nos ${label.toLowerCase()} à Cotonou. Academy Beauty Gate, Cadjehoun.`,
-  };
+  const image = cat?.image || CATEGORY_FALLBACK_FOR_META[category];
+  return buildMetadata({
+    title: `${label} à Cotonou`,
+    description: `Découvrez nos soins ${label.toLowerCase()} à Cotonou — tarifs, bénéfices et prise de rendez-vous. Academy Beauty Gate, Cadjehoun, Bénin.`,
+    path: `/nos-soins/${category}`,
+    ...(image ? { image } : {}),
+  });
 }
 
 export default async function CategoryPage({ params }: Props) {
@@ -58,8 +63,29 @@ export default async function CategoryPage({ params }: Props) {
   const fallbackImg = dbCategory.image || CATEGORY_FALLBACK_IMAGES[category] || null;
   const content = CATEGORY_CONTENT[category] ?? null;
 
+  const schemas = [
+    breadcrumbSchema([
+      { name: "Accueil", href: "/" },
+      { name: "Nos soins", href: "/nos-soins" },
+      { name: label, href: `/nos-soins/${category}` },
+    ]),
+    itemListSchema(
+      services.map((s) => {
+        const hero = s.hero as { image?: string; headline?: string } | null;
+        const pricing = s.pricing as { items?: { label: string; price: string }[] } | null;
+        return {
+          name: hero?.headline || s.title,
+          url: `/soins/${s.slug}`,
+          description: pricing?.items?.[0]?.price ? `À partir de ${pricing.items[0].price}` : undefined,
+          image: hero?.image || fallbackImg || undefined,
+        };
+      })
+    ),
+  ];
+
   return (
     <>
+      <JsonLd schema={schemas} />
       <Header />
 
       <main className="min-h-screen bg-[#faf8f6]">

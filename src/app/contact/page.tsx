@@ -23,20 +23,17 @@ function useInView(threshold = 0.1) {
 }
 
 const SERVICES_OPTIONS = [
-  "Épilation laser",
   "Épilation par électrolyse",
   "Hydrafacial",
   "Peeling visage",
   "Baby Face LaseMD",
   "Microneedling",
   "Photomodulation LED",
-  "Carbon Laser Peel",
   "Instant Glow",
   "Bleaching",
   "Peeling intime",
   "Cryolipolyse",
   "BodySculpt",
-  "Détatouage laser",
   "Acide hyaluronique",
   "Toxine botulique",
   "Diagnostic de peau",
@@ -63,8 +60,8 @@ const INFO_CARDS = [
       </svg>
     ),
     label: "Téléphone",
-    content: "+229 97 88 58 87",
-    link: "tel:+22997885887",
+    content: "+229 01 68 41 11 11",
+    link: "tel:+2290168411111",
     linkLabel: "Appeler →",
   },
   {
@@ -74,8 +71,8 @@ const INFO_CARDS = [
       </svg>
     ),
     label: "WhatsApp",
-    content: "+229 97 88 58 87",
-    link: "https://wa.me/22997885887",
+    content: "+229 01 68 41 11 11",
+    link: "https://wa.me/2290168411111",
     linkLabel: "Envoyer un message →",
   },
   {
@@ -236,7 +233,7 @@ export default function ContactPage() {
                 <div className="mt-8 pt-8 border-t border-[#eee]">
                   <p className="text-[13px] text-[#888] mb-4">Préférez-vous nous écrire directement ?</p>
                   <Link
-                    href="https://wa.me/22997885887"
+                    href="https://wa.me/2290168411111"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden inline-flex items-center gap-3 bg-[#25D366] text-white text-[12px] font-bold uppercase tracking-widest rounded-[3px] px-6 py-3.5"
@@ -245,7 +242,7 @@ export default function ContactPage() {
                     <svg viewBox="0 0 24 24" fill="currentColor" className="relative z-10 w-4 h-4 shrink-0">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.122 1.523 5.854L.057 23.215a.75.75 0 0 0 .921.921l5.424-1.461A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
                     </svg>
-                    <span className="relative z-10">WhatsApp : +229 97 88 58 87</span>
+                    <span className="relative z-10">WhatsApp : +229 01 68 41 11 11</span>
                   </Link>
                 </div>
               </div>
@@ -288,7 +285,7 @@ export default function ContactPage() {
                     <p><strong className="text-black">Horaires :</strong> Lun – Sam 9h–19h / Dimanche sur RDV</p>
                     <p><strong className="text-black">Adresse :</strong> Cadjehoun, Cotonou, Bénin</p>
                     <p><strong className="text-black">Tél :</strong>{" "}
-                      <Link href="tel:+22997885887" className="text-[#6D071A] hover:underline">+229 97 88 58 87</Link>
+                      <Link href="tel:+2290168411111" className="text-[#6D071A] hover:underline">+229 01 68 41 11 11</Link>
                     </p>
                     <p><strong className="text-black">Email :</strong>{" "}
                       <Link href="mailto:beautygate055@gmail.com" className="text-[#6D071A] hover:underline">beautygate055@gmail.com</Link>

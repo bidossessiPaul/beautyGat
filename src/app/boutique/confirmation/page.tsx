@@ -49,7 +49,7 @@ export default async function ConfirmationPage({
             Retour à la boutique
           </Link>
           <Link
-            href="https://wa.me/22997885887"
+            href="https://wa.me/2290168411111"
             target="_blank"
             rel="noopener noreferrer"
             className="border-2 border-[#6D071A] text-[#6D071A] text-[11px] font-bold uppercase tracking-widest px-8 py-3.5 hover:bg-[#6D071A] hover:text-white transition-colors"

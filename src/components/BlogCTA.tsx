@@ -22,8 +22,7 @@ export function BlogCTA() {
         </h3>
         <p className="text-[15px] leading-[28px] text-[#555] mb-8">
           Retrouvez toutes les bonnes pratiques beauté de nos experts sur notre
-          blog. Épilation laser, injections, Hydrafacial®, peeling, LaseMD,
-          Electrolyse mais aussi astuces pour garder une peau en bonne santé et
+          blog. Injections, Hydrafacial®, peeling, électrolyse, mais aussi astuces pour garder une peau en bonne santé et
           qui irradie au quotidien : nous vous dévoilons tout ce dont vous avez
           besoin pour rayonner jour après jour !
         </p>
