@@ -16,14 +16,20 @@ interface Props {
 function dbServiceToServiceData(s: {
   slug: string;
   title: string;
+  name: string;
   metaDescription: string;
   category: string;
+  stepsImage: string;
+  stepsImageAlt: string;
+  benefitsImage: string;
+  benefitsImageAlt: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  hero: any; badges: any; intro: any; benefits: any; pricing: any; faq: any; cta: any;
+  hero: any; badges: any; intro: any; benefits: any; pricing: any; faq: any; cta: any; gallery: any; forWho: any; steps: any; boosters: any;
 }): ServiceData {
   return {
     slug: s.slug,
     title: s.title,
+    name: s.name || undefined,
     metaDescription: s.metaDescription,
     category: s.category as ServiceData["category"],
     hero: {
@@ -42,7 +48,18 @@ function dbServiceToServiceData(s: {
       description: s.intro?.description ?? "",
       listItems: Array.isArray(s.intro?.listItems) ? s.intro.listItems : [],
     },
+    forWho: s.forWho?.targets?.length ? {
+      image: s.forWho.image || undefined,
+      imageAlt: s.forWho.imageAlt ?? "",
+      targets: s.forWho.targets,
+    } : undefined,
+    steps: Array.isArray(s.steps) && s.steps.length ? s.steps : undefined,
+    stepsImage: s.stepsImage || undefined,
+    stepsImageAlt: s.stepsImageAlt || undefined,
+    boosters: Array.isArray(s.boosters) && s.boosters.length ? s.boosters : undefined,
     benefits: Array.isArray(s.benefits) ? s.benefits : [],
+    benefitsImage: s.benefitsImage || undefined,
+    benefitsImageAlt: s.benefitsImageAlt || undefined,
     pricing: {
       headline: s.pricing?.headline ?? "",
       note: s.pricing?.note ?? "",
