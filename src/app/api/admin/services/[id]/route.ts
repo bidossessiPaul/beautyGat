@@ -21,13 +21,14 @@ export async function PUT(req: NextRequest, { params }: Params) {
   const { id } = await params;
   try {
     const body = await req.json();
-    const { slug, title, metaDescription, category, active, sortOrder, hero, badges, intro, benefits, pricing, faq, cta, gallery } = body;
+    const { slug, title, name, metaDescription, category, active, sortOrder, hero, badges, intro, benefits, pricing, faq, cta, gallery, forWho, steps, stepsImage, stepsImageAlt, boosters, benefitsImage, benefitsImageAlt } = body;
 
     const service = await prisma.service.update({
       where: { id },
       data: {
         slug,
         title,
+        name: name ?? "",
         metaDescription,
         category,
         active,
@@ -40,6 +41,13 @@ export async function PUT(req: NextRequest, { params }: Params) {
         faq,
         cta,
         gallery: gallery ?? [],
+        forWho: forWho ?? { image: "", imageAlt: "", targets: [] },
+        steps: steps ?? [],
+        stepsImage: stepsImage ?? "",
+        stepsImageAlt: stepsImageAlt ?? "",
+        boosters: boosters ?? [],
+        benefitsImage: benefitsImage ?? "",
+        benefitsImageAlt: benefitsImageAlt ?? "",
       },
     });
 
