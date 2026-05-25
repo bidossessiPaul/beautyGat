@@ -119,6 +119,8 @@ export default async function Page({ params }: Props) {
       category: service.hero.eyebrow,
       image: service.hero.image ?? CATEGORY_FALLBACK_FOR_META[service.category],
       priceRange: service.pricing.items[0]?.price,
+      ratingValue: "4.9",
+      reviewCount: "175",
     }),
     ...(service.faq.length > 0 ? [faqSchema(service.faq)] : []),
     breadcrumbSchema([

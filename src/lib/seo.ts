@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE = {
   name: "Academy Beauty Gate",
-  url: "https://academybeautygate.com",
+  url: "https://www.academybeautygatee.com",
   tagline: "Espace de bien-être, de beauté et de formation & esthétique avancée — Cotonou, Bénin",
   description:
     "Academy Beauty Gate, l'espace de référence à Cotonou pour les soins du visage, l'électrolyse, les massages et l'esthétique avancée. Plus de 175 avis 5 étoiles.",
@@ -144,6 +144,8 @@ export function serviceSchema(opts: {
   category: string;
   image?: string;
   priceRange?: string;
+  ratingValue?: string;
+  reviewCount?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -156,6 +158,14 @@ export function serviceSchema(opts: {
     image: opts.image ? `${SITE.url}${opts.image}` : undefined,
     provider: { "@id": `${SITE.url}/#business` },
     areaServed: { "@type": "City", name: "Cotonou" },
+    aggregateRating: opts.ratingValue
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: opts.ratingValue,
+          reviewCount: opts.reviewCount ?? "1",
+          bestRating: "5",
+        }
+      : undefined,
     offers: opts.priceRange
       ? {
           "@type": "Offer",
