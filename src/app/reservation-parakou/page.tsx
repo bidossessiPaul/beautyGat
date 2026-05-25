@@ -125,6 +125,17 @@ export default function Page() {
           opacity: 1 !important;
           color: #f9f3ec !important;
         }
+        .img-wrap {
+          overflow: hidden;
+        }
+        .img-wrap img {
+          transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+          will-change: transform;
+        }
+        .img-wrap:hover img {
+          transform: scale(1.06);
+          filter: brightness(1.05);
+        }
       `}</style>
 
       {/* ── HERO (nav fusionnée) ─────────────────────────────────── */}
@@ -134,15 +145,19 @@ export default function Page() {
       >
         {/* Nav intégrée dans le hero — absolue, transparente */}
         <div className="absolute top-0 left-0 right-0 z-20">
-          <div className="max-w-[1200px] mx-auto px-6 h-14 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Image src="/beautygate-logo.jpeg" alt="Academy Beauty Gate" width={28} height={28} className="rounded-full opacity-80" />
-              <span
-                className="text-[10px] uppercase tracking-[0.2em] hidden sm:block"
-                style={{ color: "rgba(249,243,236,0.35)" }}
-              >
-                Academy Beauty Gate
-              </span>
+          <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/beautygate-logo-sans-bg.png"
+                alt="Academy Beauty Gate"
+                width={64}
+                height={64}
+                className="brightness-0 invert"
+              />
+              <div className="flex flex-col leading-none">
+                <span className="text-[13px] font-semibold tracking-[0.08em]" style={{ color: "#f9f3ec" }}>Academy</span>
+                <span className="text-[13px] font-semibold tracking-[0.08em]" style={{ color: "#f9f3ec" }}>Beauty Gate</span>
+              </div>
             </div>
             <a
               href="#booking"
@@ -297,7 +312,7 @@ export default function Page() {
                 }}
               >
                 <Image
-                  src="/parakou-flyer.png"
+                  src="https://res.cloudinary.com/dqdduftrm/image/upload/v1779703774/beautygate/parakou/parakou-flyer.png"
                   alt="Affiche événement Parakou — Academy Beauty Gate"
                   width={360}
                   height={480}
@@ -387,10 +402,9 @@ export default function Page() {
               return (
                 <div
                   key={s.id}
-                  className="service-card"
+                  className="service-card p-6 md:p-10"
                   style={{
                     backgroundColor: bg,
-                    padding: "40px",
                     display: "flex",
                     flexDirection: "column",
                     gap: 0,
@@ -496,7 +510,7 @@ export default function Page() {
                   <div style={{ height: 1, backgroundColor: borderColor, marginBottom: 28 }} />
 
                   {/* Prix + CTA */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <div>
                       {s.id === "accrochons" && (
                         <p style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase" as const, color: textMuted, marginBottom: 4 }}>
@@ -506,7 +520,7 @@ export default function Page() {
                       <p
                         style={{
                           fontFamily: "var(--font-display)",
-                          fontSize: 36,
+                          fontSize: "clamp(28px, 5vw, 36px)",
                           fontWeight: 900,
                           color: textPrimary,
                           lineHeight: 1,
@@ -518,10 +532,11 @@ export default function Page() {
                     </div>
                     <a
                       href="#booking"
-                      className="btn-cta"
+                      className="btn-cta w-full sm:w-auto text-center"
                       style={{
                         display: "inline-flex",
                         alignItems: "center",
+                        justifyContent: "center",
                         gap: 8,
                         backgroundColor: "#6D071A",
                         color: "#f9f3ec",
@@ -532,7 +547,6 @@ export default function Page() {
                         letterSpacing: "0.2em",
                         textDecoration: "none",
                         whiteSpace: "nowrap" as const,
-                        flexShrink: 0,
                       }}
                     >
                       Réserver →
@@ -572,15 +586,7 @@ export default function Page() {
           </div>
 
           {/* Grille 3 colonnes */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 340px 1fr",
-              gap: "48px",
-              alignItems: "center",
-            }}
-            className="flex-col md:grid"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_300px_1fr] gap-10 md:gap-12 items-center">
 
             {/* ── Colonne gauche ── */}
             <div className="flex flex-col justify-center gap-8">
@@ -643,8 +649,8 @@ export default function Page() {
 
             {/* ── Colonne centrale — vidéo portrait ── */}
             <div style={{ position: "relative" }}>
-              {/* Cadre décoratif décalé */}
-              <div style={{
+              {/* Cadre décoratif décalé — desktop only */}
+              <div className="hidden md:block" style={{
                 position: "absolute",
                 top: -10,
                 left: -10,
@@ -655,10 +661,10 @@ export default function Page() {
                 zIndex: 0,
               }} />
 
-              {/* Vidéo */}
-              <div style={{ position: "relative", zIndex: 1, overflow: "hidden", aspectRatio: "9/16" }}>
+              {/* Vidéo — 16:9 mobile, 9:16 desktop */}
+              <div style={{ position: "relative", zIndex: 1, overflow: "hidden" }} className="aspect-video md:aspect-[9/16]">
                 <video
-                  src="/videoplayback.mp4"
+                  src="https://res.cloudinary.com/dqdduftrm/video/upload/v1779703810/beautygate/parakou/videoplayback.mp4"
                   autoPlay
                   muted
                   loop
@@ -706,7 +712,7 @@ export default function Page() {
             </div>
 
             {/* ── Colonne droite ── */}
-            <div className="flex flex-col justify-center gap-10">
+            <div className="grid grid-cols-2 md:flex md:flex-col md:justify-center gap-6 md:gap-10">
 
               {/* Event info */}
               <div style={{ borderLeft: "2px solid #6D071A", paddingLeft: 20 }}>
@@ -739,8 +745,8 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Badges garanties */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {/* Badges garanties — pleine largeur sur mobile */}
+              <div className="col-span-2 md:col-span-1" style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {[
                   "Paiement sécurisé FedaPay",
                   "Confirmation WhatsApp",
@@ -786,9 +792,9 @@ export default function Page() {
 
             {/* Left — Image */}
             <div className="relative">
-              <div className="relative overflow-hidden" style={{ aspectRatio: "4/5" }}>
+              <div className="relative overflow-hidden img-wrap" style={{ aspectRatio: "4/5" }}>
                 <img
-                  src="/image.png"
+                  src="https://res.cloudinary.com/dqdduftrm/image/upload/v1779703791/beautygate/parakou/image.png"
                   alt="Diagnostic de peau professionnel"
                   className="w-full h-full object-cover"
                 />
@@ -879,24 +885,25 @@ export default function Page() {
                 ))}
               </div>
 
-              <div
-                className="inline-block px-8 py-4"
-                style={{ backgroundColor: "#6D071A" }}
-              >
-                <p
+              <div className="flex items-center gap-4 flex-wrap">
+                <span
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: 26,
+                    fontSize: 20,
                     fontWeight: 800,
-                    color: "#f9f3ec",
-                    lineHeight: 1,
+                    color: "#6D071A",
                   }}
                 >
                   7 000 FCFA
-                </p>
-                <p className="text-[11px] mt-1" style={{ color: "rgba(249,243,236,0.6)" }}>
-                  Protocole personnalisé inclus
-                </p>
+                </span>
+                <a
+                  href="#booking"
+                  className="btn-cta inline-flex items-center gap-2 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] group"
+                  style={{ backgroundColor: "#6D071A", color: "#f9f3ec" }}
+                >
+                  Réserver ce soin
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
               </div>
             </div>
           </div>
@@ -1084,7 +1091,7 @@ export default function Page() {
 
             {/* Left — Image */}
             <div className="relative">
-              <div className="relative overflow-hidden" style={{ aspectRatio: "4/5" }}>
+              <div className="relative overflow-hidden img-wrap" style={{ aspectRatio: "4/5" }}>
                 <img
                   src="/images/design-sans-titre-2.png"
                   alt="Suppression des accrochons"
@@ -1126,9 +1133,18 @@ export default function Page() {
               <p className="text-[14px] leading-[1.9] mb-4" style={{ color: "rgba(26,13,13,0.65)" }}>
                 {"Les accrochons, aussi appelés « skin tags », sont de petites excroissances cutanées bénignes. Ils ne sont pas dangereux ni contagieux, mais peuvent être inesthétiques et affecter la confiance en soi — surtout au niveau du cou."}
               </p>
-              <p className="text-[14px] leading-[1.9] mb-8" style={{ color: "rgba(26,13,13,0.65)" }}>
+              <p className="text-[14px] leading-[1.9] mb-6" style={{ color: "rgba(26,13,13,0.65)" }}>
                 {"Notre procédure est réalisée avec du matériel stérilisé à usage unique. C'est rapide, peu douloureux, sans cicatrice visible. Les résultats sont immédiats."}
               </p>
+
+              <a
+                href="#booking"
+                className="inline-flex items-center gap-2 mb-8 px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] group"
+                style={{ backgroundColor: "#6D071A", color: "#f9f3ec" }}
+              >
+                Réserver la suppression accrochons
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
 
               {/* Stats */}
               <div className="grid grid-cols-4 gap-3 mb-8">
@@ -1157,7 +1173,7 @@ export default function Page() {
               </div>
 
               <div
-                className="px-4 py-3 text-[13px]"
+                className="px-4 py-3 text-[13px] mb-8"
                 style={{
                   backgroundColor: "rgba(16,185,129,0.06)",
                   border: "1px solid rgba(16,185,129,0.2)",
@@ -1165,6 +1181,27 @@ export default function Page() {
                 }}
               >
                 Les accrochons supprimés ne repoussent pas au même endroit.
+              </div>
+
+              <div className="flex items-center gap-4 flex-wrap">
+                <span
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: 20,
+                    fontWeight: 800,
+                    color: "#6D071A",
+                  }}
+                >
+                  Dès 5 000 FCFA
+                </span>
+                <a
+                  href="#booking"
+                  className="btn-cta inline-flex items-center gap-2 px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] group"
+                  style={{ backgroundColor: "#6D071A", color: "#f9f3ec" }}
+                >
+                  Réserver ce soin
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
               </div>
             </div>
           </div>
@@ -1276,7 +1313,7 @@ export default function Page() {
               </h2>
               <p
                 className="text-[13.5px] leading-[1.85] mb-8"
-                style={{ color: "rgba(249,243,236,0.4)" }}
+                style={{ color: "#ffffff" }}
               >
                 Ces consultations s'adressent à toutes celles qui veulent prendre soin de leur peau avec un accompagnement professionnel, bienveillant et adapté à leur réalité.
               </p>
@@ -1309,7 +1346,7 @@ export default function Page() {
                   </span>
                   <span
                     className="text-[13.5px] leading-[1.65]"
-                    style={{ color: "rgba(249,243,236,0.55)" }}
+                    style={{ color: "#ffffff" }}
                   >
                     {item}
                   </span>
@@ -1351,7 +1388,7 @@ export default function Page() {
               </h2>
               <p
                 className="text-[14px] leading-relaxed mb-8"
-                style={{ color: "rgba(249,243,236,0.4)" }}
+                style={{ color: "#ffffff" }}
               >
                 Formulaire en 4 étapes. Le paiement en ligne confirme définitivement ta place. Même sans aller jusqu'au bout, tes coordonnées sont sauvegardées.
               </p>
@@ -1366,7 +1403,7 @@ export default function Page() {
                 ].map((text) => (
                   <div key={text} className="flex items-center gap-3">
                     <span className="w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: "#6D071A" }} />
-                    <span className="text-[13px]" style={{ color: "rgba(249,243,236,0.45)" }}>{text}</span>
+                    <span className="text-[13px]" style={{ color: "#ffffff" }}>{text}</span>
                   </div>
                 ))}
               </div>
@@ -1466,27 +1503,97 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ── MINI FOOTER ──────────────────────────────────────────── */}
-      <footer style={{ backgroundColor: "#0a0806", borderTop: "1px solid rgba(255,255,255,0.05)" }} className="py-8">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Image src="/beautygate-logo.jpeg" alt="Academy Beauty Gate" width={32} height={32} className="rounded-full opacity-80" />
+      {/* ── FOOTER ───────────────────────────────────────────────── */}
+      <footer style={{ backgroundColor: "#060402", borderTop: "1px solid rgba(249,243,236,0.06)" }} className="pt-14 pb-8">
+        <div className="max-w-[1200px] mx-auto px-6">
+
+          {/* Top grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10" style={{ borderBottom: "1px solid rgba(249,243,236,0.06)" }}>
+
+            {/* Brand */}
             <div>
-              <p className="text-[12px] font-semibold" style={{ color: "rgba(249,243,236,0.7)", fontFamily: "var(--font-display)" }}>
-                Academy Beauty Gate
+              <div className="flex items-center gap-3 mb-4">
+                <Image
+                  src="/beautygate-logo-sans-bg.png"
+                  alt="Academy Beauty Gate"
+                  width={40}
+                  height={40}
+                  className="brightness-0 invert opacity-80"
+                />
+                <div>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: 14, fontWeight: 700, color: "#f9f3ec", lineHeight: 1.2 }}>
+                    Academy<br />Beauty Gate
+                  </p>
+                </div>
+              </div>
+              <p className="text-[12px] leading-[1.75]" style={{ color: "rgba(249,243,236,0.35)" }}>
+                Centre de bien-être et d'esthétique avancée.<br />Cotonou, Bénin · Plus de 175 avis 5 étoiles.
               </p>
-              <p className="text-[10px]" style={{ color: "rgba(249,243,236,0.25)" }}>Centre de Formation et de Bien-Être · Cotonou, Bénin</p>
             </div>
+
+            {/* Event */}
+            <div>
+              <p className="text-[9px] uppercase tracking-[0.4em] mb-4" style={{ color: "#6D071A" }}>Pop-up Parakou</p>
+              <ul className="space-y-2.5">
+                {[
+                  { label: "Lieu", value: "Parakou, Bénin" },
+                  { label: "Dates", value: "06 – 10 juillet 2026" },
+                  { label: "Diagnostic", value: "7 000 FCFA · 30–45 min" },
+                  { label: "Accrochons", value: "Dès 5 000 FCFA · 15–30 min" },
+                ].map(row => (
+                  <li key={row.label} className="flex gap-3 text-[12px]">
+                    <span style={{ color: "rgba(249,243,236,0.25)", minWidth: 72 }}>{row.label}</span>
+                    <span style={{ color: "rgba(249,243,236,0.65)" }}>{row.value}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact + CTA */}
+            <div>
+              <p className="text-[9px] uppercase tracking-[0.4em] mb-4" style={{ color: "#6D071A" }}>Contact</p>
+              <div className="space-y-3 mb-6">
+                <a
+                  href={`tel:${EVENT.phoneRaw}`}
+                  className="flex items-center gap-3 text-[13px] group"
+                  style={{ color: "rgba(249,243,236,0.55)" }}
+                >
+                  <span style={{ color: "#6D071A", fontSize: 10 }}>✦</span>
+                  <span className="group-hover:text-[#f9f3ec] transition-colors">{EVENT.phone}</span>
+                </a>
+                <a
+                  href={`https://wa.me/${EVENT.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-[13px] group"
+                  style={{ color: "rgba(249,243,236,0.55)" }}
+                >
+                  <span style={{ color: "#6D071A", fontSize: 10 }}>✦</span>
+                  <span className="group-hover:text-[#f9f3ec] transition-colors">WhatsApp</span>
+                </a>
+              </div>
+              <a
+                href="#booking"
+                className="btn-cta inline-flex items-center gap-2 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] group"
+                style={{ backgroundColor: "#6D071A", color: "#f9f3ec" }}
+              >
+                Réserver ma place
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </a>
+            </div>
+
           </div>
-          <div className="flex items-center gap-5">
-            <a href={`tel:${EVENT.phone}`} className="text-[12px] transition-colors" style={{ color: "rgba(249,243,236,0.3)" }}>
-              {EVENT.phone}
-            </a>
-            <a href={`https://wa.me/${EVENT.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-[12px] transition-colors" style={{ color: "rgba(249,243,236,0.3)" }}>
-              WhatsApp
-            </a>
+
+          {/* Bottom bar */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6">
+            <p className="text-[10px]" style={{ color: "rgba(249,243,236,0.15)" }}>
+              © 2026 Academy Beauty Gate · Tous droits réservés
+            </p>
+            <p className="text-[10px]" style={{ color: "rgba(249,243,236,0.1)" }}>
+              Places limitées · Paiement sécurisé FedaPay
+            </p>
           </div>
-          <p className="text-[10px]" style={{ color: "rgba(249,243,236,0.15)" }}>© 2026</p>
+
         </div>
       </footer>
 
