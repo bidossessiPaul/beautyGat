@@ -395,7 +395,7 @@ export default function Page() {
               const dark = idx === 0;
               const bg = dark ? "#0a0806" : "#fff";
               const textPrimary = dark ? "#f9f3ec" : "#1a0d0d";
-              const textMuted = dark ? "rgba(249,243,236,0.45)" : "rgba(26,13,13,0.45)";
+              const textMuted = dark ? "#f9f3ec" : "#1a0d0d";
               const borderColor = dark ? "rgba(249,243,236,0.08)" : "rgba(26,13,13,0.08)";
               const tagBg = dark ? "rgba(109,7,26,0.35)" : "rgba(109,7,26,0.08)";
               const tagColor = dark ? "#c98080" : "#6D071A";
@@ -481,7 +481,7 @@ export default function Page() {
                   {/* Description */}
                   <p
                     style={{
-                      fontSize: 13.5,
+                      fontSize: 16,
                       lineHeight: 1.8,
                       color: textMuted,
                       marginBottom: 24,
@@ -498,7 +498,7 @@ export default function Page() {
                     {s.includes.map((item) => (
                       <li
                         key={item}
-                        style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 13 }}
+                        style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 16 }}
                       >
                         <span style={{ color: "#6D071A", fontSize: 8, marginTop: 4, flexShrink: 0 }}>✦</span>
                         <span style={{ color: textMuted }}>{item}</span>
