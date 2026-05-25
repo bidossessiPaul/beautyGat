@@ -223,7 +223,7 @@ export default function Page() {
                 Professionnelles
               </em>
               <br />
-              <span style={{ fontSize: "0.65em", color: "rgba(249,243,236,0.5)", fontWeight: 400 }}>
+              <span style={{ fontSize: "0.65em", color: "#f9f3ec", fontWeight: 400 }}>
                 &amp; Suppression des Accrochons
               </span>
             </h1>
@@ -382,7 +382,7 @@ export default function Page() {
                 Choisis ton soin
               </h2>
             </div>
-            <p className="text-[13px] md:text-right max-w-xs" style={{ color: "rgba(26,13,13,0.45)" }}>
+            <p className="text-[13px] md:text-right max-w-xs" style={{ color: "#1a0d0d" }}>
               2 soins experts · Places limitées<br />Parakou, 06–10 juillet 2026
             </p>
           </div>
@@ -560,7 +560,7 @@ export default function Page() {
 
         {/* Bas de section */}
         <div className="max-w-[1200px] mx-auto px-6 py-8 flex items-center justify-between flex-wrap gap-4">
-          <p className="text-[12px]" style={{ color: "rgba(26,13,13,0.35)" }}>
+          <p className="text-[12px]" style={{ color: "#1a0d0d" }}>
             Paiement sécurisé · Confirmation WhatsApp · Places limitées
           </p>
           <a
@@ -809,7 +809,7 @@ export default function Page() {
                 className="absolute bottom-4 left-4 px-4 py-2.5"
                 style={{ backgroundColor: "#6D071A" }}
               >
-                <p className="text-[9px] uppercase tracking-[0.4em]" style={{ color: "rgba(249,243,236,0.7)" }}>Soin n°1</p>
+                <p className="text-[9px] uppercase tracking-[0.4em]" style={{ color: "#f9f3ec" }}>Soin n°1</p>
                 <p className="text-[13px] font-bold mt-0.5" style={{ color: "#f9f3ec", fontFamily: "var(--font-display)" }}>Diagnostic de peau</p>
               </div>
               {/* Numéro décoratif */}
@@ -836,14 +836,14 @@ export default function Page() {
               </h2>
 
               <p
-                className="text-[14px] leading-[1.9] mb-4"
-                style={{ color: "rgba(26,13,13,0.65)" }}
+                className="text-[16px] leading-[1.9] mb-4"
+                style={{ color: "#1a0d0d" }}
               >
                 {"Un diagnostic de peau professionnel va bien au-delà d'un simple bilan. Notre esthéticienne diplômée analyse ta peau sous toutes ses facettes : type de peau, texture, hydratation, imperfections, taches pigmentaires."}
               </p>
               <p
-                className="text-[14px] leading-[1.9] mb-8"
-                style={{ color: "rgba(26,13,13,0.65)" }}
+                className="text-[16px] leading-[1.9] mb-8"
+                style={{ color: "#1a0d0d" }}
               >
                 {"Beaucoup de personnes utilisent des produits qui ne correspondent pas à leur peau pendant des années. Tu repars avec une feuille de route claire et un protocole sur mesure."}
               </p>
@@ -880,7 +880,7 @@ export default function Page() {
                     style={{ backgroundColor: "rgba(109,7,26,0.04)", border: "1px solid rgba(109,7,26,0.08)" }}
                   >
                     <span style={{ color: "#6D071A", fontSize: 8, marginTop: 4 }}>✦</span>
-                    <p className="text-[12px] leading-snug" style={{ color: "rgba(26,13,13,0.6)" }}>{text}</p>
+                    <p className="text-[12px] leading-snug" style={{ color: "#1a0d0d" }}>{text}</p>
                   </div>
                 ))}
               </div>
@@ -930,7 +930,7 @@ export default function Page() {
                 Une expertise certifiée,<br />des résultats immédiats
               </h2>
             </div>
-            <p className="text-[13px] max-w-xs" style={{ color: "rgba(26,13,13,0.45)" }}>
+            <p className="text-[13px] max-w-xs" style={{ color: "#1a0d0d" }}>
               Academy Beauty Gate, c'est une équipe formée aux standards professionnels les plus élevés.
             </p>
           </div>
@@ -954,7 +954,7 @@ export default function Page() {
                 <h3 className="text-[15px] font-semibold mb-2" style={{ color: "#1a0d0d", fontFamily: "var(--font-display)" }}>
                   {title}
                 </h3>
-                <p className="text-[13px] leading-[1.75]" style={{ color: "rgba(26,13,13,0.45)" }}>
+                <p className="text-[16px] leading-[1.75]" style={{ color: "#1a0d0d" }}>
                   {body}
                 </p>
               </div>
@@ -983,7 +983,7 @@ export default function Page() {
                 Comment réserver ?
               </h2>
             </div>
-            <p className="text-[13px] max-w-xs" style={{ color: "rgba(26,13,13,0.45)" }}>
+            <p className="text-[13px] max-w-xs" style={{ color: "#1a0d0d" }}>
               3 étapes, moins de 5 minutes. Ta place est confirmée dès le paiement.
             </p>
           </div>
@@ -1053,8 +1053,8 @@ export default function Page() {
                   {item.title}
                 </h3>
                 <p
-                  className="text-[13px] leading-relaxed"
-                  style={{ color: "rgba(26,13,13,0.5)" }}
+                  className="text-[16px] leading-relaxed"
+                  style={{ color: "#1a0d0d" }}
                 >
                   {item.desc}
                 </p>
@@ -1106,7 +1106,7 @@ export default function Page() {
                 className="absolute bottom-4 left-4 px-4 py-2.5"
                 style={{ backgroundColor: "#1a0d0d" }}
               >
-                <p className="text-[9px] uppercase tracking-[0.4em]" style={{ color: "rgba(249,243,236,0.7)" }}>Soin n°2</p>
+                <p className="text-[9px] uppercase tracking-[0.4em]" style={{ color: "#f9f3ec" }}>Soin n°2</p>
                 <p className="text-[13px] font-bold mt-0.5" style={{ color: "#f9f3ec", fontFamily: "var(--font-display)" }}>Suppression accrochons</p>
               </div>
               <div
@@ -1130,10 +1130,10 @@ export default function Page() {
                 {"Qu'est-ce qu'un acrochordon (accrochon) ?"}
               </h2>
 
-              <p className="text-[14px] leading-[1.9] mb-4" style={{ color: "rgba(26,13,13,0.65)" }}>
+              <p className="text-[16px] leading-[1.9] mb-4" style={{ color: "#1a0d0d" }}>
                 {"Les accrochons, aussi appelés « skin tags », sont de petites excroissances cutanées bénignes. Ils ne sont pas dangereux ni contagieux, mais peuvent être inesthétiques et affecter la confiance en soi — surtout au niveau du cou."}
               </p>
-              <p className="text-[14px] leading-[1.9] mb-6" style={{ color: "rgba(26,13,13,0.65)" }}>
+              <p className="text-[16px] leading-[1.9] mb-6" style={{ color: "#1a0d0d" }}>
                 {"Notre procédure est réalisée avec du matériel stérilisé à usage unique. C'est rapide, peu douloureux, sans cicatrice visible. Les résultats sont immédiats."}
               </p>
 
@@ -1165,7 +1165,7 @@ export default function Page() {
                     >
                       {item.v}
                     </p>
-                    <p className="text-[10px] mt-1 uppercase tracking-wide" style={{ color: "rgba(26,13,13,0.35)" }}>
+                    <p className="text-[10px] mt-1 uppercase tracking-wide" style={{ color: "#1a0d0d" }}>
                       {item.l}
                     </p>
                   </div>
@@ -1228,7 +1228,7 @@ export default function Page() {
                 Ce qu'elles disent
               </h2>
             </div>
-            <p className="text-[13px] max-w-xs" style={{ color: "rgba(26,13,13,0.4)" }}>
+            <p className="text-[13px] max-w-xs" style={{ color: "#1a0d0d" }}>
               Clientes d'Academy Beauty Gate ayant bénéficié de nos consultations.
             </p>
           </div>
@@ -1266,8 +1266,8 @@ export default function Page() {
                     ))}
                   </div>
                   <p
-                    className="text-[13.5px] leading-[1.85]"
-                    style={{ color: "rgba(26,13,13,0.6)", fontStyle: "italic" }}
+                    className="text-[16px] leading-[1.85]"
+                    style={{ color: "#1a0d0d", fontStyle: "italic" }}
                   >
                     {`"${quote}"`}
                   </p>
@@ -1279,7 +1279,7 @@ export default function Page() {
                   >
                     {name}
                   </p>
-                  <p className="text-[11px] mt-0.5" style={{ color: "rgba(26,13,13,0.3)" }}>
+                  <p className="text-[11px] mt-0.5" style={{ color: "#1a0d0d" }}>
                     {time}
                   </p>
                 </div>
@@ -1312,7 +1312,7 @@ export default function Page() {
                 Ce pop-up est fait<br />pour toi si…
               </h2>
               <p
-                className="text-[13.5px] leading-[1.85] mb-8"
+                className="text-[16px] leading-[1.85] mb-8"
                 style={{ color: "#ffffff" }}
               >
                 Ces consultations s'adressent à toutes celles qui veulent prendre soin de leur peau avec un accompagnement professionnel, bienveillant et adapté à leur réalité.
@@ -1345,7 +1345,7 @@ export default function Page() {
                     ✓
                   </span>
                   <span
-                    className="text-[13.5px] leading-[1.65]"
+                    className="text-[16px] leading-[1.65]"
                     style={{ color: "#ffffff" }}
                   >
                     {item}
@@ -1387,7 +1387,7 @@ export default function Page() {
                 Réserve ta place maintenant
               </h2>
               <p
-                className="text-[14px] leading-relaxed mb-8"
+                className="text-[16px] leading-relaxed mb-8"
                 style={{ color: "#ffffff" }}
               >
                 Formulaire en 4 étapes. Le paiement en ligne confirme définitivement ta place. Même sans aller jusqu'au bout, tes coordonnées sont sauvegardées.
@@ -1461,8 +1461,8 @@ export default function Page() {
                   </span>
                 </summary>
                 <div
-                  className="pb-5 text-[13.5px] leading-[1.8]"
-                  style={{ color: "rgba(26,13,13,0.55)" }}
+                  className="pb-5 text-[16px] leading-[1.8]"
+                  style={{ color: "#1a0d0d" }}
                 >
                   {item.a}
                 </div>
@@ -1479,7 +1479,7 @@ export default function Page() {
       >
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.35em] mb-2" style={{ color: "rgba(249,243,236,0.5)" }}>
+            <p className="text-[10px] uppercase tracking-[0.35em] mb-2" style={{ color: "#f9f3ec" }}>
               Places limitées · {EVENT.city} · {DATES.length} jours
             </p>
             <h2
@@ -1526,7 +1526,7 @@ export default function Page() {
                   </p>
                 </div>
               </div>
-              <p className="text-[12px] leading-[1.75]" style={{ color: "rgba(249,243,236,0.35)" }}>
+              <p className="text-[12px] leading-[1.75]" style={{ color: "#f9f3ec" }}>
                 Centre de bien-être et d'esthétique avancée.<br />Cotonou, Bénin · Plus de 175 avis 5 étoiles.
               </p>
             </div>
@@ -1542,8 +1542,8 @@ export default function Page() {
                   { label: "Accrochons", value: "Dès 5 000 FCFA · 15–30 min" },
                 ].map(row => (
                   <li key={row.label} className="flex gap-3 text-[12px]">
-                    <span style={{ color: "rgba(249,243,236,0.25)", minWidth: 72 }}>{row.label}</span>
-                    <span style={{ color: "rgba(249,243,236,0.65)" }}>{row.value}</span>
+                    <span style={{ color: "#f9f3ec", minWidth: 72 }}>{row.label}</span>
+                    <span style={{ color: "#f9f3ec" }}>{row.value}</span>
                   </li>
                 ))}
               </ul>
@@ -1556,7 +1556,7 @@ export default function Page() {
                 <a
                   href={`tel:${EVENT.phoneRaw}`}
                   className="flex items-center gap-3 text-[13px] group"
-                  style={{ color: "rgba(249,243,236,0.55)" }}
+                  style={{ color: "#f9f3ec" }}
                 >
                   <span style={{ color: "#6D071A", fontSize: 10 }}>✦</span>
                   <span className="group-hover:text-[#f9f3ec] transition-colors">{EVENT.phone}</span>
@@ -1566,7 +1566,7 @@ export default function Page() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-[13px] group"
-                  style={{ color: "rgba(249,243,236,0.55)" }}
+                  style={{ color: "#f9f3ec" }}
                 >
                   <span style={{ color: "#6D071A", fontSize: 10 }}>✦</span>
                   <span className="group-hover:text-[#f9f3ec] transition-colors">WhatsApp</span>
