@@ -5,7 +5,7 @@ export const SITE = {
   url: "https://www.academybeautygatee.com",
   tagline: "Espace de bien-être, de beauté et de formation & esthétique avancée — Cotonou, Bénin",
   description:
-    "Academy Beauty Gate, l'espace de référence à Cotonou pour les soins du visage, l'électrolyse, les massages et l'esthétique avancée. Plus de 175 avis 5 étoiles.",
+    "Academy Beauty Gate, institut de beauté de référence à Cotonou pour les soins du visage, l'épilation, les massages, la manucure et la formation esthétique. Plus de 175 avis 5 étoiles.",
   locale: "fr_BJ",
   address: {
     street: "Cadjehoun",
