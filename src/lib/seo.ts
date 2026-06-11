@@ -32,7 +32,8 @@ export function buildMetadata(override: Partial<Metadata> & {
   const ogImage = image ?? SITE.ogImage;
 
   return {
-    title: `${title} | Academy Beauty Gate Cotonou`,
+    // Le template "%s | Academy Beauty Gate Cotonou" du layout ajoute déjà le suffixe
+    title,
     description,
     metadataBase: new URL(SITE.url),
     alternates: { canonical: url },
@@ -120,7 +121,11 @@ export function localBusinessSchema() {
     currenciesAccepted: "XOF",
     areaServed: { "@type": "City", name: "Cotonou" },
     hasMap: `https://www.google.com/maps/search/Academy+Beauty+Gate+Cotonou`,
-    sameAs: ["https://wa.me/2290168411111"],
+    sameAs: [
+      "https://wa.me/2290168411111",
+      "https://www.instagram.com/beaut.ygateofficiel/",
+      "https://www.goafricaonline.com/bj/annuaire/instituts-de-beaute?q=academy+beauty+gate",
+    ],
   };
 }
 
