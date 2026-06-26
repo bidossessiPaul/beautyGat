@@ -14,7 +14,7 @@ export const SITE = {
     countryCode: "BJ",
   },
   phone: "+2290168411111",
-  email: "contact@academybeautygate.com",
+  email: "contact@academybeautygatee.com",
   openingHours: ["Mo-Fr 08:00-20:00", "Sa 09:00-18:00"],
   geo: { lat: 6.3641, lng: 2.4219 },
   ogImage: "/seo/microneedling-appart-beaute-1200x628-cropped.png",
