@@ -120,11 +120,15 @@ export function localBusinessSchema() {
     priceRange: "$$",
     currenciesAccepted: "XOF",
     areaServed: { "@type": "City", name: "Cotonou" },
-    hasMap: `https://www.google.com/maps/search/Academy+Beauty+Gate+Cotonou`,
+    hasMap: "https://share.google/P6kXGkOHF6M5iTHk8",
     sameAs: [
+      "https://www.facebook.com/beautygateofficiel/",
+      "https://www.instagram.com/beautygateofficiel/",
+      "https://www.tiktok.com/@beautygateofficiel",
+      "https://share.google/P6kXGkOHF6M5iTHk8",
+      "https://www.goafricaonline.com/bj/1182720-academy-beauty-gate",
+      "https://www.anensaa.com/fr/academy-beauty-gate",
       "https://wa.me/2290168411111",
-      "https://www.instagram.com/beaut.ygateofficiel/",
-      "https://www.goafricaonline.com/bj/annuaire/instituts-de-beaute?q=academy+beauty+gate",
     ],
   };
 }
