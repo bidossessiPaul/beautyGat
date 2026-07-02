@@ -32,6 +32,7 @@ export interface ServiceData {
   category: "visage" | "corps" | "injections" | "diagnostic"
     | "mains-pieds" | "massages" | "epilation" | "epilation-cire"
     | "duo-enfants" | "privatisation";
+  catGroup?: string | null; // sous-catégorie (ex: "pedicure", "manucure") — pilote le jeu d'images
   hero: {
     image?: string;
     imageAlt: string;

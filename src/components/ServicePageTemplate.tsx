@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { MapPin, Phone, ChevronDown, CheckCircle2, Star, Navigation, Sparkles } from "lucide-react";
 import { ServiceData, getRelatedServices } from "@/data/services";
+import { SUBCAT_IMAGE_SETS } from "@/data/subcategoryImages";
 
 const HERO_FALLBACK: Partial<Record<ServiceData["category"], string>> = {
   visage:           "/images/soins/hydrafacial/hero.jpg",
@@ -90,11 +91,15 @@ export function ServicePageTemplate({ service }: Props) {
 
   const relatedServices = getRelatedServices(service, 4);
 
-  const heroImg     = service.hero.image  ?? HERO_FALLBACK[service.category];
-  const introImg    = service.intro.image ?? INTRO_FALLBACK[service.category];
-  const pourQuiImg  = service.forWho?.image ?? INTRO_FALLBACK[service.category] ?? heroImg;
-  const stepsImg    = service.stepsImage   ?? heroImg;
-  const benefitsImg = service.benefitsImage ?? INTRO_FALLBACK[service.category] ?? heroImg;
+  // Jeu d'images dédié à la sous-catégorie (ex: pédicure) — prioritaire sur les
+  // images génériques héritées de la catégorie.
+  const imgSet = service.catGroup ? SUBCAT_IMAGE_SETS[service.catGroup] : undefined;
+
+  const heroImg     = imgSet?.hero     ?? service.hero.image  ?? HERO_FALLBACK[service.category];
+  const introImg    = imgSet?.intro    ?? service.intro.image ?? INTRO_FALLBACK[service.category];
+  const pourQuiImg  = imgSet?.forWho   ?? service.forWho?.image ?? INTRO_FALLBACK[service.category] ?? heroImg;
+  const stepsImg    = imgSet?.steps    ?? service.stepsImage   ?? heroImg;
+  const benefitsImg = imgSet?.benefits ?? service.benefitsImage ?? INTRO_FALLBACK[service.category] ?? heroImg;
 
   // nom court du service pour les titres de section
   const sName = service.name ?? service.hero.eyebrow;

@@ -19,6 +19,7 @@ function dbServiceToServiceData(s: {
   name: string;
   metaDescription: string;
   category: string;
+  catGroup: string | null;
   stepsImage: string;
   stepsImageAlt: string;
   benefitsImage: string;
@@ -32,6 +33,7 @@ function dbServiceToServiceData(s: {
     name: s.name || undefined,
     metaDescription: s.metaDescription,
     category: s.category as ServiceData["category"],
+    catGroup: s.catGroup,
     hero: {
       image: s.hero?.image || undefined,
       imageAlt: s.hero?.imageAlt ?? "",
