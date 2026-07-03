@@ -5,9 +5,9 @@ import { breadcrumbSchema } from "@/lib/seo";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Espace de bien-être, de beauté et de formation & esthétique avancée",
+  title: "Institut de Beauté à Cotonou — Academy Beauty Gate | Soins, Épilation, Formation",
   description:
-    "Academy Beauty Gate, l'espace de référence à Cotonou pour l'épilation, les soins du visage, les massages et l'esthétique avancée. Plus de 175 avis 5 étoiles.",
+    "Academy Beauty Gate, institut de beauté de référence à Cotonou (Cadjehoun) : Hydrafacial, peeling, microneedling, épilation, massages, manucure et formation esthétique. Plus de 175 avis 5 étoiles.",
   path: "",
 });
 import { HeroSlider } from "@/components/HeroSlider";
@@ -19,7 +19,6 @@ import { SeoTextBlock } from "@/components/SeoTextBlock";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { CTASection } from "@/components/CTASection";
 import { GeoSeoSection2 } from "@/components/GeoSeoSection2";
-import { InstagramReels } from "@/components/InstagramReels";
 import { FaqSection } from "@/components/FaqSection";
 import { ContactFooter } from "@/components/ContactFooter";
 import { Footer } from "@/components/Footer";
@@ -40,7 +39,6 @@ export default function Home() {
         <CTASection />
         <IntroSection />
         <GeoSeoSection2 />
-        <InstagramReels />
         <ReviewsSection />
         <FaqSection />
       </main>

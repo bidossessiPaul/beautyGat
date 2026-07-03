@@ -66,16 +66,18 @@ model Service {
   pricing          Json
   faq              Json
   cta              Json
-  gallery          Json     @default("[]")
-  forWho           Json     @default("{\"image\":\"\",\"imageAlt\":\"\",\"targets\":[]}")
-  steps            Json     @default("[]")
+  gallery          Json
+  forWho           Json
+  steps            Json
   stepsImage       String   @default("")
   stepsImageAlt    String   @default("")
-  boosters         Json     @default("[]")
+  boosters         Json
   benefitsImage    String   @default("")
   benefitsImageAlt String   @default("")
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+  subcategory      String?
+  catGroup         String?
 }
 
 model Appointment {

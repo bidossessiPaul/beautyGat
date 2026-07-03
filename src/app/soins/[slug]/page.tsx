@@ -19,6 +19,7 @@ function dbServiceToServiceData(s: {
   name: string;
   metaDescription: string;
   category: string;
+  catGroup: string | null;
   stepsImage: string;
   stepsImageAlt: string;
   benefitsImage: string;
@@ -32,6 +33,7 @@ function dbServiceToServiceData(s: {
     name: s.name || undefined,
     metaDescription: s.metaDescription,
     category: s.category as ServiceData["category"],
+    catGroup: s.catGroup,
     hero: {
       image: s.hero?.image || undefined,
       imageAlt: s.hero?.imageAlt ?? "",
@@ -119,6 +121,8 @@ export default async function Page({ params }: Props) {
       category: service.hero.eyebrow,
       image: service.hero.image ?? CATEGORY_FALLBACK_FOR_META[service.category],
       priceRange: service.pricing.items[0]?.price,
+      ratingValue: "4.9",
+      reviewCount: "175",
     }),
     ...(service.faq.length > 0 ? [faqSchema(service.faq)] : []),
     breadcrumbSchema([

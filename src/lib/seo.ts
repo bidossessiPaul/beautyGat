@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 export const SITE = {
   name: "Academy Beauty Gate",
-  url: "https://academybeautygate.com",
+  url: "https://www.academybeautygatee.com",
   tagline: "Espace de bien-être, de beauté et de formation & esthétique avancée — Cotonou, Bénin",
   description:
-    "Academy Beauty Gate, l'espace de référence à Cotonou pour les soins du visage, l'électrolyse, les massages et l'esthétique avancée. Plus de 175 avis 5 étoiles.",
+    "Academy Beauty Gate, institut de beauté de référence à Cotonou pour les soins du visage, l'épilation, les massages, la manucure et la formation esthétique. Plus de 175 avis 5 étoiles.",
   locale: "fr_BJ",
   address: {
     street: "Cadjehoun",
@@ -14,7 +14,7 @@ export const SITE = {
     countryCode: "BJ",
   },
   phone: "+2290168411111",
-  email: "contact@academybeautygate.com",
+  email: "contact@academybeautygatee.com",
   openingHours: ["Mo-Fr 08:00-20:00", "Sa 09:00-18:00"],
   geo: { lat: 6.3641, lng: 2.4219 },
   ogImage: "/seo/microneedling-appart-beaute-1200x628-cropped.png",
@@ -32,7 +32,8 @@ export function buildMetadata(override: Partial<Metadata> & {
   const ogImage = image ?? SITE.ogImage;
 
   return {
-    title: `${title} | Academy Beauty Gate Cotonou`,
+    // Le template "%s | Academy Beauty Gate Cotonou" du layout ajoute déjà le suffixe
+    title,
     description,
     metadataBase: new URL(SITE.url),
     alternates: { canonical: url },
@@ -119,8 +120,16 @@ export function localBusinessSchema() {
     priceRange: "$$",
     currenciesAccepted: "XOF",
     areaServed: { "@type": "City", name: "Cotonou" },
-    hasMap: `https://www.google.com/maps/search/Academy+Beauty+Gate+Cotonou`,
-    sameAs: ["https://wa.me/2290168411111"],
+    hasMap: "https://share.google/P6kXGkOHF6M5iTHk8",
+    sameAs: [
+      "https://www.facebook.com/beautygateofficiel/",
+      "https://www.instagram.com/beautygateofficiel/",
+      "https://www.tiktok.com/@beautygateofficiel",
+      "https://share.google/P6kXGkOHF6M5iTHk8",
+      "https://www.goafricaonline.com/bj/1182720-academy-beauty-gate",
+      "https://www.anensaa.com/fr/academy-beauty-gate",
+      "https://wa.me/2290168411111",
+    ],
   };
 }
 
@@ -144,6 +153,8 @@ export function serviceSchema(opts: {
   category: string;
   image?: string;
   priceRange?: string;
+  ratingValue?: string;
+  reviewCount?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -156,6 +167,14 @@ export function serviceSchema(opts: {
     image: opts.image ? `${SITE.url}${opts.image}` : undefined,
     provider: { "@id": `${SITE.url}/#business` },
     areaServed: { "@type": "City", name: "Cotonou" },
+    aggregateRating: opts.ratingValue
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: opts.ratingValue,
+          reviewCount: opts.reviewCount ?? "1",
+          bestRating: "5",
+        }
+      : undefined,
     offers: opts.priceRange
       ? {
           "@type": "Offer",
