@@ -19,7 +19,6 @@ import { SeoTextBlock } from "@/components/SeoTextBlock";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { CTASection } from "@/components/CTASection";
 import { GeoSeoSection2 } from "@/components/GeoSeoSection2";
-import { InstagramReels } from "@/components/InstagramReels";
 import { FaqSection } from "@/components/FaqSection";
 import { ContactFooter } from "@/components/ContactFooter";
 import { Footer } from "@/components/Footer";
@@ -40,7 +39,6 @@ export default function Home() {
         <CTASection />
         <IntroSection />
         <GeoSeoSection2 />
-        <InstagramReels />
         <ReviewsSection />
         <FaqSection />
       </main>
