@@ -26,3 +26,14 @@ export async function PATCH(req: NextRequest, { params }: Props) {
     return NextResponse.json({ error: "DB error" }, { status: 500 });
   }
 }
+
+export async function DELETE(_req: NextRequest, { params }: Props) {
+  try {
+    const { id } = await params;
+    await prisma.serviceCategory.delete({ where: { id } });
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error("[api/admin/categories/[id]] DELETE error:", err);
+    return NextResponse.json({ error: "DB error" }, { status: 500 });
+  }
+}

@@ -9,49 +9,50 @@ import { CartIcon } from "@/components/shop/CartIcon";
 
 const MEGA_MENU = [
   {
-    title: "✨ Visage & Peelings",
+    title: "✦ Soins Visage",
     links: [
-      { label: "Hydrafacial®", href: "/soins/hydrafacial-cotonou" },
-      { label: "BB Glow", href: "/soins/bb-glow-visage-cotonou" },
-      { label: "Microneedling visage", href: "/soins/microneedling-cotonou" },
-      { label: "Peeling anti-taches", href: "/soins/peeling-visage-cotonou" },
-      { label: "Anti-âge régénérant", href: "/soins/soin-anti-age-regenerant-visage-cotonou" },
+      { label: "→ Soin Classique", href: "/nos-soins/visage/soin-classique" },
       { label: "Dermaplaning", href: "/soins/dermaplaning-visage-cotonou" },
-      { label: "Photomodulation LED", href: "/soins/photomodulation-led-cotonou" },
+      { label: "Soin Anti-Âge", href: "/soins/soin-anti-age-regenerant-visage-cotonou" },
+      { label: "Nettoyage Purifiant", href: "/soins/nettoyage-purifiant-visage-cotonou" },
+      { label: "→ Soin Avancé", href: "/nos-soins/visage/soin-avance" },
+      { label: "Hydrafacial®", href: "/soins/hydrafacial-cotonou" },
+      { label: "Microneedling", href: "/soins/microneedling-cotonou" },
+      { label: "Peeling Visage", href: "/soins/peeling-visage-cotonou" },
     ],
   },
   {
-    title: "🌿 Corps & Massages",
+    title: "✦ Soins du Corps",
     links: [
-      { label: "Massage relaxant corps entier", href: "/soins/massage-relaxant-corps-entier-cotonou" },
-      { label: "Massage aux pierres chaudes", href: "/soins/massage-pierres-chaudes-cotonou" },
-      { label: "Massage signature L.A Beauty", href: "/soins/massage-signature-cotonou" },
-      { label: "Massage dos & nuque", href: "/soins/massage-dos-nuque-cotonou" },
-      { label: "Cryolipolyse", href: "/soins/cryolipolyse-cotonou" },
-      { label: "Gommage corps", href: "/soins/gommage-corps-cotonou" },
-      { label: "Gommage & enveloppement", href: "/soins/gommage-enveloppement-cotonou" },
-    ],
-  },
-  {
-    title: "💅 Mains, Pieds & Nail Art",
-    links: [
-      { label: "Manucure semi-permanent", href: "/soins/manucure-semi-permanent-cotonou" },
-      { label: "Gel sur ongles naturels", href: "/soins/gel-ongles-naturels-cotonou" },
-      { label: "Capsules & résine", href: "/soins/capsules-gel-resine-cotonou" },
-      { label: "Nail art", href: "/soins/nail-art-mains-cotonou" },
-      { label: "Soin complet mains SPA", href: "/soins/soin-mains-spa-cotonou" },
-      { label: "Soin complet pieds SPA", href: "/soins/soin-pieds-spa-cotonou" },
-      { label: "Pédicure simple", href: "/soins/pedicure-simple-cotonou" },
-    ],
-  },
-  {
-    title: "🌸 Épilation & Bien-être",
-    links: [
+      { label: "→ Épilation", href: "/nos-soins/soin-corps/epilation" },
       { label: "Épilation demi-jambes", href: "/soins/epilation-demi-jambes-femme-cotonou" },
       { label: "Maillot brésilien", href: "/soins/epilation-maillot-bresilien-cotonou" },
       { label: "Vajacial", href: "/soins/vajacial-cotonou" },
-      { label: "Rituel duo & enfants", href: "/soins/rituel-duo-cotonou" },
-      { label: "Privatisation EVJF", href: "/soins/privatisation-evjf-cotonou" },
+      { label: "→ Massages", href: "/nos-soins/soin-corps/massage" },
+      { label: "Massage relaxant", href: "/soins/massage-relaxant-corps-entier-cotonou" },
+      { label: "→ Gommage & Corps", href: "/nos-soins/soin-corps/gommage" },
+    ],
+  },
+  {
+    title: "✦ Mains & Pieds",
+    links: [
+      { label: "→ Manucure", href: "/nos-soins/mains-pieds/manucure" },
+      { label: "Semi-permanent mains", href: "/soins/manucure-semi-permanent-cotonou" },
+      { label: "Gel sur ongles naturels", href: "/soins/gel-ongles-naturels-cotonou" },
+      { label: "Capsules & résine", href: "/soins/capsules-gel-resine-cotonou" },
+      { label: "Nail art", href: "/soins/nail-art-mains-cotonou" },
+      { label: "→ Pédicure", href: "/nos-soins/mains-pieds/pedicure" },
+      { label: "Soin pieds SPA", href: "/soins/soin-pieds-spa-cotonou" },
+    ],
+  },
+  {
+    title: "✦ Consultation & Formations",
+    links: [
+      { label: "→ Consultation Visio", href: "/nos-soins/consultation/visio" },
+      { label: "→ Consultation Présentiel", href: "/nos-soins/consultation/presentiel" },
+      { label: "→ Formation Modulaire", href: "/soins/formation-modulaire-esthetique-cotonou" },
+      { label: "→ Formation Perfectionnement", href: "/soins/formation-perfectionnement-esthetique-cotonou" },
+      { label: "→ Formation Complète", href: "/soins/formation-complete-esthetique-cotonou" },
     ],
   },
 ];
@@ -107,7 +108,7 @@ export function Header() {
             onMouseEnter={() => setMegaOpen(true)}
             onClick={() => setMegaOpen(false)}
           >
-            Nos soins
+            Nos Prestations
             <ChevronDownIcon className={`w-3 h-3 transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} />
           </Link>
 
@@ -219,10 +220,10 @@ export function Header() {
       >
         <div className="p-5 space-y-1">
 
-          {/* Nos soins — accordéon par catégorie */}
+          {/* Nos Prestations — accordéon par catégorie */}
           <div className="border-b border-[#f5f5f5] pb-3 mb-1">
             <p className="text-[12px] font-bold uppercase tracking-[2px] text-[#6D071A] mb-3 px-1">
-              Nos soins
+              Nos Prestations
             </p>
             {MEGA_MENU.map((col) => (
               <div key={col.title} className="mb-1">

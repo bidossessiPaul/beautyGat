@@ -6,8 +6,8 @@ import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
 import { JsonLd } from "@/components/JsonLd";
 import { prisma } from "@/lib/prisma";
-import { buildMetadata, breadcrumbSchema, itemListSchema, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
-import { CATEGORY_LABELS, CATEGORY_FALLBACK_IMAGES } from "../config";
+import { buildMetadata, breadcrumbSchema, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
+import { CATEGORY_LABELS, CATEGORY_FALLBACK_IMAGES, CATEGORY_DESCRIPTIONS } from "../config";
 import { CATEGORY_CONTENT } from "../categoryContent";
 
 export const revalidate = 60;
@@ -16,14 +16,77 @@ interface Props {
   params: Promise<{ category: string }>;
 }
 
+// Labels lisibles pour chaque sous-catégorie / groupe
+const SUBCAT_LABELS: Record<string, string> = {
+  "soin-classique":    "Soin Classique",
+  "soin-avance":       "Soin Avancé",
+  "peeling":           "Peeling",
+  "microneedling":     "Microneedling",
+  "microdermabrasion": "Microdermabrasion",
+  "oxygenation":       "Oxygénation",
+  "hydra-facial":      "Hydra Facial",
+  "traitements":       "Traitements",
+  "epilation":         "Épilation",
+  "massage":           "Massages",
+  "gommage":           "Gommage",
+  "soins-intimes":     "Soins Intimes",
+  "manucure":          "Manucure",
+  "pedicure":          "Pédicure",
+  "manucure-pedicure": "Manucure & Pédicure",
+  "visio":             "Consultation Visio",
+  "presentiel":        "Consultation Présentiel",
+  "consultation":      "Consultation",
+  "formation-modulaire":        "Formation Modulaire",
+  "formation-perfectionnement": "Formation Perfectionnement",
+  "formation-complete":         "Formation Complète",
+  "formation":         "Formation",
+  "duo-enfants":       "Duo & Enfants",
+  "cure-soin":         "Cure Soin",
+  "dermaplaning":      "Dermaplaning",
+  "soin-anti-age":     "Soin Anti-Âge",
+  "soin-peaux-imperfections": "Soin Peaux & Imperfections",
+  "soin-desincrustation":     "Soin Désincrustration",
+  "nettoyage-express":        "Nettoyage Express",
+};
+const subcatLabel = (key: string) => SUBCAT_LABELS[key] ?? key.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+
+const SUBCAT_DESCRIPTIONS: Record<string, string> = {
+  "soin-classique":    "Cure soins, dermaplaning, anti-âge, peaux et imperfections",
+  "soin-avance":       "Peeling, microneedling, microdermabrasion, oxygénation, hydra facial",
+  "peeling":           "TCA, Gluta, Boceau, Algue, Salicylé, Red, Charbon peeling",
+  "microneedling":     "BB Glow, Nano Needling, PRP, Mésothérapie, Skin Regeneration",
+  "microdermabrasion": "Exfoliation mécanique visage, dos, jambes et aisselles",
+  "oxygenation":       "Oxy Jet Peel, OxyGeneo, Photomodulation LED",
+  "hydra-facial":      "Hydrafacial et Hydra Boost — hydratation profonde",
+  "traitements":       "Élimination des acrocordons et verrues",
+  "epilation":         "Épilation à la cire toutes zones — jambes, maillot, aisselles, visage",
+  "massage":           "Massage relaxant, tonique, pierres chaudes, madérothérapie",
+  "gommage":           "Gommage corps, enveloppement hydratant et rituels",
+  "manucure":          "Manucure classique, semi-permanent, gel, capsules et nail art",
+  "pedicure":          "Pédicure classique, semi-permanent et soin SPA pieds",
+  "manucure-pedicure": "Forfaits manucure et pédicure complets",
+  "visio":             "Diagnostic et conseils personnalisés par vidéo depuis chez vous",
+  "presentiel":        "Diagnostic de peau en cabinet — analyse approfondie et protocole sur-mesure",
+  "consultation":      "Consultations visio et présentiel, diagnostic de peau",
+  "cure-soin":         "Cures et abonnements soins visage sur plusieurs séances",
+  "dermaplaning":      "Exfoliation mécanique et retrait du duvet facial",
+  "soin-anti-age":     "Soins régénérants et anti-âge pour un teint rajeuni",
+  "soin-peaux-imperfections": "Soins ciblés pour les imperfections et le teint irrégulier",
+  "soin-desincrustation":     "Nettoyage purifiant profond et désincrustration des pores",
+  "nettoyage-express":              "Nettoyage express pour un teint net en peu de temps",
+  "formation-modulaire":            "Formez-vous module par module selon vos besoins — attestation à chaque module validé",
+  "formation-perfectionnement":     "Perfectionnez vos techniques en conditions professionnelles — idéal pour les esthéticiennes en exercice",
+  "formation-complete":             "Devenez esthéticienne professionnelle de A à Z — diplôme Academy Beauty Gate délivré en fin de formation",
+};
+
 export async function generateMetadata({ params }: Props) {
   const { category } = await params;
   const cat = await prisma.serviceCategory.findUnique({ where: { key: category } });
   const label = cat?.label ?? CATEGORY_LABELS[category] ?? category;
   const image = cat?.image || CATEGORY_FALLBACK_FOR_META[category];
   return buildMetadata({
-    title: `${label} à Cotonou`,
-    description: `Découvrez nos soins ${label.toLowerCase()} à Cotonou — tarifs, bénéfices et prise de rendez-vous. Academy Beauty Gate, Cadjehoun, Bénin.`,
+    title: `${label} à Cotonou — Academy Beauty Gate`,
+    description: `${label} à Cotonou Cadjehoun — découvrez nos prestations et sous-catégories. Academy Beauty Gate, Bénin.`,
     path: `/nos-soins/${category}`,
     ...(image ? { image } : {}),
   });
@@ -32,56 +95,50 @@ export async function generateMetadata({ params }: Props) {
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
 
-  // Auto-crée la catégorie si elle n'existe pas encore en DB
   const defaultLabel = CATEGORY_LABELS[category];
   if (!defaultLabel) notFound();
 
   const dbCategory = await prisma.serviceCategory.upsert({
     where: { key: category },
-    create: {
-      key: category,
-      label: defaultLabel,
-      image: CATEGORY_FALLBACK_IMAGES[category] ?? null,
-      sortOrder: 0,
-    },
+    create: { key: category, label: defaultLabel, image: CATEGORY_FALLBACK_IMAGES[category] ?? null, sortOrder: 0 },
     update: {},
   });
 
   const label = dbCategory.label;
-
-  const services = await prisma.service.findMany({
-    where: { category, active: true },
-    orderBy: [{ sortOrder: "asc" }, { createdAt: "desc" }],
-    select: {
-      slug: true,
-      title: true,
-      hero: true,
-      pricing: true,
-    },
-  });
-
   const fallbackImg = dbCategory.image || CATEGORY_FALLBACK_IMAGES[category] || null;
   const content = CATEGORY_CONTENT[category] ?? null;
+
+  // Récupérer les groupes distincts (catGroup) avec compteur de services
+  const groupRows = await prisma.service.groupBy({
+    by: ["catGroup"],
+    where: { category, active: true, catGroup: { not: null } },
+    _count: { id: true },
+    orderBy: { catGroup: "asc" },
+  });
+
+  // Compter aussi les services sans catGroup
+  const noGroupCount = await prisma.service.count({
+    where: { category, active: true, catGroup: null },
+  });
+
+  const subcategories = groupRows
+    .filter(r => r.catGroup)
+    .map(r => ({
+      key: r.catGroup as string,
+      label: subcatLabel(r.catGroup as string),
+      description: SUBCAT_DESCRIPTIONS[r.catGroup as string] ?? "",
+      count: r._count.id,
+    }));
 
   const schemas = [
     breadcrumbSchema([
       { name: "Accueil", href: "/" },
-      { name: "Nos soins", href: "/nos-soins" },
+      { name: "Nos Prestations", href: "/nos-soins" },
       { name: label, href: `/nos-soins/${category}` },
     ]),
-    itemListSchema(
-      services.map((s) => {
-        const hero = s.hero as { image?: string; headline?: string } | null;
-        const pricing = s.pricing as { items?: { label: string; price: string }[] } | null;
-        return {
-          name: hero?.headline || s.title,
-          url: `/soins/${s.slug}`,
-          description: pricing?.items?.[0]?.price ? `À partir de ${pricing.items[0].price}` : undefined,
-          image: hero?.image || fallbackImg || undefined,
-        };
-      })
-    ),
   ];
+
+  const totalServices = subcategories.reduce((s, c) => s + c.count, 0) + noGroupCount;
 
   return (
     <>
@@ -102,9 +159,8 @@ export default async function CategoryPage({ params }: Props) {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
           <div className="relative z-10 max-w-[1300px] mx-auto px-6 md:px-10 py-20 md:py-28">
-            {/* Breadcrumb */}
             <div className="flex items-center gap-2 mb-5 text-[11px] text-white/50">
-              <Link href="/nos-soins" className="hover:text-white transition-colors">Nos soins</Link>
+              <Link href="/nos-soins" className="hover:text-white transition-colors">Nos Prestations</Link>
               <span>/</span>
               <span className="text-white/80">{label}</span>
             </div>
@@ -112,21 +168,19 @@ export default async function CategoryPage({ params }: Props) {
               {label}
             </h1>
             <p className="text-white/60 text-[14px]">
-              {services.length} soin{services.length > 1 ? "s" : ""} disponible{services.length > 1 ? "s" : ""}
+              {totalServices} prestation{totalServices > 1 ? "s" : ""} · {subcategories.length} catégorie{subcategories.length > 1 ? "s" : ""}
             </p>
           </div>
         </section>
 
-        {/* ── INTRO ────────────────────────────────────────────────────── */}
+        {/* ── INTRO SEO ────────────────────────────────────────────────── */}
         {content && (
           <section className="bg-white border-b border-[#f0f0f0]">
-            <div className="max-w-[1300px] mx-auto px-6 md:px-10 py-14 md:py-18">
+            <div className="max-w-[1300px] mx-auto px-6 md:px-10 py-14">
               <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-
-                {/* Texte */}
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#6D071A] mb-4">
-                    À propos de cette catégorie
+                    À propos
                   </p>
                   <h2 className="text-[22px] md:text-[28px] font-bold text-[#1C1C1C] leading-[1.25] mb-5">
                     {label} — <span className="text-[#6D071A]">ce qu&apos;il faut savoir</span>
@@ -135,17 +189,11 @@ export default async function CategoryPage({ params }: Props) {
                     {content.intro.description}
                   </p>
                 </div>
-
-                {/* Highlights */}
                 <div className="grid grid-cols-3 gap-4">
                   {content.intro.highlights.map((h) => (
                     <div key={h.label} className="bg-[#faf8f6] border border-[#ebebeb] p-5 text-center">
-                      <p className="text-[22px] md:text-[26px] font-bold text-[#6D071A] leading-none mb-2">
-                        {h.value}
-                      </p>
-                      <p className="text-[11px] text-[#888] uppercase tracking-[0.15em] leading-tight">
-                        {h.label}
-                      </p>
+                      <p className="text-[22px] md:text-[26px] font-bold text-[#6D071A] leading-none mb-2">{h.value}</p>
+                      <p className="text-[11px] text-[#888] uppercase tracking-[0.15em] leading-tight">{h.label}</p>
                     </div>
                   ))}
                 </div>
@@ -154,84 +202,82 @@ export default async function CategoryPage({ params }: Props) {
           </section>
         )}
 
-        {/* ── GRILLE SERVICES ──────────────────────────────────────────── */}
+        {/* ── GRILLE SOUS-CATÉGORIES ───────────────────────────────────── */}
         <section className="max-w-[1300px] mx-auto px-6 md:px-10 py-14">
-          {services.length === 0 ? (
-            <p className="text-[#999] text-sm text-center py-20">Aucun soin disponible dans cette catégorie.</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#6D071A] mb-3">
+            Choisissez une catégorie
+          </p>
+          <h2 className="text-[26px] md:text-[32px] font-bold text-[#1a1a1a] mb-10 leading-tight">
+            Nos {label.toLowerCase()}
+          </h2>
+
+          {subcategories.length === 0 ? (
+            <p className="text-[#999] text-sm py-10">Aucune prestation disponible pour le moment.</p>
           ) : (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-              {services.map((s) => {
-                const hero = s.hero as { image?: string; headline?: string; imageAlt?: string } | null;
-                const pricing = s.pricing as { items?: { label: string; price: string }[] } | null;
-                const img = hero?.image || fallbackImg;
-                const firstPrice = pricing?.items?.[0]?.price ?? null;
-                const title = hero?.headline || s.title;
-
-                return (
-                  <Link
-                    key={s.slug}
-                    href={`/soins/${s.slug}`}
-                    className="group relative overflow-hidden bg-[#1a1a1a] flex flex-col"
-                    style={{ aspectRatio: "3/4" }}
-                  >
-                    {/* Image plein format */}
-                    {img ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+              {subcategories.map((sub, i) => (
+                <Link
+                  key={sub.key}
+                  href={`/nos-soins/${category}/${sub.key}`}
+                  className="group bg-white border border-[#e8e8e8] hover:border-[#6D071A]/40 hover:shadow-[0_6px_32px_rgba(109,7,26,0.10)] transition-all duration-300 overflow-hidden"
+                >
+                  {/* Image zone */}
+                  <div className="relative h-[180px] bg-gradient-to-br from-[#f5e8ea] to-[#e0c8cc] overflow-hidden">
+                    {fallbackImg && (
                       <Image
-                        src={img}
-                        alt={hero?.imageAlt ?? s.title}
+                        src={fallbackImg}
+                        alt={sub.label}
                         fill
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-[1.05] transition-transform duration-500 opacity-70"
                       />
-                    ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#3a1520] to-[#1a0a0d]" />
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    {/* Numéro */}
+                    <span className="absolute top-3 left-3 w-7 h-7 bg-[#6D071A] text-white text-[11px] font-bold flex items-center justify-center">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    {/* Badge count */}
+                    <span className="absolute top-3 right-3 bg-black/50 text-white text-[10px] font-bold px-2 py-0.5">
+                      {sub.count} soin{sub.count > 1 ? "s" : ""}
+                    </span>
+                  </div>
 
-                    {/* Gradient overlay permanent */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-[#6D071A]/0 group-hover:bg-[#6D071A]/25 transition-colors duration-500" />
-
-                    {/* Contenu en bas */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      {firstPrice && (
-                        <span className="inline-block text-[10px] font-bold uppercase tracking-[0.15em] text-[#f0b8b8] mb-2">
-                          À partir de {firstPrice}
-                        </span>
-                      )}
-                      <p className="text-white font-semibold text-[13px] leading-[1.4] line-clamp-2 mb-3">
-                        {title}
+                  {/* Contenu */}
+                  <div className="px-5 py-4">
+                    <p className="text-[16px] font-bold text-[#1a1a1a] group-hover:text-[#6D071A] transition-colors mb-1.5 leading-tight">
+                      {sub.label}
+                    </p>
+                    {sub.description && (
+                      <p className="text-[12.5px] text-[#777] leading-[1.6] line-clamp-2 mb-3">
+                        {sub.description}
                       </p>
-                      {/* CTA apparaît au hover */}
-                      <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.15em] text-white/0 group-hover:text-white transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-                        <span>Découvrir</span>
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                      </div>
+                    )}
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#bbb]">
+                        Voir les soins
+                      </span>
+                      <span className="text-[#6D071A] group-hover:translate-x-1 transition-transform duration-200 font-bold">
+                        →
+                      </span>
                     </div>
-                  </Link>
-                );
-              })}
+                  </div>
+                </Link>
+              ))}
             </div>
           )}
         </section>
 
         {/* ── BIENFAITS ────────────────────────────────────────────────── */}
-        {content && (
-          <section className="bg-white py-16 md:py-20 border-t border-[#f0f0f0]">
+        {content && content.benefits.length > 0 && (
+          <section className="bg-white py-16 border-t border-[#f0f0f0]">
             <div className="max-w-[1300px] mx-auto px-6 md:px-10">
-
-              {/* Header */}
-              <div className="mb-10 md:mb-12">
-                <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#6D071A] mb-3">
-                  Pourquoi choisir Academy Beauty Gate
-                </p>
-                <h2 className="text-[#1C1C1C] text-[22px] md:text-[30px] font-bold leading-[1.2]">
-                  Les bienfaits de nos <span className="text-[#6D071A]">{label.toLowerCase()}</span>
-                </h2>
-              </div>
-
-              {/* Cards bienfaits */}
+              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#6D071A] mb-3">
+                Pourquoi nous choisir
+              </p>
+              <h2 className="text-[22px] md:text-[28px] font-bold text-[#1C1C1C] mb-10 leading-tight">
+                Les bienfaits de nos <span className="text-[#6D071A]">{label.toLowerCase()}</span>
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {content.benefits.map((b, i) => (
                   <div key={i} className="bg-[#faf8f6] border border-[#ebebeb] p-6 hover:border-[#6D071A]/30 hover:shadow-sm transition-all">
@@ -249,12 +295,8 @@ export default async function CategoryPage({ params }: Props) {
         <section className="bg-[#6D071A] py-14">
           <div className="max-w-[1300px] mx-auto px-6 md:px-10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-2">
-                Vous hésitez ?
-              </p>
-              <p className="text-white font-bold text-xl leading-tight">
-                Prenez rendez-vous — consultation offerte
-              </p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-2">Vous hésitez ?</p>
+              <p className="text-white font-bold text-xl leading-tight">Prenez rendez-vous — consultation offerte</p>
             </div>
             <Link
               href="/rendez-vous"
