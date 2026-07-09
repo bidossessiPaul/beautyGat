@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
   title: "Nos tarifs",
@@ -9,5 +10,13 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd schema={breadcrumbSchema([
+        { name: "Accueil", href: "/" },
+        { name: "Nos tarifs", href: "/tarifs" },
+      ])} />
+      {children}
+    </>
+  );
 }

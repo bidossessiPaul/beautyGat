@@ -5,7 +5,7 @@ import { FloatingContact } from "@/components/FloatingContact";
 import { ServicePageTemplate } from "@/components/ServicePageTemplate";
 import { JsonLd } from "@/components/JsonLd";
 import { services, getServiceBySlug, type ServiceData } from "@/data/services";
-import { buildMetadata, serviceSchema, faqSchema, breadcrumbSchema, speakableSchema, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
+import { buildMetadata, serviceSchema, faqSchema, breadcrumbSchema, speakableSchema, howToSchema, SITE, CATEGORY_FALLBACK_FOR_META } from "@/lib/seo";
 import { prisma } from "@/lib/prisma";
 
 interface Props {
@@ -125,6 +125,15 @@ export default async function Page({ params }: Props) {
       reviewCount: "175",
     }),
     ...(service.faq.length > 0 ? [faqSchema(service.faq)] : []),
+    ...(service.steps && service.steps.length > 0
+      ? [howToSchema({
+          name: service.hero.headline,
+          description: service.metaDescription,
+          url: `${SITE.url}/soins/${service.slug}`,
+          image: service.stepsImage ?? service.hero.image ?? CATEGORY_FALLBACK_FOR_META[service.category],
+          steps: service.steps,
+        })]
+      : []),
     breadcrumbSchema([
       { name: "Accueil", href: "/" },
       { name: "Nos soins", href: "/nos-soins" },

@@ -3,14 +3,17 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
+import { JsonLd } from "@/components/JsonLd";
 import { prisma } from "@/lib/prisma";
+import { buildMetadata, breadcrumbSchema } from "@/lib/seo";
 import { CATEGORY_LABELS, CATEGORY_FALLBACK_IMAGES, CATEGORY_DESCRIPTIONS, MAIN_CATEGORIES } from "./config";
 
-export const metadata = {
-  title: "Nos Prestations à Cotonou — Academy Beauty Gate",
+export const metadata = buildMetadata({
+  title: "Nos Prestations à Cotonou",
   description:
     "Découvrez toutes nos prestations beauté à Cotonou : soins visage, corps, mains & pieds et formations. Academy Beauty Gate, Cadjehoun.",
-};
+  path: "/nos-soins",
+});
 
 export const revalidate = 60;
 
@@ -54,6 +57,10 @@ export default async function NosSoins() {
 
   return (
     <>
+      <JsonLd schema={breadcrumbSchema([
+        { name: "Accueil", href: "/" },
+        { name: "Nos Prestations", href: "/nos-soins" },
+      ])} />
       <Header />
 
       <main className="min-h-screen bg-[#faf8f6]">

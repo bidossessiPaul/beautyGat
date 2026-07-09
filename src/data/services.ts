@@ -77,8 +77,8 @@ export const services: ServiceData[] = [
   // ─── SOINS VISAGE ────────────────────────────────────────────────────────────
   {
     slug: "hydrafacial-cotonou",
-    title: "Hydrafacial à Cotonou — Academy Beauty Gate",
-    metaDescription: "Soin Hydrafacial à Cotonou : nettoyage en profondeur, hydratation intense et éclat immédiat. Résultats visibles dès la première séance à Academy Beauty Gate, Cadjehoun.",
+    title: "Hydrafacial à Cotonou",
+    metaDescription: "Soin Hydrafacial à Cotonou : nettoyage profond, hydratation intense et éclat immédiat. Résultats visibles dès la 1ère séance à Academy Beauty Gate, Cadjehoun.",
     category: "visage",
     hero: {
       image: "/images/soins/hydrafacial/hero.jpg",
@@ -149,8 +149,8 @@ export const services: ServiceData[] = [
   },
   {
     slug: "peeling-visage-cotonou",
-    title: "Peeling Visage à Cotonou — Academy Beauty Gate",
-    metaDescription: "Peeling visage à Cotonou : exfoliation chimique pour unifier le teint, atténuer les taches et lisser la peau. Protocole sur-mesure à Academy Beauty Gate, Cadjehoun.",
+    title: "Peeling Visage à Cotonou",
+    metaDescription: "Peeling visage à Cotonou : exfoliation chimique pour unifier le teint, atténuer les taches et lisser la peau. Protocole sur-mesure, Academy Beauty Gate.",
     category: "visage",
     hero: {
       image: "/images/soins/peeling-visage/hero.jpg",
@@ -206,7 +206,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "photomodulation-led-cotonou",
-    title: "Photomodulation LED à Cotonou — Academy Beauty Gate",
+    title: "Photomodulation LED à Cotonou",
     metaDescription: "Photomodulation LED à Cotonou : soin anti-âge, anti-acné et régénérateur par la lumière. Protocole indolore à Academy Beauty Gate, Cadjehoun.",
     category: "visage",
     hero: {
@@ -263,7 +263,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "instant-glow-cotonou",
-    title: "Instant Glow à Cotonou — Academy Beauty Gate",
+    title: "Instant Glow à Cotonou",
     metaDescription: "Soin Instant Glow à Cotonou : éclat et luminosité immédiate pour votre peau. Cocktail d'actifs boosteurs de lumière à Academy Beauty Gate, Cadjehoun.",
     category: "visage",
     hero: {
@@ -320,7 +320,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "microneedling-cotonou",
-    title: "Microneedling à Cotonou — Academy Beauty Gate",
+    title: "Microneedling à Cotonou",
     metaDescription: "Microneedling à Cotonou : stimulation du collagène, réduction des cicatrices et anti-âge profond. Traitement expert à Academy Beauty Gate, Cadjehoun.",
     category: "visage",
     hero: {
@@ -379,7 +379,7 @@ export const services: ServiceData[] = [
   // ─── SOINS CORPS ─────────────────────────────────────────────────────────────
   {
     slug: "peeling-intime-cotonou",
-    title: "Peeling Intime à Cotonou — Academy Beauty Gate",
+    title: "Peeling Intime à Cotonou",
     metaDescription: "Peeling intime à Cotonou : éclaircissement et traitement des zones intimes. Protocole discret et sécurisé à Academy Beauty Gate, Cadjehoun.",
     category: "corps",
     hero: {
@@ -436,7 +436,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "cryolipolyse-cotonou",
-    title: "Cryolipolyse à Cotonou — Academy Beauty Gate",
+    title: "Cryolipolyse à Cotonou",
     metaDescription: "Cryolipolyse à Cotonou : réduction des graisses localisées par le froid. Ventre, flancs, cuisses et bras traités à Academy Beauty Gate, Cadjehoun.",
     category: "corps",
     hero: {
@@ -493,7 +493,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "bodysculpt-cotonou",
-    title: "BodySculpt à Cotonou — Academy Beauty Gate",
+    title: "BodySculpt à Cotonou",
     metaDescription: "BodySculpt à Cotonou : tonification musculaire et réduction des graisses par technologie haute intensité. Résultats rapides à Academy Beauty Gate, Cadjehoun.",
     category: "corps",
     hero: {
@@ -551,7 +551,7 @@ export const services: ServiceData[] = [
   // ─── INJECTIONS ──────────────────────────────────────────────────────────────
   {
     slug: "injection-acide-hyaluronique-cotonou",
-    title: "Injections Acide Hyaluronique à Cotonou — Academy Beauty Gate",
+    title: "Injections Acide Hyaluronique à Cotonou",
     metaDescription: "Injections d'acide hyaluronique à Cotonou : lèvres, cernes, pommettes, rides. Résultats naturels et durables à Academy Beauty Gate, Cadjehoun.",
     category: "injections",
     hero: {
@@ -608,7 +608,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "injection-botox-cotonou",
-    title: "Injection Toxine Botulique à Cotonou — Academy Beauty Gate",
+    title: "Injection Toxine Botulique à Cotonou",
     metaDescription: "Injections de toxine botulique (Botox) à Cotonou : traitement des rides d'expression, front, rides du lion et pattes-d'oie. Academy Beauty Gate, Cadjehoun.",
     category: "injections",
     hero: {
@@ -667,7 +667,7 @@ export const services: ServiceData[] = [
   // ─── DIAGNOSTIC ──────────────────────────────────────────────────────────────
   {
     slug: "diagnostic-de-peau-cotonou",
-    title: "Diagnostic de Peau à Cotonou — Academy Beauty Gate",
+    title: "Diagnostic de Peau à Cotonou",
     metaDescription: "Diagnostic de peau à Cotonou : analyse précise de votre peau pour un soin personnalisé. Bilan complet offert à Academy Beauty Gate, Cadjehoun.",
     category: "diagnostic",
     hero: {
@@ -726,7 +726,7 @@ export const services: ServiceData[] = [
   // ─── ÉPILATION HOMME ─────────────────────────────────────────────────────────
   {
     slug: "epilation-electrolyse-homme-cotonou",
-    title: "Épilation par Électrolyse Homme à Cotonou — Academy Beauty Gate",
+    title: "Épilation par Électrolyse Homme à Cotonou",
     metaDescription: "Épilation par électrolyse pour homme à Cotonou : la seule méthode 100% définitive pour tous types de poils. Academy Beauty Gate, Cadjehoun.",
     category: "epilation",
     hero: {
@@ -785,7 +785,7 @@ export const services: ServiceData[] = [
   // ─── SOINS HOMME ─────────────────────────────────────────────────────────────
   {
     slug: "hydrafacial-homme-cotonou",
-    title: "Hydrafacial Homme à Cotonou — Academy Beauty Gate",
+    title: "Hydrafacial Homme à Cotonou",
     metaDescription: "Hydrafacial pour homme à Cotonou : nettoyage profond, hydratation et éclat du visage masculin. Soin adapté à la peau de l'homme à Academy Beauty Gate.",
     category: "visage",
     hero: {
@@ -842,7 +842,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "peeling-visage-homme-cotonou",
-    title: "Peeling Visage Homme à Cotonou — Academy Beauty Gate",
+    title: "Peeling Visage Homme à Cotonou",
     metaDescription: "Peeling visage pour homme à Cotonou : exfoliation, éclat et traitement de l'acné masculine. Protocole adapté à la peau de l'homme à Academy Beauty Gate.",
     category: "visage",
     hero: {
@@ -899,7 +899,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "cryolipolyse-homme-cotonou",
-    title: "Cryolipolyse Homme à Cotonou — Academy Beauty Gate",
+    title: "Cryolipolyse Homme à Cotonou",
     metaDescription: "Cryolipolyse pour homme à Cotonou : réduction des graisses abdominales, flancs et poignées d'amour. Sans chirurgie à Academy Beauty Gate, Cadjehoun.",
     category: "corps",
     hero: {
@@ -956,7 +956,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "bodysculpt-homme-cotonou",
-    title: "BodySculpt Homme à Cotonou — Academy Beauty Gate",
+    title: "BodySculpt Homme à Cotonou",
     metaDescription: "BodySculpt pour homme à Cotonou : tonification musculaire et remodelage corporel par électrostimulation. Abdos et fessiers sculptés à Academy Beauty Gate.",
     category: "corps",
     hero: {
@@ -1014,7 +1014,7 @@ export const services: ServiceData[] = [
   // ─── BATCH MERGE ───
   {
     slug: "manucure-simple-cotonou",
-    title: "Manucure Simple à Cotonou — Academy Beauty Gate",
+    title: "Manucure Simple à Cotonou",
     metaDescription: "Manucure simple à Cotonou : mise en forme, soin et finition des ongles en 30 minutes. Prestation soignée à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1066,7 +1066,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "manucure-vernis-classique-cotonou",
-    title: "Manucure avec Vernis Classique à Cotonou — Academy Beauty Gate",
+    title: "Manucure avec Vernis Classique à Cotonou",
     metaDescription: "Manucure avec vernis classique à Cotonou : soin des mains et pose de vernis en 45 min. Large choix de couleurs à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1118,7 +1118,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "manucure-semi-permanent-cotonou",
-    title: "Manucure Semi-Permanent à Cotonou — Academy Beauty Gate",
+    title: "Manucure Semi-Permanent à Cotonou",
     metaDescription: "Manucure semi-permanent à Cotonou : couleur longue durée jusqu'à 3 semaines. Pose professionnelle à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -1171,7 +1171,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "complement-french-mains-cotonou",
-    title: "Complément French Mains à Cotonou — Academy Beauty Gate",
+    title: "Complément French Mains à Cotonou",
     metaDescription: "Complément French sur manucure à Cotonou : ajout d'un sourire français élégant sur vos ongles. À partir de 3 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1223,7 +1223,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "nail-art-mains-cotonou",
-    title: "Nail Art Mains à Cotonou — Academy Beauty Gate",
+    title: "Nail Art Mains à Cotonou",
     metaDescription: "Nail art sur ongles à Cotonou : motifs, pierres, dégradés à 500 FCFA par ongle. Créations personnalisées à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -1277,7 +1277,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "capsules-ongles-cotonou",
-    title: "Capsules Ongles à Cotonou — Academy Beauty Gate",
+    title: "Capsules Ongles à Cotonou",
     metaDescription: "Pose de capsules ongles à Cotonou : extension naturelle et élégante à partir de 7 000 FCFA. Résultat longue durée à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1329,7 +1329,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "gel-ongles-naturels-cotonou",
-    title: "Gel sur Ongles Naturels à Cotonou — Academy Beauty Gate",
+    title: "Gel sur Ongles Naturels à Cotonou",
     metaDescription: "Pose de gel sur ongles naturels à Cotonou : renforcement et brillance longue durée à partir de 10 000 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1382,7 +1382,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "capsules-gel-resine-cotonou",
-    title: "Capsules + Gel ou Résine à Cotonou — Academy Beauty Gate",
+    title: "Capsules + Gel ou Résine à Cotonou",
     metaDescription: "Pose capsules avec gel ou résine à Cotonou : extension renforcée longue durée à partir de 12 000 FCFA. Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -1435,7 +1435,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "remplissage-gel-resine-cotonou",
-    title: "Remplissage Gel ou Résine à Cotonou — Academy Beauty Gate",
+    title: "Remplissage Gel ou Résine à Cotonou",
     metaDescription: "Remplissage gel ou résine à Cotonou : entretien de vos extensions toutes les 3-4 semaines pour 8 000 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1487,7 +1487,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "soin-mains-spa-cotonou",
-    title: "Soin Complet des Mains SPA à Cotonou — Academy Beauty Gate",
+    title: "Soin Complet des Mains SPA à Cotonou",
     metaDescription: "Soin complet des mains SPA à Cotonou : exfoliation, masque et hydratation intensive en 45 min. 6 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1539,7 +1539,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "soin-mains-hydra-boost-cotonou",
-    title: "Soin Mains Hydra Boost à Cotonou — Academy Beauty Gate",
+    title: "Soin Mains Hydra Boost à Cotonou",
     metaDescription: "Soin mains hydra boost à Cotonou : hydratation intensive et anti-âge en 1 heure. 8 000 FCFA à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -1592,7 +1592,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "depose-semi-permanent-mains-cotonou",
-    title: "Dépose Semi-Permanent Mains à Cotonou — Academy Beauty Gate",
+    title: "Dépose Semi-Permanent Mains à Cotonou",
     metaDescription: "Dépose semi-permanent mains à Cotonou : retrait propre et sans dommage en 20 min pour 1 500 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1644,7 +1644,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "depose-gel-resine-mains-cotonou",
-    title: "Dépose Gel ou Résine Mains à Cotonou — Academy Beauty Gate",
+    title: "Dépose Gel ou Résine Mains à Cotonou",
     metaDescription: "Dépose gel ou résine mains à Cotonou : retrait professionnel en 30 min pour 2 500 FCFA. Ongles préservés à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1696,7 +1696,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "pedicure-simple-cotonou",
-    title: "Pédicure Simple à Cotonou — Academy Beauty Gate",
+    title: "Pédicure Simple à Cotonou",
     metaDescription: "Pédicure simple à Cotonou : soin et mise en forme des ongles de pieds en 30 min. 3 000 FCFA à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -1748,7 +1748,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "pedicure-vernis-classique-cotonou",
-    title: "Pédicure avec Vernis Classique à Cotonou — Academy Beauty Gate",
+    title: "Pédicure avec Vernis Classique à Cotonou",
     metaDescription: "Pédicure avec vernis classique à Cotonou : soin complet des pieds et pose de vernis en 45 min. 6 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1800,7 +1800,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "pedicure-semi-permanent-cotonou",
-    title: "Pédicure Semi-Permanent à Cotonou — Academy Beauty Gate",
+    title: "Pédicure Semi-Permanent à Cotonou",
     metaDescription: "Pédicure semi-permanent à Cotonou : couleur longue durée jusqu'à 4 semaines sur les pieds. 8 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1853,7 +1853,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "complement-french-pieds-cotonou",
-    title: "Complément French Pieds à Cotonou — Academy Beauty Gate",
+    title: "Complément French Pieds à Cotonou",
     metaDescription: "Complément French ongles de pieds à Cotonou : élégance intemporelle à partir de 2 000 FCFA. Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -1905,7 +1905,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "nail-art-pieds-cotonou",
-    title: "Nail Art Pieds à Cotonou — Academy Beauty Gate",
+    title: "Nail Art Pieds à Cotonou",
     metaDescription: "Nail art ongles de pieds à Cotonou : motifs et décorations à 500 FCFA par ongle. Créations sur mesure à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -1959,7 +1959,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "capsules-pieds-cotonou",
-    title: "Capsules Pieds à Cotonou — Academy Beauty Gate",
+    title: "Capsules Pieds à Cotonou",
     metaDescription: "Pose de capsules ongles de pieds à Cotonou à partir de 7 000 FCFA. Extension naturelle et durable à Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -2011,7 +2011,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "gel-ongles-naturels-pieds-cotonou",
-    title: "Gel sur Ongles Naturels Pieds à Cotonou — Academy Beauty Gate",
+    title: "Gel sur Ongles Naturels Pieds à Cotonou",
     metaDescription: "Gel sur ongles naturels pieds à Cotonou : renforcement et brillance à partir de 10 000 FCFA. Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -2064,7 +2064,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "capsules-gel-resine-pieds-cotonou",
-    title: "Capsules + Gel ou Résine Pieds à Cotonou — Academy Beauty Gate",
+    title: "Capsules + Gel ou Résine Pieds à Cotonou",
     metaDescription: "Capsules + gel ou résine ongles de pieds à Cotonou : extension renforcée à partir de 12 000 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -2117,7 +2117,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "remplissage-gel-resine-pieds-cotonou",
-    title: "Remplissage Gel ou Résine Pieds à Cotonou — Academy Beauty Gate",
+    title: "Remplissage Gel ou Résine Pieds à Cotonou",
     metaDescription: "Remplissage gel ou résine pieds à Cotonou : entretien de vos extensions de pieds en 1h15 pour 8 000 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -2169,7 +2169,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "soin-pieds-spa-cotonou",
-    title: "Soin Complet des Pieds SPA à Cotonou — Academy Beauty Gate",
+    title: "Soin Complet des Pieds SPA à Cotonou",
     metaDescription: "Soin complet des pieds SPA à Cotonou : gommage, masque et massage en 45 min. 7 000 FCFA à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -2221,7 +2221,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "soin-pieds-hydra-boost-cotonou",
-    title: "Soin Pieds Hydra Boost à Cotonou — Academy Beauty Gate",
+    title: "Soin Pieds Hydra Boost à Cotonou",
     metaDescription: "Soin pieds hydra boost à Cotonou : hydratation intensive et anti-âge en 1 heure. 9 000 FCFA à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "mains-pieds",
     hero: {
@@ -2274,7 +2274,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "depose-semi-permanent-pieds-cotonou",
-    title: "Dépose Semi-Permanent Pieds à Cotonou — Academy Beauty Gate",
+    title: "Dépose Semi-Permanent Pieds à Cotonou",
     metaDescription: "Dépose semi-permanent pieds à Cotonou : retrait propre et sans dommage en 20 min pour 1 500 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -2326,7 +2326,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "depose-gel-resine-pieds-cotonou",
-    title: "Dépose Gel ou Résine Pieds à Cotonou — Academy Beauty Gate",
+    title: "Dépose Gel ou Résine Pieds à Cotonou",
     metaDescription: "Dépose gel ou résine ongles de pieds à Cotonou : retrait professionnel en 30 min pour 2 500 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -2378,7 +2378,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "manucure-pedicure-completes-cotonou",
-    title: "Manucure + Pédicure Complètes à Cotonou — Academy Beauty Gate",
+    title: "Manucure + Pédicure Complètes à Cotonou",
     metaDescription: "Forfait manucure + pédicure complètes à Cotonou : mains et pieds sublimés en 1h30 à partir de 12 000 FCFA. Academy Beauty Gate, Cadjehoun.",
     category: "mains-pieds",
     hero: {
@@ -2433,7 +2433,7 @@ export const services: ServiceData[] = [
   // ─── MASSAGES ───────────────────────────────────────────────────────────────
   {
     slug: "gommage-corps-cotonou",
-    title: "Gommage Corps au Sucre ou Sel Marin à Cotonou — Academy Beauty Gate",
+    title: "Gommage Corps au Sucre ou Sel Marin à Cotonou",
     metaDescription: "Gommage corps au sucre ou sel marin à Cotonou : exfoliation douce et éclat de peau en 45 min. 15 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -2485,7 +2485,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "gommage-enveloppement-cotonou",
-    title: "Gommage + Enveloppement Hydratant à Cotonou — Academy Beauty Gate",
+    title: "Gommage + Enveloppement Hydratant à Cotonou",
     metaDescription: "Gommage + enveloppement hydratant corps à Cotonou : rituel complet peau lisse et nourrie en 1h. 20 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -2538,7 +2538,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "soin-dos-purifiant-cotonou",
-    title: "Soin Dos Purifiant à Cotonou — Academy Beauty Gate",
+    title: "Soin Dos Purifiant à Cotonou",
     metaDescription: "Soin dos purifiant à Cotonou : nettoyage profond, exfoliation et hydratation du dos en 1h. 20 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -2590,7 +2590,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "massage-dos-nuque-cotonou",
-    title: "Massage Dos et Nuque à Cotonou — Academy Beauty Gate",
+    title: "Massage Dos et Nuque à Cotonou",
     metaDescription: "Massage dos et nuque à Cotonou : détente profonde des zones de tension en 30 min. 10 000 FCFA à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "massages",
     hero: {
@@ -2643,7 +2643,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "massage-relaxant-corps-entier-cotonou",
-    title: "Massage Relaxant Corps Entier à Cotonou — Academy Beauty Gate",
+    title: "Massage Relaxant Corps Entier à Cotonou",
     metaDescription: "Massage relaxant corps entier à Cotonou : détente profonde de la tête aux pieds en 1h. 20 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -2696,7 +2696,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "massage-tonique-cotonou",
-    title: "Massage Tonique à Cotonou — Academy Beauty Gate",
+    title: "Massage Tonique à Cotonou",
     metaDescription: "Massage tonique corps entier à Cotonou : stimulation musculaire et drainage en 1h. 25 000 FCFA à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "massages",
     hero: {
@@ -2748,7 +2748,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "massage-pierres-chaudes-cotonou",
-    title: "Massage aux Pierres Chaudes à Cotonou — Academy Beauty Gate",
+    title: "Massage aux Pierres Chaudes à Cotonou",
     metaDescription: "Massage aux pierres chaudes à Cotonou : détente profonde par la chaleur des basaltes en 1h. 30 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -2800,7 +2800,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "massage-jambes-legeres-cotonou",
-    title: "Massage Jambes Légères à Cotonou — Academy Beauty Gate",
+    title: "Massage Jambes Légères à Cotonou",
     metaDescription: "Massage jambes légères à Cotonou : drainage et soulagement des jambes lourdes en 30 min. 10 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -2852,7 +2852,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "massage-signature-cotonou",
-    title: "Massage Signature à Cotonou — Academy Beauty Gate",
+    title: "Massage Signature à Cotonou",
     metaDescription: "Massage signature Academy Beauty Gate à Cotonou : l'expérience unique de notre salon en 1h15. 35 000 FCFA à Cadjehoun, Bénin.",
     category: "massages",
     hero: {
@@ -2904,7 +2904,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "forfait-3-massages-relaxants-cotonou",
-    title: "Forfait 3 Massages Relaxants Corps Entier à Cotonou — Academy Beauty Gate",
+    title: "Forfait 3 Massages Relaxants Corps Entier à Cotonou",
     metaDescription: "Forfait 3 massages relaxants corps entier à Cotonou : cure bien-être complète à 50 000 FCFA. Économisez 10 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -2957,7 +2957,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "cure-5-massages-dos-nuque-cotonou",
-    title: "Cure 5 Massages Dos et Nuque à Cotonou — Academy Beauty Gate",
+    title: "Cure 5 Massages Dos et Nuque à Cotonou",
     metaDescription: "Cure 5 massages dos et nuque à Cotonou : traitement des tensions chroniques à 40 000 FCFA. Économisez 10 000 FCFA à Academy Beauty Gate, Cadjehoun.",
     category: "massages",
     hero: {
@@ -3010,7 +3010,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "rituel-corps-complet-cotonou",
-    title: "Rituel Corps Complet à Cotonou — Academy Beauty Gate",
+    title: "Rituel Corps Complet à Cotonou",
     metaDescription: "Rituel corps complet (gommage + massage) à Cotonou : transformation totale en 1h. 30 000 FCFA à Academy Beauty Gate, Cadjehoun, Bénin.",
     category: "massages",
     hero: {
@@ -3762,8 +3762,8 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-demi-jambes-femme-cotonou",
-    title: "Épilation Demi-Jambes Femme à Cotonou | Academy Beauty Gate",
-    metaDescription: "Épilation à la cire des demi-jambes pour femme à Cotonou, quartier Cadjehoun. Peau douce et lisse dès 8 000 FCFA. Résultats durables au salon Academy Beauty Gate.",
+    title: "Épilation Demi-Jambes Femme à Cotonou",
+    metaDescription: "Épilation à la cire des demi-jambes pour femme à Cotonou, Cadjehoun. Peau douce et lisse dès 8 000 FCFA. Résultats durables, Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
       imageAlt: "Épilation demi-jambes femme à la cire au salon Academy Beauty Gate Cotonou",
@@ -3841,7 +3841,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-jambes-completes-femme-cotonou",
-    title: "Épilation Jambes Complètes Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Jambes Complètes Femme à Cotonou",
     metaDescription: "Épilation à la cire jambes complètes pour femme à Cotonou, Cadjehoun. Des jambes parfaitement lisses de la cheville à la cuisse — 12 000 FCFA, 45 min.",
     category: "epilation-cire",
     hero: {
@@ -3920,7 +3920,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-bras-femme-cotonou",
-    title: "Épilation Bras Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Bras Femme à Cotonou",
     metaDescription: "Épilation à la cire des bras pour femme à Cotonou, Cadjehoun. Bras lisses et soyeux dès 8 000 FCFA en 30 minutes. Salon Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
@@ -3999,7 +3999,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-aisselles-femme-cotonou",
-    title: "Épilation Aisselles Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Aisselles Femme à Cotonou",
     metaDescription: "Épilation aisselles femme à la cire à Cotonou, Cadjehoun — 5 000 FCFA en 15 min. Résultat net et durable. Salon Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
@@ -4078,7 +4078,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-maillot-simple-cotonou",
-    title: "Épilation Maillot Simple à Cotonou | Academy Beauty Gate",
+    title: "Épilation Maillot Simple à Cotonou",
     metaDescription: "Épilation maillot simple à la cire à Cotonou, Cadjehoun — 8 000 FCFA en 20 min. Résultat net sur les côtés du maillot. Salon Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
@@ -4157,7 +4157,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-maillot-bresilien-cotonou",
-    title: "Épilation Maillot Brésilien à Cotonou | Academy Beauty Gate",
+    title: "Épilation Maillot Brésilien à Cotonou",
     metaDescription: "Épilation maillot brésilien à la cire à Cotonou — 12 000 FCFA en 30 min. Laisse une bande. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -4236,7 +4236,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-maillot-integral-cotonou",
-    title: "Épilation Maillot Intégral à Cotonou | Academy Beauty Gate",
+    title: "Épilation Maillot Intégral à Cotonou",
     metaDescription: "Épilation maillot intégral à la cire à Cotonou — 15 000 FCFA en 40 min. Zone entière traitée. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -4315,7 +4315,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-fessier-femme-cotonou",
-    title: "Épilation Fessier Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Fessier Femme à Cotonou",
     metaDescription: "Épilation fessier femme à la cire à Cotonou, Cadjehoun — 12 000 FCFA en 20 min. Peau lisse et nette. Salon Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
@@ -4394,7 +4394,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "vajacial-cotonou",
-    title: "Vajacial à Cotonou | Academy Beauty Gate",
+    title: "Vajacial à Cotonou",
     metaDescription: "Vajacial à Cotonou, Cadjehoun — 30 000 FCFA, 1 heure. Soin complet post-épilation pour la zone intime. Hydratation, éclat et douceur. Salon Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
@@ -4472,7 +4472,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "vajacial-soin-fessier-cotonou",
-    title: "Vajacial + Soin Fessier à Cotonou | Academy Beauty Gate",
+    title: "Vajacial + Soin Fessier à Cotonou",
     metaDescription: "Vajacial et soin fessier en combo à Cotonou — 45 000 FCFA, 1h30. Soin complet zone intime et fessier. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -4550,7 +4550,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-sourcils-femme-cotonou",
-    title: "Épilation Sourcils Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Sourcils Femme à Cotonou",
     metaDescription: "Épilation sourcils femme à la cire à Cotonou, Cadjehoun — 2 000 FCFA en 15 min. Sourcils mis en forme et définis. Salon Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
@@ -4629,7 +4629,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-levres-femme-cotonou",
-    title: "Épilation Lèvres Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Lèvres Femme à Cotonou",
     metaDescription: "Épilation lèvres (duvet) femme à la cire à Cotonou — 3 000 FCFA en 10 min. Duvet retiré proprement. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -4708,7 +4708,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-menton-femme-cotonou",
-    title: "Épilation Menton Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Menton Femme à Cotonou",
     metaDescription: "Épilation menton femme à la cire à Cotonou, Cadjehoun — 3 000 FCFA en 10 min. Menton lisse et net. Salon Academy Beauty Gate.",
     category: "epilation-cire",
     hero: {
@@ -4787,7 +4787,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-joues-femme-cotonou",
-    title: "Épilation Joues Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Joues Femme à Cotonou",
     metaDescription: "Épilation joues femme à la cire à Cotonou — 3 000 FCFA en 10 min. Duvet des joues retiré. Teint unifié. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -4866,7 +4866,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-cou-femme-cotonou",
-    title: "Épilation Cou Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Cou Femme à Cotonou",
     metaDescription: "Épilation cou femme à la cire à Cotonou — 4 000 FCFA en 15 min. Cou lisse et net. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -4945,7 +4945,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-visage-entier-femme-cotonou",
-    title: "Épilation Visage Entier Femme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Visage Entier Femme à Cotonou",
     metaDescription: "Épilation visage entier femme à la cire à Cotonou — 10 000 FCFA en 30 min. Sourcils, lèvres, menton, joues, cou. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5024,7 +5024,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-demi-jambes-homme-cotonou",
-    title: "Épilation Demi-Jambes Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Demi-Jambes Homme à Cotonou",
     metaDescription: "Épilation demi-jambes homme à la cire à Cotonou — 12 000 FCFA en 45 min. Résultat lisse et net. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5103,7 +5103,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-jambes-completes-homme-cotonou",
-    title: "Épilation Jambes Complètes Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Jambes Complètes Homme à Cotonou",
     metaDescription: "Épilation jambes complètes homme à la cire à Cotonou — 16 000 FCFA en 1h. De la cheville à la cuisse. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5182,7 +5182,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-dos-homme-cotonou",
-    title: "Épilation Dos Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Dos Homme à Cotonou",
     metaDescription: "Épilation dos homme à la cire à Cotonou — 12 000 FCFA en 30 min. Dos lisse et net. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5261,7 +5261,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-ventre-homme-cotonou",
-    title: "Épilation Ventre Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Ventre Homme à Cotonou",
     metaDescription: "Épilation ventre homme à la cire à Cotonou — 12 000 FCFA en 30 min. Abdomen lisse et défini. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5340,7 +5340,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-bras-homme-cotonou",
-    title: "Épilation Bras Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Bras Homme à Cotonou",
     metaDescription: "Épilation bras homme à la cire à Cotonou — 10 000 FCFA en 30 min. Bras lisses et soignés. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5419,7 +5419,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-torse-homme-cotonou",
-    title: "Épilation Torse Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Torse Homme à Cotonou",
     metaDescription: "Épilation torse homme à la cire à Cotonou — 10 000 FCFA en 30 min. Poitrine lisse et musclée. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5498,7 +5498,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-epaules-homme-cotonou",
-    title: "Épilation Épaules Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Épaules Homme à Cotonou",
     metaDescription: "Épilation épaules homme à la cire à Cotonou — 8 000 FCFA en 20 min. Épaules lisses et nettes. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5577,7 +5577,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-nuque-homme-cotonou",
-    title: "Épilation Nuque Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Nuque Homme à Cotonou",
     metaDescription: "Épilation nuque homme à la cire à Cotonou — 8 000 FCFA en 15 min. Nuque nette entre deux coupes. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5656,7 +5656,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-aisselles-homme-cotonou",
-    title: "Épilation Aisselles Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Aisselles Homme à Cotonou",
     metaDescription: "Épilation aisselles homme à la cire à Cotonou — 7 000 FCFA en 15 min. Résultat net et hygiénique. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5735,7 +5735,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-sourcils-homme-cotonou",
-    title: "Épilation Sourcils Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Sourcils Homme à Cotonou",
     metaDescription: "Épilation sourcils homme à la cire à Cotonou — 2 000 FCFA en 15 min. Sourcils nets et dessinés. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5814,7 +5814,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-menton-homme-cotonou",
-    title: "Épilation Menton Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Menton Homme à Cotonou",
     metaDescription: "Épilation menton homme à la cire à Cotonou — 4 000 FCFA en 15 min. Zone du menton nettoyée et lissée. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5893,7 +5893,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-levres-homme-cotonou",
-    title: "Épilation Lèvres Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Lèvres Homme à Cotonou",
     metaDescription: "Épilation lèvres homme à la cire à Cotonou — 4 000 FCFA en 15 min. Duvet ou poils retirés. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -5972,7 +5972,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-pommettes-homme-cotonou",
-    title: "Épilation Pommettes Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Pommettes Homme à Cotonou",
     metaDescription: "Épilation pommettes homme à la cire à Cotonou — 5 000 FCFA en 15 min. Contours de barbe précis. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -6051,7 +6051,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-cou-homme-cotonou",
-    title: "Épilation Cou Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Cou Homme à Cotonou",
     metaDescription: "Épilation cou homme à la cire à Cotonou — 7 000 FCFA en 20 min. Cou net et barbe délimitée. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -6130,7 +6130,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "epilation-visage-entier-homme-cotonou",
-    title: "Épilation Visage Entier Homme à Cotonou | Academy Beauty Gate",
+    title: "Épilation Visage Entier Homme à Cotonou",
     metaDescription: "Épilation visage entier homme à la cire à Cotonou — 12 000 FCFA en 40 min. Sourcils, lèvres, menton, pommettes, cou. Salon Academy Beauty Gate, Cadjehoun.",
     category: "epilation-cire",
     hero: {
@@ -6983,7 +6983,7 @@ export const services: ServiceData[] = [
   {
     slug: "privatisation-mariage-cotonou",
     title: "Privatisation Mariage et Préparation Mariée à Cotonou",
-    metaDescription: "Privatisation salon pour la préparation de la mariée à Cadjehoun, Cotonou. Coiffure, maquillage et soins pour le grand jour au salon Academy Beauty Gate. Sur devis.",
+    metaDescription: "Privatisation salon pour la préparation de la mariée à Cadjehoun, Cotonou. Coiffure, maquillage et soins pour le grand jour, Academy Beauty Gate. Sur devis.",
     category: "privatisation",
     hero: {
       imageAlt: "Mariée en cours de préparation au salon Academy Beauty Gate Cotonou",

@@ -20,6 +20,7 @@ const LIENS = [
   { label: "Nos soins", href: "/#services" },
   { label: "Nos tarifs", href: "/tarifs" },
   { label: "À propos", href: "/a-propos" },
+  { label: "Blog", href: "/blog" },
   { label: "Avis clients", href: "/#avis" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },

@@ -5,7 +5,7 @@ export const SITE = {
   url: "https://www.academybeautygatee.com",
   tagline: "Espace de bien-être, de beauté et de formation & esthétique avancée — Cotonou, Bénin",
   description:
-    "Academy Beauty Gate, institut de beauté de référence à Cotonou pour les soins du visage, l'épilation, les massages, la manucure et la formation esthétique. Plus de 175 avis 5 étoiles.",
+    "Academy Beauty Gate, institut de beauté de référence à Cotonou : soins visage, épilation, massages, manucure et formation esthétique. +175 avis 5 étoiles.",
   locale: "fr_BJ",
   address: {
     street: "Cadjehoun",
@@ -223,6 +223,73 @@ export function itemListSchema(items: { name: string; url: string; description?:
       ...(item.description && { description: item.description }),
       ...(item.image && { image: `${SITE.url}${item.image}` }),
     })),
+  };
+}
+
+export function articleSchema(opts: {
+  slug: string;
+  headline: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${SITE.url}/blog/${opts.slug}/#article`,
+    headline: opts.headline,
+    description: opts.description,
+    image: `${SITE.url}${opts.image}`,
+    url: `${SITE.url}/blog/${opts.slug}`,
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified,
+    inLanguage: "fr",
+    author: { "@id": `${SITE.url}/#business` },
+    publisher: { "@id": `${SITE.url}/#business` },
+    mainEntityOfPage: `${SITE.url}/blog/${opts.slug}`,
+  };
+}
+
+export function howToSchema(opts: {
+  name: string;
+  description: string;
+  url: string;
+  image?: string;
+  steps: { title: string; description: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `Les étapes du soin ${opts.name}`,
+    description: opts.description,
+    url: opts.url,
+    ...(opts.image && { image: `${SITE.url}${opts.image}` }),
+    step: opts.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.title,
+      text: s.description,
+    })),
+  };
+}
+
+export function personSchema(opts: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  image?: string;
+  url?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: opts.name,
+    jobTitle: opts.jobTitle,
+    description: opts.description,
+    ...(opts.image && { image: `${SITE.url}${opts.image}` }),
+    ...(opts.url && { url: `${SITE.url}${opts.url}` }),
+    worksFor: { "@id": `${SITE.url}/#business` },
   };
 }
 
