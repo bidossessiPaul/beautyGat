@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
+import { blogArticles } from "@/data/blog";
 import { SITE } from "@/lib/seo";
 import { MAIN_CATEGORIES } from "./nos-soins/config";
 import { prisma } from "@/lib/prisma";
@@ -17,7 +18,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE.url}/a-propos`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE.url}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE.url}/epilation-electrolyse-cotonou`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE.url}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
+
+  const blogPages: MetadataRoute.Sitemap = blogArticles.map((a) => ({
+    url: `${SITE.url}/blog/${a.slug}`,
+    lastModified: new Date(a.updatedDate),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
   // Pages catégories principales /nos-soins/[category]
   const categoryPages: MetadataRoute.Sitemap = MAIN_CATEGORIES.map((cat) => ({
@@ -75,5 +84,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.75,
     }));
 
-  return [...staticPages, ...categoryPages, ...subcategoryPages, ...dbServicePages, ...staticServicePages];
+  return [...staticPages, ...blogPages, ...categoryPages, ...subcategoryPages, ...dbServicePages, ...staticServicePages];
 }

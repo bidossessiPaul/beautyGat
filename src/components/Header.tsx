@@ -60,6 +60,7 @@ const MEGA_MENU = [
 const NAV_LINKS = [
   { label: "Nos tarifs", href: "/tarifs" },
   { label: "Boutique", href: "/boutique" },
+  { label: "Blog", href: "/blog" },
   { label: "À propos", href: "/a-propos" },
   { label: "Contact", href: "/contact" },
 ];
