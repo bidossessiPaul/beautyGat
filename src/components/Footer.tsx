@@ -167,6 +167,22 @@ export function Footer() {
             Cadjehoun, Cotonou, Bénin
           </p>
         </div>
+
+        {/* Crédit de réalisation — volontairement discret, sur sa propre ligne
+            pour ne pas passer sous le bouton WhatsApp flottant. */}
+        <div className="max-w-[1300px] mx-auto px-6 md:px-10 pb-6 md:pb-5 text-center md:text-left">
+          <p className="text-[11px] text-white/25">
+            Site réalisé par{" "}
+            <a
+              href="https://paulmaximedossou.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-white/70 transition-colors underline-offset-2 hover:underline"
+            >
+              Paul Maxime
+            </a>
+          </p>
+        </div>
       </div>
 
     </footer>
