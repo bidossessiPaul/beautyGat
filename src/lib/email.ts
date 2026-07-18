@@ -254,18 +254,26 @@ export async function sendClientConfirmation(rdv: AppointmentMailData): Promise<
 
 /**
  * Envoie l'alerte admin et la confirmation cliente en parallèle.
- * Ne lève jamais : le résultat sert uniquement au log.
+ * Ne lève jamais. Le retour permet à l'interface de n'annoncer un email
+ * que s'il est réellement parti.
  */
-export async function notifyNewAppointment(rdv: AppointmentMailData): Promise<void> {
+export async function notifyNewAppointment(
+  rdv: AppointmentMailData,
+): Promise<{ adminSent: boolean; clientSent: boolean }> {
   const [admin, client] = await Promise.allSettled([
     sendAdminNotification(rdv),
     sendClientConfirmation(rdv),
   ]);
 
   const ok = (r: PromiseSettledResult<boolean>) => r.status === "fulfilled" && r.value;
+  const adminSent = ok(admin);
+  const clientSent = ok(client);
+
   console.log(
-    `[email] rdv ${rdv.id} — admin: ${ok(admin) ? "envoyé" : "échec"}, client: ${
-      rdv.email ? (ok(client) ? "envoyé" : "échec") : "pas d'email fourni"
+    `[email] rdv ${rdv.id} — admin: ${adminSent ? "envoyé" : "échec"}, client: ${
+      rdv.email ? (clientSent ? "envoyé" : "échec") : "pas d'email fourni"
     }`,
   );
+
+  return { adminSent, clientSent };
 }

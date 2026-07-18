@@ -294,6 +294,8 @@ function BookingPageInner() {
   // "deposit" = paiement de l'acompte en cours, "free" = réservation sans acompte
   const [submitting, setSubmitting] = useState<"deposit" | "free" | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // Renseigné par l'API : n'annoncer un email que s'il est réellement parti.
+  const [emailSent, setEmailSent] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
 
   // Charger les services
@@ -371,7 +373,7 @@ function BookingPageInner() {
         throw new Error(payload?.error ?? "Votre demande n'a pas pu être enregistrée.");
       }
 
-      const { id } = await res.json();
+      const { id, clientEmailSent } = await res.json();
 
       if (withDeposit) {
         const payRes = await fetch(`/api/rdv/${id}/pay`, { method: "POST" });
@@ -385,6 +387,7 @@ function BookingPageInner() {
         return;
       }
 
+      setEmailSent(Boolean(clientEmailSent));
       setConfirmed(true);
       setSubmitting(null);
     } catch (err) {
@@ -408,7 +411,7 @@ function BookingPageInner() {
           <h2 className="text-[26px] md:text-[30px] font-bold text-[#1a1a1a] mb-3">Demande envoyée !</h2>
           <p className="text-[#666] text-[15px] leading-relaxed mb-8">
             Votre demande de rendez-vous a bien été reçue. Notre équipe vous contactera rapidement sur le <strong>{form.phone}</strong> pour confirmer.
-            {form.email && <> Un récapitulatif vient de vous être envoyé à <strong>{form.email}</strong>.</>}
+            {emailSent && <> Un récapitulatif vient de vous être envoyé à <strong>{form.email}</strong>.</>}
           </p>
           <div className="bg-[#faf8f6] border border-[#e8e8e8] p-5 text-left mb-8 space-y-2.5">
             <div className="flex justify-between text-[13px]">

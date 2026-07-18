@@ -34,10 +34,12 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    let clientEmailSent = false;
+
     if (!withDeposit) {
       // Volontairement attendu : sur Vercel, le travail lancé après la réponse
       // est interrompu dès que la fonction rend la main.
-      await notifyNewAppointment({
+      const sent = await notifyNewAppointment({
         id: appointment.id,
         serviceTitle: appointment.serviceTitle,
         servicePrice: appointment.servicePrice,
@@ -51,9 +53,11 @@ export async function POST(req: NextRequest) {
         depositPaid: false,
         depositAmount: null,
       });
+      clientEmailSent = sent.clientSent;
     }
 
-    return NextResponse.json({ id: appointment.id }, { status: 201 });
+    // clientEmailSent évite d'annoncer au client un email qui n'est jamais parti.
+    return NextResponse.json({ id: appointment.id, clientEmailSent }, { status: 201 });
   } catch (err) {
     console.error("[api/rdv] error:", err);
     return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
