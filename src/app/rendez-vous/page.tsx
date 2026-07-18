@@ -152,6 +152,61 @@ function ServiceDrawer({ service, onClose, onSelect }: {
   );
 }
 
+/* ──────────────────────────────────────── overlay d'attente à l'envoi */
+
+/**
+ * Occupe l'attente pendant l'enregistrement et l'envoi des emails (2 à 3 s).
+ * Les messages défilent pour montrer que le traitement avance, plutôt que de
+ * laisser un spinner figé qui donne l'impression d'un blocage.
+ */
+function BookingLoader({ mode }: { mode: "deposit" | "free" }) {
+  const steps = mode === "deposit"
+    ? ["Enregistrement de votre demande…", "Préparation du paiement sécurisé…", "Redirection vers FedaPay…"]
+    : ["Enregistrement de votre demande…", "Envoi de votre confirmation…", "Encore un instant…"];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    // On s'arrête sur le dernier message si l'attente se prolonge.
+    const id = setInterval(() => setIndex(i => (i < steps.length - 1 ? i + 1 : i)), 1400);
+    return () => clearInterval(id);
+  }, [steps.length]);
+
+  return (
+    <div className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center px-4">
+      <div className="bg-white w-full max-w-[340px] px-8 py-10 text-center">
+
+        {/* Anneau de progression */}
+        <div className="relative w-14 h-14 mx-auto mb-6">
+          <div className="absolute inset-0 rounded-full border-[3px] border-[#f0e4e6]" />
+          <div className="absolute inset-0 rounded-full border-[3px] border-transparent border-t-[#6D071A] animate-spin" />
+          <Sparkles className="absolute inset-0 m-auto w-5 h-5 text-[#6D071A]" />
+        </div>
+
+        <p className="text-[14px] font-semibold text-[#1a1a1a] mb-1.5 min-h-[20px] transition-opacity">
+          {steps[index]}
+        </p>
+        <p className="text-[12px] text-[#999] leading-relaxed">
+          Merci de patienter, ne fermez pas cette page.
+        </p>
+
+        {/* Progression des étapes */}
+        <div className="flex items-center justify-center gap-1.5 mt-6">
+          {steps.map((_, i) => (
+            <span
+              key={i}
+              className={`h-1 rounded-full transition-all duration-500 ${
+                i <= index ? "w-6 bg-[#6D071A]" : "w-2 bg-[#e8e0e1]"
+              }`}
+            />
+          ))}
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 /* ─────────────────────────────────────────── mini calendar component */
 function MiniCalendar({ selected, onSelect }: { selected: string | null; onSelect: (d: string) => void }) {
   const today = new Date();
@@ -453,6 +508,7 @@ function BookingPageInner() {
 
   return (
     <div className="max-w-[900px] mx-auto px-4 py-10 md:py-14">
+      {submitting && <BookingLoader mode={submitting} />}
       <StepIndicator step={step} />
 
       {/* ── Étape 1 : Choisir un service ──────────────────── */}
