@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import FedaPay from "fedapay";
+// Le paquet fedapay n'a PAS d'export par défaut : il expose { FedaPay,
+// Transaction, ... }. Un `import FedaPay from "fedapay"` récupère l'objet
+// module entier, sur lequel setApiKey n'existe pas — l'appel échouait
+// silencieusement sur undefined. Les imports nommés sont obligatoires.
+import { FedaPay, Transaction } from "fedapay";
 
 /**
  * Accès centralisé à FedaPay.
@@ -35,7 +39,7 @@ export async function createTransaction(
 ): Promise<{ id: string; paymentUrl: string }> {
   configureFedaPay();
 
-  const transaction = await (FedaPay as any).Transaction.create({
+  const transaction = await (Transaction as any).create({
     description: params.description,
     amount: params.amount,
     currency: { iso: "XOF" },
@@ -63,7 +67,7 @@ export async function createTransaction(
 export async function isTransactionApproved(transactionId: string): Promise<boolean> {
   try {
     configureFedaPay();
-    const transaction = await (FedaPay as any).Transaction.retrieve(transactionId);
+    const transaction = await (Transaction as any).retrieve(transactionId);
     return transaction?.status === APPROVED;
   } catch (err) {
     console.error(`[fedapay] vérification impossible pour ${transactionId}:`, err);
