@@ -64,6 +64,51 @@ function isNonEmptyString(v: unknown): v is string {
 }
 
 /**
+ * Valide un numéro de téléphone et le normalise au format attendu par FedaPay.
+ *
+ * FedaPay rejette les numéros mal formés avec une simple erreur 400, sans
+ * indiquer le champ fautif au client. On filtre donc en amont, en particulier
+ * les numéros béninois d'une longueur incorrecte (un chiffre en trop ou en
+ * moins) qui passeraient un contrôle naïf sur le nombre de chiffres.
+ *
+ * Bénin : 10 chiffres en local (01 XX XX XX XX), soit 13 avec l'indicatif 229.
+ * Les numéros étrangers restent acceptés, avec un contrôle de longueur souple.
+ */
+export function validatePhone(
+  raw: string,
+): { ok: true; phone: string } | { ok: false; error: string } {
+  const digits = raw.replace(/\D/g, "");
+
+  if (digits.length < 8) {
+    return { ok: false, error: "Numéro de téléphone trop court" };
+  }
+
+  // Numéro local béninois : 10 chiffres commençant par 0.
+  if (digits.length === 10 && digits.startsWith("0")) {
+    return { ok: true, phone: `229${digits}` };
+  }
+
+  // Numéro béninois avec indicatif : 229 + 10 chiffres.
+  if (digits.startsWith("229")) {
+    const local = digits.slice(3);
+    if (local.length !== 10) {
+      return {
+        ok: false,
+        error: "Numéro béninois invalide : il doit comporter 10 chiffres après l'indicatif 229 (ex. 229 01 68 41 11 11)",
+      };
+    }
+    return { ok: true, phone: digits };
+  }
+
+  // Autres pays : contrôle de longueur souple (norme E.164).
+  if (digits.length > 15) {
+    return { ok: false, error: "Numéro de téléphone trop long" };
+  }
+
+  return { ok: true, phone: digits };
+}
+
+/**
  * Valide et normalise les données reçues du navigateur.
  * Retourne soit les données propres, soit le premier message d'erreur.
  */
@@ -107,12 +152,9 @@ export function validateAppointmentInput(
     return { ok: false, error: "Adresse email invalide" };
   }
 
-  const phone = (b.phone as string).trim();
-  // Au moins 8 chiffres : filtre les saisies manifestement erronées
-  // sans imposer un format strict (indicatifs internationaux variés).
-  if ((phone.match(/\d/g) ?? []).length < 8) {
-    return { ok: false, error: "Numéro de téléphone invalide" };
-  }
+  const phoneCheck = validatePhone((b.phone as string).trim());
+  if (!phoneCheck.ok) return { ok: false, error: phoneCheck.error };
+  const phone = phoneCheck.phone;
 
   const data: AppointmentInput = {
     serviceTitle: (b.serviceTitle as string).trim(),

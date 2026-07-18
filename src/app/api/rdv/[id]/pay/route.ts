@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { createTransaction } from "@/lib/fedapay";
+import { createTransaction, FedaPayValidationError } from "@/lib/fedapay";
 import { getDepositAmount } from "@/lib/booking";
 import { notifyWithoutDeposit } from "@/lib/appointment-confirm";
 
@@ -45,6 +45,12 @@ export async function POST(_req: NextRequest, { params }: { params: Promise<{ id
 
     return NextResponse.json({ paymentUrl });
   } catch (err) {
+    // Données refusées par FedaPay : le client peut corriger lui-même, on ne
+    // déclenche donc pas le repli "sans acompte" et on lui dit quoi rectifier.
+    if (err instanceof FedaPayValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
+
     console.error("[api/rdv pay] error:", err);
 
     // FedaPay est injoignable : le rendez-vous est déjà enregistré, on prévient

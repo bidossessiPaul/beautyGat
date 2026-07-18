@@ -23,6 +23,30 @@ export function configureFedaPay(): void {
   (FedaPay as any).setEnvironment(process.env.FEDAPAY_ENV ?? "sandbox");
 }
 
+/**
+ * Erreur de validation renvoyée par FedaPay (HTTP 400).
+ * Distinguée d'une panne réseau : elle est due aux données envoyées et doit
+ * être corrigée par le client, pas réessayée.
+ */
+export class FedaPayValidationError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "FedaPayValidationError";
+  }
+}
+
+/** Traduit les erreurs de champ FedaPay en message lisible. */
+function describeFieldErrors(errors: Record<string, string[]>): string | null {
+  if (errors["phone_number.number"] || errors["phone_number"]) {
+    return "Le numéro de téléphone n'est pas accepté par notre prestataire de paiement. Vérifiez-le (ex. 01 68 41 11 11).";
+  }
+  if (errors["customer.email"] || errors["email"]) {
+    return "L'adresse email n'est pas valide.";
+  }
+  const first = Object.keys(errors)[0];
+  return first ? `Champ invalide : ${first}` : null;
+}
+
 export interface CreateTransactionParams {
   description: string;
   amount: number;
@@ -39,18 +63,31 @@ export async function createTransaction(
 ): Promise<{ id: string; paymentUrl: string }> {
   configureFedaPay();
 
-  const transaction = await (Transaction as any).create({
-    description: params.description,
-    amount: params.amount,
-    currency: { iso: "XOF" },
-    callback_url: params.callbackUrl,
-    customer: {
-      firstname: params.firstName,
-      lastname: params.lastName,
-      phone_number: { number: params.phone, country: "BJ" },
-      ...(params.email ? { email: params.email } : {}),
-    },
-  });
+  let transaction: any;
+  try {
+    transaction = await (Transaction as any).create({
+      description: params.description,
+      amount: params.amount,
+      currency: { iso: "XOF" },
+      callback_url: params.callbackUrl,
+      customer: {
+        firstname: params.firstName,
+        lastname: params.lastName,
+        phone_number: { number: params.phone, country: "BJ" },
+        ...(params.email ? { email: params.email } : {}),
+      },
+    });
+  } catch (err: any) {
+    // FedaPay renvoie le détail des champs fautifs dans err.errors ; sans cette
+    // traduction, le client ne voit qu'une panne générique et ne peut rien corriger.
+    const fieldErrors = err?.errors as Record<string, string[]> | undefined;
+    if (fieldErrors) {
+      const message = describeFieldErrors(fieldErrors);
+      console.error("[fedapay] données refusées:", JSON.stringify(fieldErrors));
+      if (message) throw new FedaPayValidationError(message);
+    }
+    throw err;
+  }
 
   const token = await transaction.generateToken();
   return { id: String(transaction.id), paymentUrl: token.url };
