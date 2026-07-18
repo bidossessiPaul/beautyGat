@@ -84,6 +84,7 @@ model Appointment {
   id           String   @id @default(cuid())
   serviceTitle String
   serviceSlug  String?
+  servicePrice String?
   date         String
   time         String
   firstName    String
@@ -92,6 +93,14 @@ model Appointment {
   email        String?
   message      String?  @db.Text
   status       String   @default("pending")
+  // Acompte "Garantir ma place" — depositPaid n'est passé à true
+  // qu'après vérification du statut de la transaction auprès de FedaPay.
+  depositPaid   Boolean @default(false)
+  depositAmount Int?
+  paymentId     String?
+  // Empêche l'envoi en double des emails de confirmation
+  // (retour navigateur + webhook peuvent se déclencher tous les deux).
+  notifiedAt   DateTime?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }

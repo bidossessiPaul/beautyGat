@@ -3,7 +3,7 @@
 import { useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { AdminShell } from "@/components/admin/AdminShell";
-import { Calendar, Clock, User, Sparkles, Trash2, Phone, Mail } from "lucide-react";
+import { Calendar, Clock, User, Sparkles, Trash2, Phone, Mail, ShieldCheck } from "lucide-react";
 
 interface Appointment {
   id: string;
@@ -17,6 +17,8 @@ interface Appointment {
   email: string | null;
   message: string | null;
   status: string;
+  depositPaid: boolean;
+  depositAmount: number | null;
   createdAt: string;
 }
 
@@ -161,6 +163,20 @@ export default function AdminRdv() {
                   </div>
 
                   <div className="p-4 flex flex-col gap-3 flex-1">
+                    {/* Acompte : distingue une place réellement garantie d'une simple demande */}
+                    <div>
+                      {a.depositPaid ? (
+                        <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-1 text-[11px] font-bold uppercase tracking-wide">
+                          <ShieldCheck className="w-3 h-3" />
+                          Acompte payé{a.depositAmount ? ` · ${a.depositAmount.toLocaleString("fr-FR")} F` : ""}
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 bg-[#f7f7f7] text-[#999] border border-[#e8e8e8] px-2 py-1 text-[11px] font-bold uppercase tracking-wide">
+                          Sans acompte
+                        </span>
+                      )}
+                    </div>
+
                     {/* Service */}
                     <div className="flex items-start gap-2">
                       <Sparkles className="w-3.5 h-3.5 text-[#6D071A] mt-0.5 shrink-0" />

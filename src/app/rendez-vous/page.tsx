@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ChevronLeft, ChevronRight, Check, Calendar, Clock, User, Sparkles, X, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Check, Calendar, Clock, User, Sparkles, X, ArrowRight, ShieldCheck, AlertCircle } from "lucide-react";
+import { TIME_SLOTS, DEPOSIT_DISPLAY_AMOUNT } from "@/lib/booking";
 
 /* ─────────────────────────────────────────────────────────── types */
 interface Service {
@@ -34,7 +35,6 @@ const CATEGORY_LABELS: Record<string, string> = {
   injections: "Médical", diagnostic: "Consultations", privatisation: "Privatisation",
 };
 
-const TIME_SLOTS = ["09:00","10:00","11:00","12:00","14:00","15:00","16:00","17:00","18:00","19:00"];
 
 /* ─────────────────────────────────────── service preview drawer */
 function ServiceDrawer({ service, onClose, onSelect }: {
@@ -291,7 +291,9 @@ function BookingPageInner() {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [form, setForm] = useState<FormData>({ firstName: "", lastName: "", phone: "", email: "", message: "" });
-  const [submitting, setSubmitting] = useState(false);
+  // "deposit" = paiement de l'acompte en cours, "free" = réservation sans acompte
+  const [submitting, setSubmitting] = useState<"deposit" | "free" | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [confirmed, setConfirmed] = useState(false);
 
   // Charger les services
@@ -339,24 +341,55 @@ function BookingPageInner() {
   const categories = Array.from(new Set(services.map(s => s.category))).sort();
   const filteredServices = filterCat === "all" ? services : services.filter(s => s.category === filterCat);
 
-  async function handleSubmit() {
+  /**
+   * Enregistre le rendez-vous, puis redirige vers FedaPay si le client
+   * a choisi de garantir sa place avec un acompte.
+   */
+  async function handleSubmit(withDeposit: boolean) {
     if (!selectedService || !selectedDate || !selectedTime || !form.firstName || !form.lastName || !form.phone) return;
-    setSubmitting(true);
+
+    setSubmitting(withDeposit ? "deposit" : "free");
+    setError(null);
+
     try {
-      await fetch("/api/rdv", {
+      const res = await fetch("/api/rdv", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           serviceTitle: selectedService.title,
           serviceSlug: selectedService.slug,
+          servicePrice: selectedService.pricing?.items?.[0]?.price ?? null,
           date: selectedDate,
           time: selectedTime,
+          withDeposit,
           ...form,
         }),
       });
+
+      if (!res.ok) {
+        const payload = await res.json().catch(() => null);
+        throw new Error(payload?.error ?? "Votre demande n'a pas pu être enregistrée.");
+      }
+
+      const { id } = await res.json();
+
+      if (withDeposit) {
+        const payRes = await fetch(`/api/rdv/${id}/pay`, { method: "POST" });
+        if (!payRes.ok) {
+          const payload = await payRes.json().catch(() => null);
+          throw new Error(payload?.error ?? "Le paiement n'a pas pu être ouvert.");
+        }
+        const { paymentUrl } = await payRes.json();
+        // On quitte la page : inutile de réinitialiser l'état de chargement.
+        window.location.href = paymentUrl;
+        return;
+      }
+
       setConfirmed(true);
-    } finally {
-      setSubmitting(false);
+      setSubmitting(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Une erreur est survenue. Réessayez.");
+      setSubmitting(null);
     }
   }
 
@@ -375,6 +408,7 @@ function BookingPageInner() {
           <h2 className="text-[26px] md:text-[30px] font-bold text-[#1a1a1a] mb-3">Demande envoyée !</h2>
           <p className="text-[#666] text-[15px] leading-relaxed mb-8">
             Votre demande de rendez-vous a bien été reçue. Notre équipe vous contactera rapidement sur le <strong>{form.phone}</strong> pour confirmer.
+            {form.email && <> Un récapitulatif vient de vous être envoyé à <strong>{form.email}</strong>.</>}
           </p>
           <div className="bg-[#faf8f6] border border-[#e8e8e8] p-5 text-left mb-8 space-y-2.5">
             <div className="flex justify-between text-[13px]">
@@ -693,16 +727,44 @@ function BookingPageInner() {
                 placeholder="Précisions sur votre soin, questions..." />
             </div>
 
+            {error && (
+              <div className="flex items-start gap-2.5 bg-[#fdf2f2] border border-[#f0c9c9] px-4 py-3 mb-4">
+                <AlertCircle className="w-4 h-4 text-[#c0392b] shrink-0 mt-0.5" />
+                <p className="text-[13px] text-[#a33] leading-relaxed">{error}</p>
+              </div>
+            )}
+
+            {/* Option mise en avant : l'acompte garantit le créneau */}
             <button
-              onClick={handleSubmit}
-              disabled={submitting || !form.firstName || !form.lastName || !form.phone}
+              onClick={() => handleSubmit(true)}
+              disabled={submitting !== null || !form.firstName || !form.lastName || !form.phone}
               className="w-full bg-[#6D071A] text-white text-[12px] font-bold uppercase tracking-widest py-4 hover:bg-black transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              {submitting
-                ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Envoi en cours…</>
-                : "Confirmer ma demande de rendez-vous"}
+              {submitting === "deposit"
+                ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Redirection vers le paiement…</>
+                : <><ShieldCheck className="w-4 h-4" /> Garantir ma place — {DEPOSIT_DISPLAY_AMOUNT.toLocaleString("fr-FR")} FCFA</>}
             </button>
-            <p className="text-[11px] text-[#bbb] text-center mt-3">Notre équipe vous contactera dans les 24h pour confirmer votre créneau</p>
+            <p className="text-[11px] text-[#999] text-center mt-2.5 leading-relaxed">
+              Acompte déduit du prix de votre soin · Paiement sécurisé par FedaPay
+            </p>
+
+            {/* Option secondaire, volontairement discrète */}
+            <div className="flex items-center gap-3 my-5">
+              <div className="flex-1 h-px bg-[#ececec]" />
+              <span className="text-[10px] uppercase tracking-widest text-[#ccc]">ou</span>
+              <div className="flex-1 h-px bg-[#ececec]" />
+            </div>
+
+            <button
+              onClick={() => handleSubmit(false)}
+              disabled={submitting !== null || !form.firstName || !form.lastName || !form.phone}
+              className="w-full text-[12px] text-[#9a9a9a] underline underline-offset-4 decoration-[#dcdcdc] hover:text-[#6D071A] hover:decoration-[#6D071A] transition-colors disabled:opacity-40 disabled:cursor-not-allowed py-1"
+            >
+              {submitting === "free" ? "Envoi en cours…" : "Réserver sans payer d'avance"}
+            </button>
+            <p className="text-[10px] text-[#c5c5c5] text-center mt-1.5">
+              Créneau non garanti — nous vous rappellerons pour confirmer
+            </p>
           </div>
         </div>
       )}
