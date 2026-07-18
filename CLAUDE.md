@@ -37,11 +37,14 @@
   (le retour navigateur et le webhook peuvent se déclencher tous les deux).
 
 ## Emails
-- Module unique : `src/lib/email.ts` (API REST Brevo, pas de SMTP — Vercel gère
-  mal les connexions SMTP persistantes).
+- Module unique : `src/lib/email.ts` — SMTP Hostinger via nodemailer, depuis
+  la boîte `contact@academybeautygatee.com`.
 - Aucune fonction du module ne lève : une panne d'email ne doit jamais faire
-  échouer une réservation déjà enregistrée.
-- Variables : `BREVO_API_KEY`, `BREVO_SENDER_EMAIL`, `BREVO_SENDER_NAME`,
-  `ADMIN_NOTIFICATION_EMAIL`.
-- Brevo restreint les IP appelantes : la restriction doit être désactivée pour
-  que Vercel (IP dynamiques) puisse envoyer.
+  échouer une réservation déjà enregistrée. Le transport est isolé dans
+  `sendMail()`, changer de prestataire ne touche pas aux gabarits.
+- Variables : `SMTP_HOST`, `SMTP_PORT` (465), `SMTP_USER`, `SMTP_PASSWORD`,
+  `SMTP_SENDER_NAME`, `ADMIN_NOTIFICATION_EMAIL`.
+- `from` doit rester la boîte authentifiée, sinon Hostinger rejette l'envoi.
+- Brevo a été écarté : son compte restreint les IP appelantes, incompatible avec
+  les IP dynamiques de Vercel (401 systématiques).
+- Le SPF du domaine autorise déjà Hostinger, aucun réglage DNS n'est requis.

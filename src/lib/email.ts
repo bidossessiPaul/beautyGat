@@ -1,16 +1,54 @@
+import nodemailer, { type Transporter } from "nodemailer";
+
 /**
- * Envoi des emails transactionnels via l'API REST Brevo (v3).
+ * Envoi des emails transactionnels via le SMTP Hostinger de la boîte
+ * contact@academybeautygatee.com.
  *
- * On utilise l'API HTTP plutôt que le SMTP : le site tourne sur Vercel, où les
- * connexions SMTP persistantes sont peu fiables (cold starts, timeouts).
+ * Choisi plutôt que Brevo, dont le compte restreint les IP appelantes : les
+ * fonctions Vercel changent d'IP à chaque exécution et étaient rejetées en 401.
+ * Le SPF du domaine autorise déjà Hostinger, la délivrabilité est donc correcte
+ * sans réglage DNS supplémentaire.
  *
  * Règle : aucune fonction de ce module ne lève d'exception. Une panne d'email
  * ne doit jamais faire échouer une réservation déjà enregistrée en base.
  */
 
-const BREVO_ENDPOINT = "https://api.brevo.com/v3/smtp/email";
-
 const BORDEAUX = "#6D071A";
+
+/**
+ * Le transporteur est mis en cache entre les invocations : sur Vercel, une même
+ * instance chaude peut enchaîner plusieurs envois sans rouvrir la connexion.
+ */
+let cachedTransporter: Transporter | null = null;
+
+function getTransporter(): Transporter | null {
+  if (cachedTransporter) return cachedTransporter;
+
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASSWORD;
+
+  if (!host || !user || !pass) {
+    console.error("[email] SMTP_HOST, SMTP_USER ou SMTP_PASSWORD manquant — envoi ignoré");
+    return null;
+  }
+
+  const port = Number(process.env.SMTP_PORT) || 465;
+
+  cachedTransporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465, // 465 = SSL implicite, 587 = STARTTLS
+    auth: { user, pass },
+    // Timeouts courts : en serverless, mieux vaut échouer vite et journaliser
+    // que bloquer la réponse HTTP de la réservation.
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 15_000,
+  });
+
+  return cachedTransporter;
+}
 
 interface MailRecipient {
   email: string;
@@ -40,47 +78,32 @@ export interface AppointmentMailData {
   depositAmount?: number | null;
 }
 
-/* ────────────────────────────────────────────────── transport Brevo */
+/* ─────────────────────────────────────────────────── transport SMTP */
+
+/** Formate un destinataire au format "Nom <adresse>". */
+function formatRecipient(r: MailRecipient): string {
+  return r.name ? `"${r.name.replace(/"/g, "")}" <${r.email}>` : r.email;
+}
 
 async function sendMail({ to, subject, html, replyTo }: SendMailParams): Promise<boolean> {
-  const apiKey = process.env.BREVO_API_KEY;
-  const senderEmail = process.env.BREVO_SENDER_EMAIL;
+  const transporter = getTransporter();
+  if (!transporter) return false;
 
-  if (!apiKey || !senderEmail) {
-    console.error("[email] BREVO_API_KEY ou BREVO_SENDER_EMAIL manquant — envoi ignoré");
-    return false;
-  }
+  const senderEmail = process.env.SMTP_USER!;
+  const senderName = process.env.SMTP_SENDER_NAME || "Academy Beauty Gate";
 
   try {
-    const res = await fetch(BREVO_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "api-key": apiKey,
-        "content-type": "application/json",
-        accept: "application/json",
-      },
-      body: JSON.stringify({
-        sender: {
-          email: senderEmail,
-          name: process.env.BREVO_SENDER_NAME || "Academy Beauty Gate",
-        },
-        to,
-        subject,
-        htmlContent: html,
-        ...(replyTo ? { replyTo } : {}),
-      }),
+    await transporter.sendMail({
+      // L'expéditeur doit rester la boîte authentifiée, sinon Hostinger rejette.
+      from: `"${senderName}" <${senderEmail}>`,
+      to: to.map(formatRecipient).join(", "),
+      subject,
+      html,
+      ...(replyTo ? { replyTo: formatRecipient(replyTo) } : {}),
     });
-
-    if (!res.ok) {
-      // Brevo renvoie un JSON explicite ({ code, message }) très utile au debug.
-      const detail = await res.text().catch(() => "");
-      console.error(`[email] Brevo a répondu ${res.status}:`, detail);
-      return false;
-    }
-
     return true;
   } catch (err) {
-    console.error("[email] échec de l'appel à Brevo:", err);
+    console.error("[email] échec de l'envoi SMTP:", err instanceof Error ? err.message : err);
     return false;
   }
 }
